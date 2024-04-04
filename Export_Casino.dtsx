@@ -1,0 +1,3105 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/13/2019 2:24:40 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="BOSBI01"
+  DTS:CreatorName="BOS\divina"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{2EF1C6D9-C8E3-4C6C-A145-F2F996C4DD32}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:ForceExecValue="True"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Export_Casino"
+  DTS:PackageType="5"
+  DTS:VersionBuild="651"
+  DTS:VersionGUID="{FBEBB408-2147-437D-9E36-AEEE0230CCF5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Config]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1FB16AC4-9373-451B-AFF1-4F2963A0259F}"
+      DTS:ObjectName="Config">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Export_Casino-{1FB16AC4-9373-451B-AFF1-4F2963A0259F}Config;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeXt3KueBO0ysIC6Zf+RJWwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAkxdRja6qXQd1PqO6nf58UceBQ7j9J0Q49HuiwjGN2JAAAAAAOgAAAAAIAACAAAADVw1mIeNHDsyxY1IlI7m2CiKy8PZVL48oq07oi0PeVvjAAAADJ2AT/6YaWhXV6f0dPErhexmooSFHm5ZKscCgLsdV1a7Ja0QihXmhieOHAvKVHu09AAAAAv2OsoWAwCZj6pAQJJMC2XuAtTKZCt4VGdqxifYq59beJDvt0Am6vwWUqhBB6SK5BicIoFf42ttIOVu8hmoPE5A</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DBCasino]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{30020BE6-906D-4871-AAB3-37A928FC7896}"
+      DTS:ObjectName="DBCasino">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_Casino;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Export_Casino-{30020BE6-906D-4871-AAB3-37A928FC7896}DBCasino;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeXt3KueBO0ysIC6Zf+RJWwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACGJhMw5RUrmEjD/cuuN2UFCLDPHwerpHefZtCj07qRywAAAAAOgAAAAAIAACAAAADRT4ja39ShANxdPPIGMm9RzINxie0pL85lo7pfNJ9Q4jAAAAAklTZGS/jTWdR0kMhd7E+kUwZEw7IEnKuTBXiRPBT6Yt0yqe56kGpvk+opSK/De3BAAAAAF7eO29kjFeeTaGtN3iUXeo2d+tQcemkAgiC2EQSnIFQoEOX1qBuuZ/OERUlMLSUOg9he3Lmpw/MOq4A0Deueeg</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ExportCasino]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6B153FD7-3CF3-4A6E-867B-8859AC0FD527}"
+      DTS:ObjectName="ExportCasino">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FileFullName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1040"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\ETL_Out\Upload_Temporarily\Casino\Export_18991230.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PartitionFlag"
+              DTS:DTSID="{4E85BCF9-9AA3-439E-9B51-EDC31F54E3D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompetenceDate"
+              DTS:DTSID="{33309927-8A71-440E-8A64-719ACBDB13D8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserName"
+              DTS:DTSID="{F34FA74D-6384-4C27-87F7-D6AFAA797C79}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SiteCode"
+              DTS:DTSID="{D346CFD9-35B8-41E1-AAAD-43960AC5B544}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CasinoTickets"
+              DTS:DTSID="{5D60A3FD-A657-40E1-A693-78CDDC86B8D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Winning"
+              DTS:DTSID="{F19D8AC8-CA34-4ADB-8557-569D58091081}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Bet"
+              DTS:DTSID="{15A5D9E8-DBC8-444C-9DB9-5906B938F25F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HouseProfit"
+              DTS:DTSID="{956C7A37-3265-4F10-A918-759237D1C74A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="JackpotWinning"
+              DTS:DTSID="{3A75EA36-2B2A-4266-8E78-9E6B485652D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AdditionalJackpotForWinning"
+              DTS:DTSID="{74753460-37EA-4F2F-8901-7B5E0D0820F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BetFromRealBonus"
+              DTS:DTSID="{0AE42CAC-61AF-4888-B024-0011836A4C4C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BetFromPlayBonus"
+              DTS:DTSID="{534FAF3A-8370-4D04-886B-CDAA5E85DCDC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DeviceId"
+              DTS:DTSID="{7BBE7F0A-607E-4E1C-8BA9-D52D64C44444}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FunBonusBet"
+              DTS:DTSID="{E838FCF1-91D6-48CA-B03B-6798EBABF6FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FunBonusHouseProfit"
+              DTS:DTSID="{55F0AAD9-865A-484C-A04F-DEF913448533}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FunBonusCasinoTickets"
+              DTS:DTSID="{BE94B6C3-B00A-48CD-8158-F64544CB93CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FreeRollCasinoTickets"
+              DTS:DTSID="{63F84E1A-A7FB-404B-8BC2-561788A0EA37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RealBet"
+              DTS:DTSID="{FB1DBFC5-5990-4D87-BA1F-B3D283D7E75E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phases"
+              DTS:DTSID="{C779BFE6-21CA-4217-9AEB-AE94846A347C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{505EB023-B992-4335-93C7-F4E8A78D00FB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="BeginDate">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5D43F37A-8108-4288-89F3-9EE06B228D4A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="COD_Customer">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E09966F0-0FE4-4073-854F-6048634D430F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentDate"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1EBA4504-7C5B-40EC-926B-CB85B2A028F0}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;Export_&quot; + (DT_STR,4,1252) DatePart(&quot;yyyy&quot;,@[User::CurrentDate]) &#xA;+ Right(&quot;0&quot; + (DT_STR,4,1252) DatePart(&quot;m&quot;,@[User::CurrentDate]),2) &#xA;+ Right(&quot;0&quot; + (DT_STR,4,1252) DatePart(&quot;day&quot;,@[User::CurrentDate]),2)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentDateString"
+      DTS:RaiseChangedEvent="True">
+      <DTS:VariableValue
+        DTS:DataType="8">Export_18991230</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{37FBC31F-882B-4CF5-97D7-902CFC7D8DA5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Databases">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{63C071A8-89DD-47CB-A17D-0F90EB380682}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DBKey">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B2470A7E-4FBF-4042-9F1E-D9E4EDA850A0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DBName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{619F168B-81CF-49F1-BC30-6FCB2BF40CEC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Delete">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{68A3ABD4-1D32-408A-9896-3B2723268F92}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EndDate">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D9D92E36-0D9D-4B80-8041-F58D27E79B23}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EnvironmentId">
+      <DTS:VariableValue
+        DTS:DataType="3">3</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3A67DF81-D6E6-4BAB-BE22-10BB6EEE69A7}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::PathTarget]  +@[User::CurrentDateString] + &quot;.csv&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileFullName">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\ETL_Out\Upload_Temporarily\Casino\Export_18991230.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EF02148F-5A0C-42E4-8811-85240964A326}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="InFiletype">
+      <DTS:VariableValue
+        DTS:DataType="8">csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CC5DBE44-7C77-4A12-833F-DF612B513E2F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="InFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\ETL_Out\Upload_Temporarily\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C542EEBD-2933-4CE8-9CEE-7DAB2BF3D45E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumeroRighe">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{19A00C30-3E0E-4690-B8CD-FEDB43F2C527}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Options">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2ACA710A-AC69-483F-B47B-1E125511EA7F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutExecutable">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{89589D60-1B13-42DF-AF13-4C671C283D6B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutFileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8B425410-D185-4B63-993E-31574294D1DA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::PathTarget]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\ETL_Out\Upload_Temporarily\Casino\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EA99377A-B4D6-4011-BCF4-16E4780B2FCF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutMessage">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6268569C-1ECA-447F-8DE9-0B7863B93200}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Outsubject">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C0575794-3C23-48DF-9F45-E29ECBF15D82}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PathTarget">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\ETL_Out\Upload_Temporarily\Casino\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{32B9756F-5AC0-4DC3-8971-0B747F17AB7D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PS1Code">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B76ADA11-681A-4A87-980E-F471ED77BFAE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PS1Es">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F55D3AA3-A046-4894-B29C-14F40D1576E4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Server">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AA7386A0-976C-44F6-99F1-4F94225B2CC8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLServerAuthenticationPassword">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FEEC13FE-C318-42A6-BEB4-B3B2E518E63C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLServerAuthenticationUsername">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7C73BFCF-F190-4C35-8539-79DAC3544B64}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Task">
+      <DTS:VariableValue
+        DTS:DataType="8">Export_Casino</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{799FCE35-2E8F-4BD8-8612-9B2D1B510EB0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="UseSQLServerAuthentication">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Aggiornamento Date"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{222428D3-9F49-4530-81D7-E712C7C217C5}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Aggiornamento Date">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Aggiornamento Date\Update DateToLoad"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{879AD88C-D438-4696-B003-F6B876BC583E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update DateToLoad"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:DTSID="{E0E2DE12-1458-4A82-A681-9DCEB4E298C0}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="User"
+              DTS:ObjectName="Variable">
+              <DTS:VariableValue
+                DTS:DataType="3">0</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1FB16AC4-9373-451B-AFF1-4F2963A0259F}"
+              SQLTask:SqlStatementSource="exec Config.SetDateToLoadForCRM ?, ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@Task"
+                SQLTask:DtsVariableName="User::Task"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="32" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@EnvironmentId"
+                SQLTask:DtsVariableName="User::EnvironmentId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="2"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@LastLoadedDate"
+                SQLTask:DtsVariableName="User::EndDate"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Caricamento date"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B13C4331-BE00-47D3-A615-EB964223090B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Caricamento date">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Caricamento date\GetMaxDate"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{26F37990-289E-4E48-B31A-02C8119CBAE1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GetMaxDate"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:DTSID="{7B0FCC66-8D08-406E-9899-0275F5282F41}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="User"
+              DTS:ObjectName="Variable">
+              <DTS:VariableValue
+                DTS:DataType="3">0</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1FB16AC4-9373-451B-AFF1-4F2963A0259F}"
+              SQLTask:SqlStatementSource="exec Config.GetMaxDateToLoad ?,?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::EndDate" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@Task"
+                SQLTask:DtsVariableName="User::Task"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="32" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@EnvironmentId"
+                SQLTask:DtsVariableName="User::EnvironmentId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="2"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Caricamento date\GetMinDate"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7DEC759F-6752-403D-B56F-B6BEEA197FF3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GetMinDate"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:DTSID="{EFC76EC1-30AF-471A-A78F-4220116F7740}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="User"
+              DTS:ObjectName="Variable">
+              <DTS:VariableValue
+                DTS:DataType="3">0</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1FB16AC4-9373-451B-AFF1-4F2963A0259F}"
+              SQLTask:SqlStatementSource="exec Config.GetMinDateToLoad ?,?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::BeginDate" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@Task"
+                SQLTask:DtsVariableName="User::Task"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@EnvironmentId"
+                SQLTask:DtsVariableName="User::EnvironmentId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="2"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Caricamento date.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{B1A5FDC4-490E-4399-8182-D19A59A27835}"
+          DTS:From="Package\Caricamento date\GetMinDate"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Caricamento date\GetMaxDate" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Contenitore Ciclo For"
+      DTS:AssignExpression="@[User::CurrentDate] = dateadd(&quot;day&quot;, 1, @[User::CurrentDate])"
+      DTS:CreationName="STOCK:FORLOOP"
+      DTS:Description="Contenitore Ciclo For"
+      DTS:DTSID="{CB7BE1D5-83F5-405E-BBDF-B2D0B4322108}"
+      DTS:EvalExpression="@[User::CurrentDate] &lt;= @[User::EndDate]"
+      DTS:ExecutableType="STOCK:FORLOOP"
+      DTS:InitExpression="@[User::CurrentDate] = @[User::BeginDate]"
+      DTS:LocaleID="-1"
+      DTS:MaxConcurrent="1"
+      DTS:ObjectName="Contenitore Ciclo For">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Contenitore Ciclo For\Attività Esegui processo"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Attività Esegui processo"
+          DTS:DTSID="{60742071-8A65-42A4-8367-FDEAB159F0AC}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Attività Esegui processo"
+          DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="powershell.exe"
+              Arguments="-f &quot;c:\tools\SFTP_Casino.PS1&quot;"
+              WorkingDirectory="C:\Program Files (x86)\WinSCP" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenitore Ciclo For\GetSummaryByUser"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{6C77A3BD-678A-4A6E-9FD7-97D09093AD2F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GetSummaryByUser"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="1040"
+                  name="Flat File Destination"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ExportCasino]"
+                      connectionManagerRefId="Package.ConnectionManagers[ExportCasino]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[PartitionFlag]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PartitionFlag"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PartitionFlag]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[PartitionFlag]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[CompetenceDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CompetenceDate"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CompetenceDate]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[CompetenceDate]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[UserName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="UserName"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[UserName]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[UserName]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[SiteCode]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SiteCode"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SiteCode]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[SiteCode]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[CasinoTickets]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CasinoTickets"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CasinoTickets]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[CasinoTickets]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[Winning]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Winning"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Winning]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Winning]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[Bet]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Bet"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Bet]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Bet]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[HouseProfit]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="HouseProfit"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[HouseProfit]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[HouseProfit]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[JackpotWinning]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="JackpotWinning"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[JackpotWinning]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[JackpotWinning]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[AdditionalJackpotForWinning]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="AdditionalJackpotForWinning"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AdditionalJackpotForWinning]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[AdditionalJackpotForWinning]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[BetFromRealBonus]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="BetFromRealBonus"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[BetFromRealBonus]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[BetFromRealBonus]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[DeviceId]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DeviceId"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DeviceId]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[DeviceId]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[FunBonusBet]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FunBonusBet"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FunBonusBet]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[FunBonusBet]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[FunBonusHouseProfit]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FunBonusHouseProfit"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FunBonusHouseProfit]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[FunBonusHouseProfit]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[FunBonusCasinoTickets]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FunBonusCasinoTickets"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FunBonusCasinoTickets]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[FunBonusCasinoTickets]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[FreeRollCasinoTickets]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FreeRollCasinoTickets"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FreeRollCasinoTickets]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[FreeRollCasinoTickets]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[RealBet]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RealBet"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[RealBet]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[RealBet]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[Phases]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Phases"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Phases]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Phases]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].Columns[BetFromPlayBonus]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="BetFromPlayBonus"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[BetFromPlayBonus]"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[BetFromPlayBonus]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PartitionFlag]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PartitionFlag" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CompetenceDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CompetenceDate" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[UserName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="UserName" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SiteCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SiteCode" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CasinoTickets]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CasinoTickets" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Winning]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Winning" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Bet]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Bet" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[HouseProfit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="HouseProfit" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[JackpotWinning]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="JackpotWinning" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AdditionalJackpotForWinning]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="AdditionalJackpotForWinning" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[BetFromRealBonus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BetFromRealBonus" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DeviceId]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DeviceId" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FunBonusBet]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FunBonusBet" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FunBonusHouseProfit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FunBonusHouseProfit" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FunBonusCasinoTickets]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FunBonusCasinoTickets" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FreeRollCasinoTickets]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FreeRollCasinoTickets" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[RealBet]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RealBet" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Phases]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Phases" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[BetFromPlayBonus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BetFromPlayBonus" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+                  description="Origine OLE DB"
+                  name="Origine OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">exec [Casino].[GetSummaryByUser] ?,?
+WITH RESULT SETS ((
+	[PartitionFlag] [varchar](50) ,
+	[CompetenceDate] [varchar](50) ,
+	[UserName] [varchar](50) ,
+	[SiteCode] [varchar](50) ,
+	[CasinoTickets] [varchar](50) ,
+	[Winning] [varchar](50) ,
+	[Bet] [varchar](50) ,
+	[HouseProfit] [varchar](50) ,
+	[JackpotWinning] [varchar](50) ,
+	[AdditionalJackpotForWinning] [varchar](50) ,
+	[BetFromRealBonus] [varchar](50) ,
+                [BetFromPlayBonus] [varchar](50) ,
+	[DeviceId] [varchar](50) ,
+	[FunBonusBet] [varchar](50) ,
+	[FunBonusHouseProfit] [varchar](50) ,
+	[FunBonusCasinoTickets] [varchar](50) ,
+	[FreeRollCasinoTickets] [varchar](50) ,
+	[RealBet] [varchar](50) ,
+	[Phases] [varchar](50) 
+));</property>
+                    <property
+                      dataType="System.String"
+                      description="Variabile che contiene il comando SQL da eseguire."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Mapping tra i parametri nel comando SQL e le variabili."
+                      name="ParameterMapping">"@DateFrom:Input",{E09966F0-0FE4-4073-854F-6048634D430F};"@DateTo:Input",{E09966F0-0FE4-4073-854F-6048634D430F};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DBCasino]"
+                      connectionManagerRefId="Package.ConnectionManagers[DBCasino]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB]"
+                      name="Output origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[PartitionFlag]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[PartitionFlag]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[PartitionFlag]"
+                          name="PartitionFlag"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[CompetenceDate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[CompetenceDate]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[CompetenceDate]"
+                          name="CompetenceDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[UserName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[UserName]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[UserName]"
+                          name="UserName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[SiteCode]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[SiteCode]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[SiteCode]"
+                          name="SiteCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[CasinoTickets]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[CasinoTickets]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[CasinoTickets]"
+                          name="CasinoTickets"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Winning]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[Winning]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Winning]"
+                          name="Winning"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Bet]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[Bet]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Bet]"
+                          name="Bet"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[HouseProfit]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[HouseProfit]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[HouseProfit]"
+                          name="HouseProfit"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[JackpotWinning]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[JackpotWinning]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[JackpotWinning]"
+                          name="JackpotWinning"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[AdditionalJackpotForWinning]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[AdditionalJackpotForWinning]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[AdditionalJackpotForWinning]"
+                          name="AdditionalJackpotForWinning"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[BetFromRealBonus]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[BetFromRealBonus]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[BetFromRealBonus]"
+                          name="BetFromRealBonus"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[DeviceId]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[DeviceId]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[DeviceId]"
+                          name="DeviceId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[FunBonusBet]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[FunBonusBet]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[FunBonusBet]"
+                          name="FunBonusBet"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[FunBonusHouseProfit]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[FunBonusHouseProfit]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[FunBonusHouseProfit]"
+                          name="FunBonusHouseProfit"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[FunBonusCasinoTickets]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[FunBonusCasinoTickets]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[FunBonusCasinoTickets]"
+                          name="FunBonusCasinoTickets"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[FreeRollCasinoTickets]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[FreeRollCasinoTickets]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[FreeRollCasinoTickets]"
+                          name="FreeRollCasinoTickets"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[RealBet]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[RealBet]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[RealBet]"
+                          name="RealBet"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Phases]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[Phases]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Phases]"
+                          name="Phases"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[BetFromPlayBonus]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[BetFromPlayBonus]"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].Columns[BetFromPlayBonus]"
+                          name="BetFromPlayBonus"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[PartitionFlag]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PartitionFlag" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[CompetenceDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CompetenceDate" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[UserName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="UserName" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[SiteCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SiteCode" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[CasinoTickets]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CasinoTickets" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[Winning]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Winning" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[Bet]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Bet" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[HouseProfit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="HouseProfit" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[JackpotWinning]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="JackpotWinning" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[AdditionalJackpotForWinning]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="AdditionalJackpotForWinning" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[BetFromRealBonus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BetFromRealBonus" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[DeviceId]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DeviceId" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[FunBonusBet]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FunBonusBet" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[FunBonusHouseProfit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FunBonusHouseProfit" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[FunBonusCasinoTickets]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FunBonusCasinoTickets" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[FreeRollCasinoTickets]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FreeRollCasinoTickets" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[RealBet]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RealBet" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[Phases]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Phases" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[BetFromPlayBonus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BetFromPlayBonus" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB]"
+                      isErrorOut="true"
+                      name="Output errori origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[PartitionFlag]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[PartitionFlag]"
+                          name="PartitionFlag" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[CompetenceDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[CompetenceDate]"
+                          name="CompetenceDate" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[UserName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[UserName]"
+                          name="UserName" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[SiteCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[SiteCode]"
+                          name="SiteCode" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[CasinoTickets]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[CasinoTickets]"
+                          name="CasinoTickets" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[Winning]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[Winning]"
+                          name="Winning" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[Bet]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[Bet]"
+                          name="Bet" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[HouseProfit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[HouseProfit]"
+                          name="HouseProfit" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[JackpotWinning]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[JackpotWinning]"
+                          name="JackpotWinning" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[AdditionalJackpotForWinning]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[AdditionalJackpotForWinning]"
+                          name="AdditionalJackpotForWinning" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[BetFromRealBonus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[BetFromRealBonus]"
+                          name="BetFromRealBonus" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[BetFromPlayBonus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[BetFromPlayBonus]"
+                          name="BetFromPlayBonus" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[DeviceId]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[DeviceId]"
+                          name="DeviceId" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[FunBonusBet]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[FunBonusBet]"
+                          name="FunBonusBet" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[FunBonusHouseProfit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[FunBonusHouseProfit]"
+                          name="FunBonusHouseProfit" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[FunBonusCasinoTickets]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[FunBonusCasinoTickets]"
+                          name="FunBonusCasinoTickets" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[FreeRollCasinoTickets]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[FreeRollCasinoTickets]"
+                          name="FreeRollCasinoTickets" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[RealBet]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[RealBet]"
+                          name="RealBet" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[Phases]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[Phases]"
+                          name="Phases" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contenitore Ciclo For\GetSummaryByUser.Paths[Output origine OLE DB]"
+                  endId="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination.Inputs[Flat File Destination Input]"
+                  name="Output origine OLE DB"
+                  startId="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB.Outputs[Output origine OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenitore Ciclo For.PrecedenceConstraints[Vincolo]"
+          DTS:CreationName=""
+          DTS:DTSID="{1232F5BC-C5FC-4833-A721-BDF5B917D140}"
+          DTS:From="Package\Contenitore Ciclo For\GetSummaryByUser"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Vincolo"
+          DTS:To="Package\Contenitore Ciclo For\Attività Esegui processo" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Gestione Connessioni"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{11731D8A-B575-4AC3-9D75-4AA6022E2CE2}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Gestione Connessioni">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Gestione Connessioni\Foreach DB Config"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{963030C9-2973-4AAB-9CF6-DF0DF8FAE512}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Foreach DB Config">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="Microsoft.ForEachADOEnumerator"
+            DTS:DTSID="{56B87922-F2AE-4F85-A2F0-02A718B66EB5}"
+            DTS:ObjectName="{05BB7322-E5B2-43C4-B6FE-709BE65D5776}">
+            <DTS:ObjectData>
+              <FEEADO
+                EnumType="EnumerateRowsInFirstTable"
+                VarName="User::Databases" />
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Gestione Connessioni\Foreach DB Config\Script Connections"
+              DTS:CreationName="Microsoft.ScriptTask"
+              DTS:Description="Script Task"
+              DTS:DTSID="{3AF079CD-E98E-4787-A998-C7F486AC7F78}"
+              DTS:ExecutableType="Microsoft.ScriptTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Script Connections"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ScriptProject
+                  Name="ST_bbf2f96b6a0d43b0b3b5f3b85b69dddc"
+                  VSTAMajorVersion="16"
+                  VSTAMinorVersion="0"
+                  Language="CSharp"
+                  ReadWriteVariables="User::DBKey,User::DBName,User::Options,User::Server,User::SQLServerAuthenticationPassword,User::SQLServerAuthenticationUsername,User::UseSQLServerAuthentication">
+                  <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Resources.resx"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+                  <ProjectItem
+                    Name="ScriptMain.cs"
+                    Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+#endregion
+
+namespace ST_8f7ed3023d754b44afd8b7544a716c5c
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+		/// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+		public void Main()
+		{
+            // TODO: Add your code here
+            try
+            {
+                System.Diagnostics.Trace.WriteLine("Prima di accesso alla variabile");
+                string DBKey = (string)Dts.Variables["DBKey"].Value;
+
+
+                //string DBKeyPermanent = (string)Dts.Variables["DBKey"].Value + "Permanent";
+                string Server = (string)Dts.Variables["Server"].Value;
+                string DBName = (string)Dts.Variables["DBName"].Value;
+                string Options = (string)Dts.Variables["Options"].Value;
+                bool UseSqlServerAuthentication = (bool)Dts.Variables["UseSQLServerAuthentication"].Value;
+                System.Diagnostics.Trace.WriteLine(string.Format("UseSQLServerAuthentication = {0}", UseSqlServerAuthentication));
+                string connectionString;
+                if (UseSqlServerAuthentication)
+                {
+                    string SqlServerAuthenticationUsername = (string)Dts.Variables["SQLServerAuthenticationUsername"].Value;
+                    string SqlServerAuthenticationPassword = (string)Dts.Variables["SQLServerAuthenticationPassword"].Value;
+                    // connectionString = string.Format("Data Source={0};Initial Catalog={1};Provider=SQLNCLI10.1;Integrated Security=SSPI;Application Name=Loader_Microgame_SSIS;Auto Translate=False;", Server, DBName);
+                    connectionString = string.Format("Data Source={0};User ID={1};Password={2};Initial Catalog={3};{4}Provider=SQLNCLI11.1;Auto Translate=False;",
+                        Server, SqlServerAuthenticationUsername, SqlServerAuthenticationPassword, DBName, Options);
+                }
+                else
+                {
+                    connectionString = string.Format("Data Source={0};Initial Catalog={1};{2}Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;", Server, DBName, Options);
+                }
+                System.Diagnostics.Trace.WriteLine(string.Format("++++++++++++++ Connection string = {0}", connectionString));
+                //System.Windows.Forms.MessageBox.Show("Connections[0].Name=" + Dts.Connections[0].Name.ToString());
+                //System.Windows.Forms.MessageBox.Show("Connections[0].ConnectionString=" + Dts.Connections[0].ConnectionString);
+                //System.Windows.Forms.MessageBox.Show("DBKeyPermanent=" + DBKeyPermanent);
+
+                //if (Dts.Connections.Contains(DBKeyPermanent))
+                //{
+                //    //System.Windows.Forms.MessageBox.Show(DBKeyPermanent+" OK");
+                //    Dts.Connections[DBKeyPermanent].ConnectionString = connectionString;
+                //}
+                if (Dts.Connections.Contains(DBKey))
+                {
+                    //System.Windows.Forms.MessageBox.Show(DBKeyPermanent + " KO");
+                    Dts.Connections[DBKey].ConnectionString = connectionString;
+                }
+                else
+                {
+                    System.Diagnostics.Trace.WriteLine(string.Format("++++++++++++++ Connection object for {0} not found. Action taken: SKIP", DBKey));
+                }
+                //                System.Diagnostics.Trace.WriteLine("Dopo accesso alla connessione");
+                Dts.TaskResult = (int)ScriptResults.Success;
+            }
+            catch (Exception ex)
+            {
+                //System.Windows.Forms.MessageBox.Show(ex.ToString());
+                System.Diagnostics.Trace.WriteLine("Script task exception: {0}", ex.ToString());
+                Dts.TaskResult = (int)ScriptResults.Failure;
+            }
+            
+		}
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
+                  <ProjectItem
+                    Name="ST_bbf2f96b6a0d43b0b3b5f3b85b69dddc.csproj"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{54D3B6CC-05A7-476E-A5FC-E251F8AF54C2}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>ST_8f7ed3023d754b44afd8b7544a716c5c</RootNamespace><AssemblyName>ST_bbf2f96b6a0d43b0b3b5f3b85b69dddc</AssemblyName><TargetFrameworkVersion>v4.7</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch><TargetFrameworkProfile></TargetFrameworkProfile></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.ManagedDTS, Version=16.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.ScriptTask, Version=16.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile><Compile Include="ScriptMain.cs"><SubType>Code</SubType></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" /><Host Name="ScriptTask" /><ProjectClient><HostIdentifier>SSIS_ST160</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Project"
+                    Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_e0abbd2ac5d749f689dbf554cdaece3c</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_e0abbd2ac5d749f689dbf554cdaece3c</msb:DisplayName>
+    <msb:ProjectId>{71304710-C9DA-4E18-8308-E1D10E624E16}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_bbf2f96b6a0d43b0b3b5f3b85b69dddc.csproj" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_8f7ed3023d754b44afd8b7544a716c5c.Properties.Settings.get_Default():ST_8f7ed3023d754b44afd8b7544a716c5c.Properties.Sett" +
+    "ings")]
+
+namespace ST_8f7ed3023d754b44afd8b7544a716c5c.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_8f7ed3023d754b44afd8b7544a716c5c")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_8f7ed3023d754b44afd8b7544a716c5c")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Resources.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_8f7ed3023d754b44afd8b7544a716c5c.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_8f7ed3023d754b44afd8b7544a716c5c.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_8f7ed3023d754b44afd8b7544a716c5c.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_8f7ed3023d754b44afd8b7544a716c5c.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_8f7ed3023d754b44afd8b7544a716c5c.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <BinaryItem
+                    Name="ST_e0abbd2ac5d749f689dbf554cdaece3c.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHyOjmUAAAAAAAAAAOAAIiALATAAABYAAAAIAAAAAAAAajQA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAABg0AABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAcBQAAAAgAAAAFgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAYAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABM
+NAAAAAAAAEgAAAACAAUAoCIAAMAQAAABAAAAAAAAAGAzAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswBQC+AQAAAQAAEXIBAABwKBAAAAoCKBEAAApvEgAACnJB
+AABwbxMAAApvFAAACnQdAAABCgIoEQAACm8SAAAKck0AAHBvEwAACm8UAAAKdB0AAAELAigRAAAK
+bxIAAApyWwAAcG8TAAAKbxQAAAp0HQAAAQwCKBEAAApvEgAACnJpAABwbxMAAApvFAAACnQdAAAB
+DQIoEQAACm8SAAAKcnkAAHBvEwAACm8UAAAKpR4AAAETBHKvAABwEQSMHgAAASgVAAAKKBAAAAoR
+BCxsAigRAAAKbxIAAApy8QAAcG8TAAAKbxQAAAp0HQAAARMGAigRAAAKbxIAAApyMQEAcG8TAAAK
+bxQAAAp0HQAAARMHcnEBAHAbjRIAAAElFgeiJRcRBqIlGBEHoiUZCKIlGgmiKBYAAAoTBSsPckgC
+AHAHCAkoFwAAChMFch8DAHARBSgVAAAKKBAAAAoCKBEAAApvGAAACgZvGQAACiwaAigRAAAKbxgA
+AAoGbxoAAAoRBW8bAAAKKxBybQMAcAYoFQAACigQAAAKAigRAAAKFm8cAAAK3iETCHL8AwBwEQhv
+HQAACigeAAAKAigRAAAKF28cAAAK3gAqAABBHAAAAAAAAAAAAACcAQAAnAEAACEAAAAPAAABHgIo
+HwAACioeAiggAAAKKq5+AQAABC0ecjIEAHDQAwAAAighAAAKbyIAAApzIwAACoABAAAEfgEAAAQq
+Gn4CAAAEKh4CgAIAAAQqGn4DAAAEKh4CKCQAAAoqLnMIAAAGgAMAAAQqAABCU0pCAQABAAAAAAAM
+AAAAdjQuMC4zMDMxOQAAAAAFAGwAAAAYBAAAI34AAIQEAADoBQAAI1N0cmluZ3MAAAAAbAoAAKQE
+AAAjVVMAEA8AABAAAAAjR1VJRAAAACAPAACgAQAAI0Jsb2IAAAAAAAAAAgAAAVcdogEJAwAAAPoB
+MwAWAAABAAAAIwAAAAUAAAAGAAAACQAAAAEAAAAkAAAAAgAAABAAAAABAAAAAgAAAAMAAAAEAAAA
+AQAAAAQAAAABAAAAAQAAAAAAvgMBAAAAAAAGAFkCsgQGAOgCsgQGAKUBnwQPACYFAAAGANIBRAQG
+ADwCRAQGAB0CRAQGAM8CRAQGAHkCRAQGAJICRAQGAOkBRAQGAAQCFgMKAK0CbQMKACQBbQMGAFYE
+7wMGAPYD7wMGAIgBnwQGALkF7wMGAHAE0gQGAGAELwQOAFgBqAMOALkBqAMOAEABGgQGAG0BsgQO
+AIIAnwQKAJYDbQMSAGgFxQASAJgAxQAGAEcD7wMGAAcE7wMSAIgFxQASAIAExQAGAO8A7wMGAKEA
+7wMGAN8FRAQAAAAAAQAAAAAAAQABAAEAEAAPBF4AOQABAAEAAAAQANkENQVJAAEAAwAAARAAcgU1
+BV0AAwAHAAMBAACkBQAAQQAEAAoAEQD7A6QAEQAUAagAEQCIAKwABgYpALAAVoCUBbMAVoD0ALMA
+UCAAAAAAhgAVBAYAAQA4IgAAAACGGJIEBgABAEAiAAAAAIMYkgQGAAEASCIAAAAAkwhsBLcAAQB0
+IgAAAACTCPwAvAABAHsiAAAAAJMICAHBAAEAgyIAAAAAlgjABccAAgCKIgAAAACGGJIEBgACAJIi
+AAAAAJEYmATMAAIAAAABABADCQCSBAEAEQCSBAYAGQCSBAoAKQCSBBAAMQCSBBAAOQCSBBAAQQCS
+BBAASQCSBBAAUQCSBBAAWQCSBBAAYQCSBBAAaQCSBAYAiQCSBAYAsQCSBBUAwQCSBAYAyQDlACgA
+cQCcBS0A0QBkBTIA2QDmAzcA4QAGAz0A6QCyBUEA6QCyBUcA6QCyBU4A0QCEBVYA+QB7BVsA+QDm
+A2AAAQEwAxAA0QDMBQEAkQBFA2cAyQDlAGsAcQCSBAYAkQCSBAYACQGzAHEACQHbBXoAmQCSBIAA
+uQCSBAYACAAUAJoACAAYAJ8AKQBzAAcBLgALAN8ALgATAOgALgAbAAcBLgAjABABLgArADkBLgAz
+ADkBLgA7ADkBLgBDABABLgBLAD8BLgBTADkBLgBbAFYBQwBjAJ8ASQBzAAcBYQB7AJ8AYwBrAJ8A
+GwADAAEABAADAAAAcATQAAAAHAHVAAAAxAXaAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAAB
+AAAAOyJGSAAAAAAAADoAAAAEAAAAAAAAAAAAAACIADEAAAAAABAAAAAAAAAAAAAAAJEATgMAAAAA
+BAAAAAAAAAAAAAAAiADvAwAAAAAQAAAAAAAAAAAAAACRAAoAAAAAAAAAAAABAAAA4wQAAAUAAgAA
+AAAAADxNb2R1bGU+AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuTWFuYWdlZERUUwB2YWx1ZV9fAG1zY29y
+bGliAFNUX2UwYWJiZDJhYzVkNzQ5ZjY4OWRiZjU1NGNkYWVjZTNjAFNUXzhmN2VkMzAyM2Q3NTRi
+NDRhZmQ4Yjc1NDRhNzE2YzVjAFRyYWNlAGRlZmF1bHRJbnN0YW5jZQBWYXJpYWJsZQBSdW50aW1l
+VHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5SdW50
+aW1lAFdyaXRlTGluZQBUeXBlAEZhaWx1cmUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3Vy
+Y2VDdWx0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNhdGlvblNldHRpbmdz
+QmFzZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQBEZWJ1
+Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3Nh
+YmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRy
+aWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJp
+YnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNB
+dHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmli
+dXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRy
+aWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAZ2V0X1ZhbHVlAHZhbHVlAFN5c3Rl
+bS5SdW50aW1lLlZlcnNpb25pbmcAc2V0X0Nvbm5lY3Rpb25TdHJpbmcAVG9TdHJpbmcATWljcm9z
+b2Z0LlNxbFNlcnZlci5TY3JpcHRUYXNrAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlRhc2tzLlNj
+cmlwdFRhc2sAU2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNUX2UwYWJi
+ZDJhYzVkNzQ5ZjY4OWRiZjU1NGNkYWVjZTNjLmRsbABnZXRfSXRlbQBTeXN0ZW0ARW51bQByZXNv
+dXJjZU1hbgBCb29sZWFuAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkds
+b2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ARXhjZXB0aW9uAEN1bHR1cmVJbmZvAGdldF9S
+ZXNvdXJjZU1hbmFnZXIAQ29ubmVjdGlvbk1hbmFnZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFn
+bm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMA
+U1RfOGY3ZWQzMDIzZDc1NGI0NGFmZDhiNzU0NGE3MTZjNWMuUHJvcGVydGllcy5SZXNvdXJjZXMu
+cmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFNUXzhmN2VkMzAyM2Q3NTRiNDRhZmQ4Yjc1NDRhNzE2
+YzVjLlByb3BlcnRpZXMAZ2V0X1ZhcmlhYmxlcwBTZXR0aW5ncwBDb250YWlucwBnZXRfQ29ubmVj
+dGlvbnMAU3VjY2VzcwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMARm9ybWF0AE9iamVjdABnZXRfRGVm
+YXVsdABzZXRfVGFza1Jlc3VsdABnZXRfQXNzZW1ibHkAAD9QAHIAaQBtAGEAIABkAGkAIABhAGMA
+YwBlAHMAcwBvACAAYQBsAGwAYQAgAHYAYQByAGkAYQBiAGkAbABlAAALRABCAEsAZQB5AAANUwBl
+AHIAdgBlAHIAAA1EAEIATgBhAG0AZQAAD08AcAB0AGkAbwBuAHMAADVVAHMAZQBTAFEATABTAGUA
+cgB2AGUAcgBBAHUAdABoAGUAbgB0AGkAYwBhAHQAaQBvAG4AAEFVAHMAZQBTAFEATABTAGUAcgB2
+AGUAcgBBAHUAdABoAGUAbgB0AGkAYwBhAHQAaQBvAG4AIAA9ACAAewAwAH0AAD9TAFEATABTAGUA
+cgB2AGUAcgBBAHUAdABoAGUAbgB0AGkAYwBhAHQAaQBvAG4AVQBzAGUAcgBuAGEAbQBlAAA/UwBR
+AEwAUwBlAHIAdgBlAHIAQQB1AHQAaABlAG4AdABpAGMAYQB0AGkAbwBuAFAAYQBzAHMAdwBvAHIA
+ZAAAgNVEAGEAdABhACAAUwBvAHUAcgBjAGUAPQB7ADAAfQA7AFUAcwBlAHIAIABJAEQAPQB7ADEA
+fQA7AFAAYQBzAHMAdwBvAHIAZAA9AHsAMgB9ADsASQBuAGkAdABpAGEAbAAgAEMAYQB0AGEAbABv
+AGcAPQB7ADMAfQA7AHsANAB9AFAAcgBvAHYAaQBkAGUAcgA9AFMAUQBMAE4AQwBMAEkAMQAxAC4A
+MQA7AEEAdQB0AG8AIABUAHIAYQBuAHMAbABhAHQAZQA9AEYAYQBsAHMAZQA7AACA1UQAYQB0AGEA
+IABTAG8AdQByAGMAZQA9AHsAMAB9ADsASQBuAGkAdABpAGEAbAAgAEMAYQB0AGEAbABvAGcAPQB7
+ADEAfQA7AHsAMgB9AFAAcgBvAHYAaQBkAGUAcgA9AFMAUQBMAE4AQwBMAEkAMQAxAC4AMQA7AEkA
+bgB0AGUAZwByAGEAdABlAGQAIABTAGUAYwB1AHIAaQB0AHkAPQBTAFMAUABJADsAQQB1AHQAbwAg
+AFQAcgBhAG4AcwBsAGEAdABlAD0ARgBhAGwAcwBlADsAAE0rACsAKwArACsAKwArACsAKwArACsA
+KwArACsAIABDAG8AbgBuAGUAYwB0AGkAbwBuACAAcwB0AHIAaQBuAGcAIAA9ACAAewAwAH0AAICN
+KwArACsAKwArACsAKwArACsAKwArACsAKwArACAAQwBvAG4AbgBlAGMAdABpAG8AbgAgAG8AYgBq
+AGUAYwB0ACAAZgBvAHIAIAB7ADAAfQAgAG4AbwB0ACAAZgBvAHUAbgBkAC4AIABBAGMAdABpAG8A
+bgAgAHQAYQBrAGUAbgA6ACAAUwBLAEkAUAAANVMAYwByAGkAcAB0ACAAdABhAHMAawAgAGUAeABj
+AGUAcAB0AGkAbwBuADoAIAB7ADAAfQAAcVMAVABfADgAZgA3AGUAZAAzADAAMgAzAGQANwA1ADQA
+YgA0ADQAYQBmAGQAOABiADcANQA0ADQAYQA3ADEANgBjADUAYwAuAFAAcgBvAHAAZQByAHQAaQBl
+AHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAZw7ONM5PYEGzAMINFN2EGAAEIAEBCAMgAAEFIAEBEREE
+IAEBDgUgAQERVQwHCQ4ODg4CDg4OEj0EAAEBDgQgABJpBCAAEm0FIAEScRwDIAAcBQACDg4cBgAC
+Dg4dHAcABA4OHBwcBCAAEn0EIAECHAYgARKAgRwDIAAOBQACAQ4OCAABEoCFEYCJBSAAEoCNByAC
+AQ4SgI0It3pcVhk04IkIiYRdzYCAzJEEAAAAAAQBAAAAAwYSTQMGElEDBhIQAgYIAwYRFAQAABJN
+BAAAElEFAAEBElEEAAASEAMAAAEECAASTQQIABJRBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBO
+b25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAAKAEAI1NUXzhmN2VkMzAyM2Q3NTRiNDRhZmQ4Yjc1
+NDRhNzE2YzVjAAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMTcAAEkBABouTkVURnJhbWV3b3Jr
+LFZlcnNpb249djQuNwEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC43
+tAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2Nvcmxp
+YiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1
+YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAA
+AABQQURQQURQtAAAAEA0AAAAAAAAAAAAAFo0AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAABMNAAA
+AAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABI
+AAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAA
+AAC9BO/+AAABAAAAAQBGSDsiAAABAEZIOyI/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAA
+AAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4A
+AAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAAMAAw
+ADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4A
+eQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAA
+AFMAVABfADgAZgA3AGUAZAAzADAAMgAzAGQANwA1ADQAYgA0ADQAYQBmAGQAOABiADcANQA0ADQA
+YQA3ADEANgBjADUAYwAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA4
+ADcANgAzAC4AMQA4ADUAMAAyAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMA
+VABfAGUAMABhAGIAYgBkADIAYQBjADUAZAA3ADQAOQBmADYAOAA5AGQAYgBmADUANQA0AGMAZABh
+AGUAYwBlADMAYwAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAA
+QwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMQA3AAAAKgABAAEATABlAGcAYQBsAFQAcgBh
+AGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEA
+bQBlAAAAUwBUAF8AZQAwAGEAYgBiAGQAMgBhAGMANQBkADcANAA5AGYANgA4ADkAZABiAGYANQA1
+ADQAYwBkAGEAZQBjAGUAMwBjAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUA
+AAAAAFMAVABfADgAZgA3AGUAZAAzADAAMgAzAGQANwA1ADQAYgA0ADQAYQBmAGQAOABiADcANQA0
+ADQAYQA3ADEANgBjADUAYwAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEA
+LgAwAC4AOAA3ADYAMwAuADEAOAA1ADAAMgAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBl
+AHIAcwBpAG8AbgAAADEALgAwAC4AOAA3ADYAMwAuADEAOAA1ADAAMgAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAABsNAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+                </ScriptProject>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{A4B95A87-1945-4958-A141-604B6B0865BC}"
+              DTS:ObjectName="{43087E67-540C-4175-AE29-4F5C5AFC31E8}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::DBKey" />
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{47869EE7-199C-486E-B37F-2402AD475F5A}"
+              DTS:ObjectName="{919CDEEE-F257-48FD-9F7B-A65CD093140A}"
+              DTS:ValueIndex="1"
+              DTS:VariableName="User::Server" />
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{6BAD6A39-841E-4B78-A874-DCC78F65617D}"
+              DTS:ObjectName="{FFD0E5B7-8572-4F1D-93C9-9E47271B6DB9}"
+              DTS:ValueIndex="2"
+              DTS:VariableName="User::DBName" />
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{0E8A8932-8508-4BEE-BDD4-042DD427FA3B}"
+              DTS:ObjectName="{F1DE74E9-B8C0-49DC-B2F5-8EB76929B575}"
+              DTS:ValueIndex="3"
+              DTS:VariableName="User::UseSQLServerAuthentication" />
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{722FF4BA-7232-4EC3-99AF-0269EF3C5CD0}"
+              DTS:ObjectName="{E6C922CA-0364-45B3-A942-23F409E9C31B}"
+              DTS:ValueIndex="4"
+              DTS:VariableName="User::SQLServerAuthenticationUsername" />
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{3D21071E-DCBF-403A-BF18-B2459ECBD1E1}"
+              DTS:ObjectName="{0B3E3111-CB3D-48F5-95FA-BCDA491AED08}"
+              DTS:ValueIndex="5"
+              DTS:VariableName="User::SQLServerAuthenticationPassword" />
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{0D935967-AF5F-4CD8-913C-2B0C99DDA85C}"
+              DTS:ObjectName="{EBFEB26C-B50D-4579-8E20-31A834566E5D}"
+              DTS:ValueIndex="6"
+              DTS:VariableName="User::Options" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Gestione Connessioni\Load DB Config"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{88F9C462-DECB-47FA-970E-33476827E42F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load DB Config"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1FB16AC4-9373-451B-AFF1-4F2963A0259F}"
+              SQLTask:SqlStatementSource="SELECT&#xA; DBKey, Server, DBName, UseSQLServerAuthentication, COALESCE(SQLServerAuthenticationUsername, '') AS SQLServerAuthenticationUsername, &#xA; COALESCE(SQLServerAuthenticationPassword, '') AS SQLServerAuthenticationPassword, COALESCE(Options, '') as Options&#xA;FROM Config.DB&#xA;WHERE EnvironmentId = ?"
+              SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Databases" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@EnvironmentId"
+                SQLTask:DtsVariableName="User::EnvironmentId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Gestione Connessioni\Test Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{30232681-F357-4554-BADD-628E8B9828BD}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Gestione Connessioni\Test Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Config].[test]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{05F0EA04-AA88-411D-BBD2-FC4E21131C7D}:invalid"
+                      connectionManagerRefId="{05F0EA04-AA88-411D-BBD2-FC4E21131C7D}:invalid"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HostName]"
+                          cachedDataType="wstr"
+                          cachedLength="128"
+                          cachedName="HostName"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HostName]"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HostName]" />
+                        <inputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ServiceName]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="ServiceName"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ServiceName]"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ServiceName]" />
+                        <inputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ServerName]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="ServerName"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ServerName]"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ServerName]" />
+                        <inputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Version]"
+                          cachedDataType="wstr"
+                          cachedLength="300"
+                          cachedName="Version"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Version]"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Version]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ServiceName]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ServiceName" />
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ServerName]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ServerName" />
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HostName]"
+                          dataType="nText"
+                          name="HostName" />
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Version]"
+                          dataType="nText"
+                          name="Version" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Gestione Connessioni\Test Task\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Config].[DB]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+	CONVERT(varchar(max),@@SERVICENAME)	AS ServiceName,
+	CONVERT(varchar(max),@@SERVERNAME)	AS ServerName, 
+	CONVERT(SYSNAME, SERVERPROPERTY('ComputerNamePhysicalNetBIOS')) AS HostName,
+	@@version AS Version</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{A4CBC23E-0749-4BAF-9872-A517D8607C30}:invalid"
+                      connectionManagerRefId="{A4CBC23E-0749-4BAF-9872-A517D8607C30}:invalid"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ServiceName]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ServiceName]"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ServiceName]"
+                          name="ServiceName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ServerName]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ServerName]"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ServerName]"
+                          name="ServerName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HostName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HostName]"
+                          length="128"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HostName]"
+                          name="HostName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Version]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Version]"
+                          length="300"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Version]"
+                          name="Version"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ServiceName]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ServiceName" />
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ServerName]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ServerName" />
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HostName]"
+                          dataType="wstr"
+                          length="128"
+                          name="HostName" />
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Version]"
+                          dataType="wstr"
+                          length="300"
+                          name="Version" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ServiceName]"
+                          codePage="1252"
+                          dataType="text"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ServiceName]"
+                          name="ServiceName" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ServerName]"
+                          codePage="1252"
+                          dataType="text"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ServerName]"
+                          name="ServerName" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HostName]"
+                          dataType="wstr"
+                          length="128"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HostName]"
+                          name="HostName" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Version]"
+                          dataType="wstr"
+                          length="300"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Version]"
+                          name="Version" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Gestione Connessioni\Test Task.Paths[OLE DB Source Output]"
+                  endId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Gestione Connessioni.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{5F7332EB-E0A5-4D99-AB9B-1B000FF1D471}"
+          DTS:From="Package\Gestione Connessioni\Load DB Config"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Gestione Connessioni\Foreach DB Config" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Gestione Connessioni.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{524C8B94-4766-429E-B777-160F185DE4F3}"
+          DTS:From="Package\Gestione Connessioni\Foreach DB Config"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Gestione Connessioni\Test Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{78D62F3D-E85C-44FB-A39D-4089F17CD3D2}"
+      DTS:From="Package\Gestione Connessioni"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Caricamento date" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Vincolo]"
+      DTS:CreationName=""
+      DTS:DTSID="{624D7B59-9CF6-4CB5-809C-CF8B9EA66585}"
+      DTS:From="Package\Caricamento date"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Vincolo"
+      DTS:To="Package\Contenitore Ciclo For" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Vincolo 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{DE1E8119-6DCD-4417-88DB-D7753DC9A27E}"
+      DTS:From="Package\Contenitore Ciclo For"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Vincolo 1"
+      DTS:To="Package\Aggiornamento Date" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
+<!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
+<!--Sarà comunque possibile caricare manualmente il pacchetto, ma le informazioni precedenti sul layout verranno perse e gli elementi verranno nuovamente disposti nell'area di progettazione all'interno dell'apposita finestra.-->
+<Objects
+  Version="8">
+  <!--Ogni nodo seguente conterrà proprietà che non influiscono sul comportamento di runtime.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\Aggiornamento Date\Update DateToLoad"
+          TopLeft="5.5,5.49999999999995" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="197.6,62.4"
+          Size="197.6,105.6"
+          Id="Package\Aggiornamento Date"
+          TopLeft="665.80474752396,385.085206305776" />
+        <NodeLayout
+          Size="140.8,41.6"
+          Id="Package\Caricamento date\GetMaxDate"
+          TopLeft="5.50000000000001,107.1" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Caricamento date\GetMinDate"
+          TopLeft="7.10000000000002,5.49999999999995" />
+        <EdgeLayout
+          Id="Package\Caricamento date.PrecedenceConstraints[Constraint]"
+          TopLeft="75.9,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.924528301886795"
+          IsExpanded="True"
+          PanelSize="184.8,202.4"
+          Size="184.8,246.4"
+          Id="Package\Caricamento date"
+          TopLeft="387.299997417132,71.3666671901283" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Contenitore Ciclo For\Attività Esegui processo"
+          TopLeft="26.8666375928467,96.4000010331467" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Contenitore Ciclo For\GetSummaryByUser"
+          TopLeft="31.4259248957222,9.85555234131965" />
+        <EdgeLayout
+          Id="Package\Contenitore Ciclo For.PrecedenceConstraints[Vincolo]"
+          TopLeft="119.946281244284,51.4555523413196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.944448691827"
+              Start="0,0"
+              End="0,37.444448691827">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.444448691827" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="260,192.8"
+          Size="260,236"
+          Id="Package\Contenitore Ciclo For"
+          TopLeft="636.095213037637,73.4439158838854" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Gestione Connessioni\Foreach DB Config\Script Connections"
+          TopLeft="5.5,5.49999999999995" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="177.6,102.4"
+          Size="177.6,145.6"
+          Id="Package\Gestione Connessioni\Foreach DB Config"
+          TopLeft="5.50000000000003,107.1" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Gestione Connessioni\Load DB Config"
+          TopLeft="18.3,5.49999999999995" />
+        <NodeLayout
+          Size="127.2,41.6"
+          Id="Package\Gestione Connessioni\Test Task"
+          TopLeft="30.7,312.7" />
+        <EdgeLayout
+          Id="Package\Gestione Connessioni.PrecedenceConstraints[Constraint]"
+          TopLeft="94.3,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Gestione Connessioni.PrecedenceConstraints[Constraint 1]"
+          TopLeft="94.3,252.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="204,409.6"
+          Size="204,452.8"
+          Id="Package\Gestione Connessioni"
+          TopLeft="74.7333424395984,68.4333562416501" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="278.733342439598,294.83335624165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108.566654977534,-100.266689051522"
+              Start="0,0"
+              End="101.066654977534,-100.266689051522">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="50.2833274887669,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.2833274887669,0"
+                    Point2="54.2833274887669,0"
+                    Point3="54.2833274887669,-4" />
+                  <mssgle:LineSegment
+                    End="54.2833274887669,-96.2666890515218" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54.2833274887669,-96.2666890515218"
+                    Point2="54.2833274887669,-100.266689051522"
+                    Point3="58.2833274887669,-100.266689051522" />
+                  <mssgle:LineSegment
+                    End="101.066654977534,-100.266689051522" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Vincolo]"
+          TopLeft="572.099997417132,193.005291537007">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.9952156205045,0"
+              Start="0,0"
+              End="56.4952156205045,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.4952156205045,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Vincolo 1]"
+          TopLeft="765.349980280798,309.443915883885">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75.6412904218909"
+              Start="0,0"
+              End="0,68.1412904218909">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.1412904218909" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Contenitore Ciclo For\GetSummaryByUser">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB"
+          TopLeft="283.333322074679,60.666667148802" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Contenitore Ciclo For\GetSummaryByUser\Flat File Destination"
+          TopLeft="308,268" />
+        <EdgeLayout
+          Id="Package\Contenitore Ciclo For\GetSummaryByUser.Paths[Output origine OLE DB]"
+          TopLeft="359.733322074679,102.266667148802">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.466677925321,165.733332851198"
+              Start="0,0"
+              End="33.466677925321,158.233332851198">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.866666425599" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,78.866666425599"
+                    Point2="0,82.866666425599"
+                    Point3="4,82.866666425599" />
+                  <mssgle:LineSegment
+                    End="29.466677925321,82.866666425599" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.466677925321,82.866666425599"
+                    Point2="33.466677925321,82.866666425599"
+                    Point3="33.466677925321,86.866666425599" />
+                  <mssgle:LineSegment
+                    End="33.466677925321,158.233332851198" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenitore Ciclo For\GetSummaryByUser\Origine OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Gestione Connessioni\Test Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Gestione Connessioni\Test Task\OLE DB Source"
+          TopLeft="119,80" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Gestione Connessioni\Test Task\OLE DB Destination"
+          TopLeft="107,195" />
+        <EdgeLayout
+          Id="Package\Gestione Connessioni\Test Task.Paths[OLE DB Source Output]"
+          TopLeft="193.25,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
