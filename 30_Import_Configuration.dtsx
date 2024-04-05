@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/20/2018 1:19:26 PM"
@@ -6,90 +6,94 @@
   DTS:CreatorComputerName="DEV105"
   DTS:CreatorName="PEOPLES2001\mambrosino"
   DTS:DelayValidation="True"
-  DTS:DTSID="{036CAF9A-7094-4EE4-9C08-B9D1A35722FE}"
+  DTS:DTSID="{1A527482-1FA0-4864-9185-3B805FA771CD}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5467.0"
   DTS:LocaleID="1040"
   DTS:ObjectName="30_Import_Configuration"
   DTS:PackageType="5"
-  DTS:VersionBuild="269"
-  DTS:VersionGUID="{BF1110C1-F66E-44F1-BB16-B410F35DB74C}">
+  DTS:VersionBuild="258"
+  DTS:VersionGUID="{6FCFFBB2-4094-4034-8216-230584228490}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Config]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{9FF09CB7-DDDA-4F72-84FE-1D512F2B02DA}"
+      DTS:DTSID="{A6B57B6E-2786-4F71-AA07-554094DDDD46}"
       DTS:ObjectName="Config">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-30_Import_Configuration-{9FF09CB7-DDDA-4F72-84FE-1D512F2B02DA}Config;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeXt3KueBO0ysIC6Zf+RJWwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACDySz0XSRRnKkw/OMTdWEU0EJgvM8me2mgh73MxuplKAAAAAAOgAAAAAIAACAAAACdZIZwzEQICZ/aH4YZQf76/21t5qPeJpYeiE1Jr067xTAAAAAYcfuPTApISkFJEJ29PgpC0ZRknQ41pS240vqcwzpdgiADv+nIC8PyiHN6ITmTonFAAAAAfdn/ohJbfq3YugHmix/mc027qRZTQNHznm2aBER05ukrYOpnbIa+YmRjqxDSQB0zi621gHk8odwTQNBfdBDWHQ</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_Configuration-{A6B57B6E-2786-4F71-AA07-554094DDDD46}Config;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CRM]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{92A60971-C108-4A92-99FD-F2E73FB73197}"
+      DTS:DTSID="{3B7CBEE9-609D-4A95-8865-CDD078AEC69A}"
       DTS:ObjectName="CRM">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=DEV_15219_CRM_STG;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-30_Import_Configuration-{92A60971-C108-4A92-99FD-F2E73FB73197}CRM;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeXt3KueBO0ysIC6Zf+RJWwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABm8J1TfPOFb1ZtsIFw6uztxvjUKGIxVZjy3B734N5eLgAAAAAOgAAAAAIAACAAAACcWTlKfdkZx6eFPkWpfg3Aj/rv/Wy6SKZST4kODQMdyjAAAAALliSOtF8M38y48XArlMPIPDtAm5ypncxegTfxPM3NuHFRSTUn4YY3SUe97RkP6flAAAAAY4krfYRLy8MUo3x081NVa7pbKW7pY3+tZT+yuBUOGLa7fa/M027/uA5jjrwxU2gmF0p9m9s/eDXYzWAmnkToJw</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=DEV_15219_CRM_STG;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_Configuration-{3B7CBEE9-609D-4A95-8865-CDD078AEC69A}CRM;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+      DTS:DTSID="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
       DTS:ObjectName="DW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-30_Import_Configuration-{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}DW;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeXt3KueBO0ysIC6Zf+RJWwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAbbhyGFWs5b80xod/XUdLl58kNozqgLXVHZS3mPRTBgQAAAAAOgAAAAAIAACAAAAAcrTnrP1E1nNcXqLZpV7e/qdfD3PMfU/cN9JzbiU6BezAAAAAph9aKOEQe8RAOCaxal4pGAGsBIpGihLovSWthU1XNkjN7gkBQanlO02Q3dkP8L15AAAAALZtu9+gG4uj5KjQDgml7xjfTpYFld0UwNdBbdXeAUuHb5LDIiLaIrmUYXb72xsFe5FMb+gKpLn2UY62qcHAfvg</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Import_Configuration-{3962BC9D-A421-4F35-BFA8-E6B312335641}DW;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Mirror_03Slave]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6C78B676-08F4-4C9B-9255-732D9D8500B2}"
+      DTS:ObjectName="Mirror_03Slave">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=10.10.10.46;Initial Catalog=Microgame_BI_Mirror;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Import_Configuration-{6C78B676-08F4-4C9B-9255-732D9D8500B2}Mirror_03Slave;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Mirror_Bingo]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C288B7A8-88E2-4410-B226-61A91BC739F0}"
+      DTS:ObjectName="Mirror_Bingo">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MSBOS22SLAVE\MSBOS22SLAVE;Initial Catalog=BOSBingo;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Import_Configuration-{6C78B676-08F4-4C9B-9255-732D9D8500B2}Mirror_03Slave;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[PAM]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{B4117D7F-CF41-4D0F-8660-DFDD8B0896E9}"
+      DTS:DTSID="{3184529E-82BA-4DCB-ADCB-F3A7E033F8DE}"
       DTS:ObjectName="PAM">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TEST_DEV_15219_PAM;Provider=MSOLEDBSQL.1;Application Name=SSIS-30_Import_Configuration-{B4117D7F-CF41-4D0F-8660-DFDD8B0896E9}PAM;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeXt3KueBO0ysIC6Zf+RJWwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAAXwS2T2fcuKwN+gDZGGR48mtFh8j1osK0AKOwxh4zBQAAAAAOgAAAAAIAACAAAAAfXx8FbJBHdIQQHa4skvHWNuKyGXtC9pTk78vD9cQ+bTAAAAD6VPyz5GAMENMhyUiUydXfsfOltUseYcY0kfjHTyjy73kqE/OSgZmQT+J6vJ08Q69AAAAAvF0WV2QSkZ0E0jdzb5VPV6oTvBs1FmdKphbUvOsFxEqKWwS/f6TtSHkxpeMzLNrdWHErzPTtVo4t5uQWOvKwaQ</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=MG-E-FAB-IOM;Initial Catalog=TEST_DEV_15219_PAM;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Import_Configuration-{3184529E-82BA-4DCB-ADCB-F3A7E033F8DE}Mirror_03Master;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8F88E0DF-1592-4698-BE56-68FC8A406DDC}"
+      DTS:DTSID="{9D4B62C0-62CC-481C-861E-C194D3E1DEEB}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Conteggio">
@@ -98,7 +102,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5186706A-F445-4A67-BAB9-5A32B171504C}"
+      DTS:DTSID="{5920FBED-3441-44E6-96A1-22EFF6E52D6B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Databases">
@@ -116,7 +120,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1A350DDD-1E15-4E88-9CB0-6C85449BED76}"
+      DTS:DTSID="{F14745F4-5118-4019-A9FE-B3D7752FCA73}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="DateEnd">
@@ -125,7 +129,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D076BC00-576C-4D1B-8590-17A92A360090}"
+      DTS:DTSID="{D9DC70B8-20F5-436E-A173-FC6E54F55A81}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="DateStart">
@@ -134,7 +138,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{577CE1A1-977F-4D79-8779-0E49D2E9ABC1}"
+      DTS:DTSID="{11BBD8FA-5A79-4DAD-A07E-BF923061BC68}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DBKey">
@@ -144,7 +148,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{213080B3-D92B-4E80-B123-1A4B2B9D71A6}"
+      DTS:DTSID="{7DD7D97A-8F3F-44F8-A245-7F3A0D4E3D80}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DBName">
@@ -154,7 +158,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{68DC5E3F-A288-4A96-AC46-C7000E19A0E7}"
+      DTS:DTSID="{5B2780AF-9B8A-4302-A983-0165D07630C6}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="EnvironmentId">
@@ -163,7 +167,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{23029161-7595-48C2-8EDC-52FC6C8CCDA0}"
+      DTS:DTSID="{DE296023-DE33-407F-963B-7AB34612FC5D}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Options">
@@ -173,7 +177,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FF12EE09-54E9-4BDD-9FA5-B417F3826BE1}"
+      DTS:DTSID="{84890A14-335A-48D6-8B89-80558A4821A2}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Server">
@@ -183,7 +187,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A4DD0C49-A544-4630-A49B-A67105DD0E6D}"
+      DTS:DTSID="{31340CDA-946F-44AF-8F22-54D07773C97C}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLServerAuthenticationPassword">
@@ -193,7 +197,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{815B9AF0-5209-4AB2-AFEC-E3A818F5AF3C}"
+      DTS:DTSID="{F8ABD9DE-4447-4AE1-A51B-516E03698650}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLServerAuthenticationUsername">
@@ -203,7 +207,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{E6C7BF8F-46FC-4977-9D41-B97D3076ABC4}"
+      DTS:DTSID="{9F5420BF-74FF-4527-85F1-CD650D3C31EB}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Task">
@@ -212,7 +216,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{E4931573-5CEE-45D7-8238-5C1E2799A255}"
+      DTS:DTSID="{E12502AD-4156-4D4C-A050-97278A2706CC}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="UseSQLServerAuthentication">
@@ -221,7 +225,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DC44F1CB-729B-4EE9-8878-48EFD7B16F4D}"
+      DTS:DTSID="{D79869B7-1BB0-42FD-98FA-A23BE63178E8}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="xCrossProvider">
@@ -234,7 +238,7 @@
       DTS:refId="Package\Aggiornamento Date"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{AF9F0D63-0504-4CF3-B937-3357298F3640}"
+      DTS:DTSID="{0FC98E08-5654-49CD-8CA5-9240B2CCD177}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Aggiornamento Date">
@@ -244,7 +248,7 @@
           DTS:refId="Package\Aggiornamento Date\SetDate"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Attività Esegui SQL"
-          DTS:DTSID="{3A1A3EEA-5A3D-42C4-B0F8-C9CC79C3A990}"
+          DTS:DTSID="{B4851F5D-D982-4022-8D4C-6F60008E0413}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SetDate"
@@ -252,7 +256,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{9FF09CB7-DDDA-4F72-84FE-1D512F2B02DA}"
+              SQLTask:Connection="{A6B57B6E-2786-4F71-AA07-554094DDDD46}"
               SQLTask:SqlStatementSource="exec Config.SetDateToLoadForCRM ?, ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="@Task"
@@ -282,7 +286,7 @@
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
       DTS:Disabled="True"
-      DTS:DTSID="{FA0DEF9C-BA22-4A29-8342-DF4E53CF05A4}"
+      DTS:DTSID="{2C616CFB-19EE-42A9-8091-2EA08E619EB2}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Aggiornamento Partizioni">
@@ -292,7 +296,7 @@
           DTS:refId="Package\Aggiornamento Partizioni\PartitionsMaintenance"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{92CA3F9B-4167-42AF-B821-AF0ABC1ADE81}"
+          DTS:DTSID="{39D60703-1BFD-466D-BFFB-2CE668557DC5}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="PartitionsMaintenance"
@@ -300,7 +304,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="exec [Management].[PartitionsMaintenance]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -310,7 +314,7 @@
       DTS:refId="Package\Gestione Connessioni"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{45CD2DEF-AFC3-42E5-B0BB-C1A584A8DC93}"
+      DTS:DTSID="{564B2DA1-0D03-412C-96CA-C2FD5C305E27}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Gestione Connessioni">
@@ -320,13 +324,13 @@
           DTS:refId="Package\Gestione Connessioni\Foreach DB Config"
           DTS:CreationName="STOCK:FOREACHLOOP"
           DTS:Description="Foreach Loop Container"
-          DTS:DTSID="{02FDAC10-BF7D-4F95-AF26-E2C5B60B8A3E}"
+          DTS:DTSID="{0846E412-C1A0-4E3D-9BF3-A5391657AB6D}"
           DTS:ExecutableType="STOCK:FOREACHLOOP"
           DTS:LocaleID="-1"
           DTS:ObjectName="Foreach DB Config">
           <DTS:ForEachEnumerator
             DTS:CreationName="Microsoft.ForEachADOEnumerator"
-            DTS:DTSID="{0CF2ECEA-1C4C-4CDD-AE0D-8FD8D50ADC5F}"
+            DTS:DTSID="{F1A0C29C-310A-4E32-A246-2DEB7D6C242C}"
             DTS:ObjectName="{05BB7322-E5B2-43C4-B6FE-709BE65D5776}">
             <DTS:ObjectData>
               <FEEADO
@@ -340,7 +344,7 @@
               DTS:refId="Package\Gestione Connessioni\Foreach DB Config\Script Connections"
               DTS:CreationName="Microsoft.ScriptTask"
               DTS:Description="Script Task"
-              DTS:DTSID="{10977669-C9E0-4FD9-A82D-A7D179E022ED}"
+              DTS:DTSID="{AD13A58E-7AB6-4773-9ED4-CF09FB0B7C78}"
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Script Connections"
@@ -353,6 +357,36 @@
                   VSTAMinorVersion="0"
                   Language="CSharp"
                   ReadWriteVariables="User::DBKey,User::DBName,User::Options,User::Server,User::SQLServerAuthenticationPassword,User::SQLServerAuthenticationUsername,User::UseSQLServerAuthentication">
+                  <ProjectItem
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_24c5e24cc68448ecaa684009f98296d3")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_24c5e24cc68448ecaa684009f98296d3")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -472,35 +506,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_24c5e24cc68448ecaa684009f98296d3.Properties.Settings.get_Default():ST_24c5e24cc68448ecaa684009f98296d3.Properties.Sett" +
-    "ings")]
-
-namespace ST_24c5e24cc68448ecaa684009f98296d3.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
                   <ProjectItem
                     Name="ST_24c5e24cc68448ecaa684009f98296d3.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -777,35 +782,34 @@ namespace ST_24c5e24cc68448ecaa684009f98296d3
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_24c5e24cc68448ecaa684009f98296d3")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_24c5e24cc68448ecaa684009f98296d3")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_24c5e24cc68448ecaa684009f98296d3.Properties.Settings.get_Default():ST_24c5e24cc68448ecaa684009f98296d3.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_24c5e24cc68448ecaa684009f98296d3.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -1035,44 +1039,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{E2B0F056-AC8D-4752-AE0E-056DD7E8222B}"
-              DTS:ObjectName="{E2B0F056-AC8D-4752-AE0E-056DD7E8222B}"
+              DTS:DTSID="{4625DCE6-25C3-4ABD-AFCB-F81AAA9A3BE2}"
+              DTS:ObjectName="{4625DCE6-25C3-4ABD-AFCB-F81AAA9A3BE2}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::DBKey" />
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{FF849029-4451-456E-B8A6-A620E684A9C3}"
-              DTS:ObjectName="{FF849029-4451-456E-B8A6-A620E684A9C3}"
+              DTS:DTSID="{2C75F066-77EE-4DF4-ABA9-DE249747130E}"
+              DTS:ObjectName="{2C75F066-77EE-4DF4-ABA9-DE249747130E}"
               DTS:ValueIndex="1"
               DTS:VariableName="User::Server" />
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{CA01C482-880A-4010-9FA8-B8478171AD07}"
-              DTS:ObjectName="{CA01C482-880A-4010-9FA8-B8478171AD07}"
+              DTS:DTSID="{D23C9987-D6F2-4C36-A4E0-24E30B797470}"
+              DTS:ObjectName="{D23C9987-D6F2-4C36-A4E0-24E30B797470}"
               DTS:ValueIndex="2"
               DTS:VariableName="User::DBName" />
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{51B99970-9862-484D-9DA1-42FE2F8D150A}"
-              DTS:ObjectName="{51B99970-9862-484D-9DA1-42FE2F8D150A}"
+              DTS:DTSID="{12F51329-58CD-4698-8354-05BF7FF04CFF}"
+              DTS:ObjectName="{12F51329-58CD-4698-8354-05BF7FF04CFF}"
               DTS:ValueIndex="3"
               DTS:VariableName="User::UseSQLServerAuthentication" />
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{951CC1D4-364A-4872-9524-21AB219250F0}"
-              DTS:ObjectName="{951CC1D4-364A-4872-9524-21AB219250F0}"
+              DTS:DTSID="{026D4A52-8B8C-45E1-A98D-8BCE0CC342F3}"
+              DTS:ObjectName="{026D4A52-8B8C-45E1-A98D-8BCE0CC342F3}"
               DTS:ValueIndex="4"
               DTS:VariableName="User::SQLServerAuthenticationUsername" />
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{0C82A6B3-FD2E-4B05-BD87-992E5D3C2396}"
-              DTS:ObjectName="{0C82A6B3-FD2E-4B05-BD87-992E5D3C2396}"
+              DTS:DTSID="{E99584B3-2ED5-448C-9656-C86E9AD26FBF}"
+              DTS:ObjectName="{E99584B3-2ED5-448C-9656-C86E9AD26FBF}"
               DTS:ValueIndex="5"
               DTS:VariableName="User::SQLServerAuthenticationPassword" />
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{66273459-E0F5-4247-8C1A-2D4493F1E659}"
-              DTS:ObjectName="{66273459-E0F5-4247-8C1A-2D4493F1E659}"
+              DTS:DTSID="{FF4DE44D-AEEC-44DF-9E7E-7967994B30EB}"
+              DTS:ObjectName="{FF4DE44D-AEEC-44DF-9E7E-7967994B30EB}"
               DTS:ValueIndex="6"
               DTS:VariableName="User::Options" />
           </DTS:ForEachVariableMappings>
@@ -1081,7 +1085,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\Gestione Connessioni\Load DB Config"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7811A36A-E3F5-4916-8544-E7478255B704}"
+          DTS:DTSID="{9B720167-87FA-46A4-BA8E-7FDFD7D43494}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load DB Config"
@@ -1090,7 +1094,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{9FF09CB7-DDDA-4F72-84FE-1D512F2B02DA}"
+              SQLTask:Connection="{A6B57B6E-2786-4F71-AA07-554094DDDD46}"
               SQLTask:SqlStatementSource="SELECT&#xA; DBKey, Server, DBName, UseSQLServerAuthentication, COALESCE(SQLServerAuthenticationUsername, '') AS SQLServerAuthenticationUsername, &#xA; COALESCE(SQLServerAuthenticationPassword, '') AS SQLServerAuthenticationPassword, COALESCE(Options, '') as Options&#xA;FROM Config.DB&#xA;WHERE EnvironmentId = ?"
               SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
@@ -1110,7 +1114,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:Disabled="True"
-          DTS:DTSID="{D41C6598-E8FC-4E7B-8A6F-DD2491B72DB6}"
+          DTS:DTSID="{1E1406F7-9E8C-45F1-B15E-6D1DD1285782}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test Task"
@@ -1461,7 +1465,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Gestione Connessioni.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{55F2D5B9-BB2F-40A2-98B8-FCB7BC7DE717}"
+          DTS:DTSID="{1A848988-2DB5-4AAD-9DCA-AEB8355E0F3D}"
           DTS:From="Package\Gestione Connessioni\Load DB Config"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -1469,7 +1473,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Gestione Connessioni.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{A43610EE-F964-49FA-8CB8-0A5285ADC679}"
+          DTS:DTSID="{DC53FBAA-3CF0-4B3B-AFE0-7D2AC9B36A44}"
           DTS:From="Package\Gestione Connessioni\Foreach DB Config"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -1481,7 +1485,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
       DTS:Disabled="True"
-      DTS:DTSID="{16B12121-077A-4E7B-AAFD-4BBA7D5C342C}"
+      DTS:DTSID="{B386FFA5-8F8E-49A3-9DCD-F30FF49E6B96}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Import CommissionSubtype - BonusOperation">
@@ -1491,7 +1495,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\Import CommissionSubtype - BonusOperation\Bonus Operation"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{71004547-AD5D-46ED-A3EB-8F584F5FFEE6}"
+          DTS:DTSID="{88F4FD7C-9A80-4817-BC75-C555CEA95D29}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Bonus Operation"
@@ -2109,7 +2113,7 @@ where [refTable].[COD_Operation] = ? and [refTable].[Code] = ?</property>
           DTS:refId="Package\Import CommissionSubtype - BonusOperation\Commission Subtypes"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{FFFE584C-A00E-44F7-8067-BD10B3B9593F}"
+          DTS:DTSID="{90D4488F-5C36-46D9-B08F-C0BA07600F4C}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Commission Subtypes"
@@ -2981,7 +2985,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           DTS:refId="Package\Import CommissionSubtype - BonusOperation\Create Temp BonusOperation"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{67996D64-3941-4C7B-9BF0-21FFAF19B2EF}"
+          DTS:DTSID="{E0FA6A97-F0A3-40CD-B268-E3E3F39DCAF7}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Create Temp BonusOperation"
@@ -2990,7 +2994,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="exec [Management].[CreateTempCRMBonusOperations]&#xA; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -2998,7 +3002,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           DTS:refId="Package\Import CommissionSubtype - BonusOperation\Create Temp CommissionSubtypes"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{FFE4C22C-7AEC-4A3A-B123-33A69C740F22}"
+          DTS:DTSID="{3C7DC2BB-5C70-4B1B-8E97-2F831333CF7C}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Create Temp CommissionSubtypes"
@@ -3007,7 +3011,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="exec [Management].[CreateTempCRMCommissionSubtypes]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -3015,7 +3019,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           DTS:refId="Package\Import CommissionSubtype - BonusOperation\delete temp Bonus OPeration"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{B54D9D61-DF4C-4A06-B768-4FDF05D7256D}"
+          DTS:DTSID="{152A1DFA-91A4-4BCE-8EB5-5087E6ED034F}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="delete temp Bonus OPeration"
@@ -3024,7 +3028,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE Temp.CRMBonusOperations" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -3032,7 +3036,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           DTS:refId="Package\Import CommissionSubtype - BonusOperation\delete temp Commission Subtypes"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0F6D1E66-B507-4874-B49C-1FC393C2A332}"
+          DTS:DTSID="{216384C1-204F-4698-A55D-706AC16942F7}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="delete temp Commission Subtypes"
@@ -3041,7 +3045,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE Temp.CRMCommissionSubtypes" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -3049,7 +3053,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           DTS:refId="Package\Import CommissionSubtype - BonusOperation\update Bonus Operation"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0ADEA09B-DBBE-4618-B0D9-04C74C59CC1A}"
+          DTS:DTSID="{C334A387-9031-4832-979E-A40FDEF91654}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="update Bonus Operation"
@@ -3058,7 +3062,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="EXEC Management.UpdateCRMBonusOperation" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -3066,7 +3070,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           DTS:refId="Package\Import CommissionSubtype - BonusOperation\update Commission Subtypes"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{60A442A2-F6D8-430F-845C-26E325BD7BC0}"
+          DTS:DTSID="{973E2807-FEC8-4D1A-8065-33B3BFCA4D83}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="update Commission Subtypes"
@@ -3075,7 +3079,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="EXEC Management.UpdateCRMCommissionSubtypes" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -3084,7 +3088,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CommissionSubtype - BonusOperation.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{D715B5A9-0A72-4D31-A20B-916BBC6C0F78}"
+          DTS:DTSID="{B4633FED-68A1-4D1A-A137-0D8ED02F9251}"
           DTS:From="Package\Import CommissionSubtype - BonusOperation\Create Temp BonusOperation"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -3092,7 +3096,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CommissionSubtype - BonusOperation.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{6ADA52A2-1DD5-41CD-B265-4005D4E98637}"
+          DTS:DTSID="{69D9EB3A-CC33-4FC1-9079-CA92963B3509}"
           DTS:From="Package\Import CommissionSubtype - BonusOperation\Bonus Operation"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -3100,7 +3104,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CommissionSubtype - BonusOperation.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{3C4FD49E-0CD7-4CCA-A66B-284DE90F221A}"
+          DTS:DTSID="{5445C6EE-BE00-4FE3-99B4-9D68D11F872F}"
           DTS:From="Package\Import CommissionSubtype - BonusOperation\update Bonus Operation"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -3108,7 +3112,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CommissionSubtype - BonusOperation.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{3EDD7C6D-3729-455A-B966-B5BD4C61B25A}"
+          DTS:DTSID="{0A815DDC-3440-4530-A674-F0D25DF2DDE9}"
           DTS:From="Package\Import CommissionSubtype - BonusOperation\Create Temp CommissionSubtypes"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -3116,7 +3120,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CommissionSubtype - BonusOperation.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{E5EA8AC2-567D-4CCF-8EB9-7720CE322F35}"
+          DTS:DTSID="{96D621EB-9442-4F25-8A49-6163D9608D0A}"
           DTS:From="Package\Import CommissionSubtype - BonusOperation\Commission Subtypes"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -3124,7 +3128,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CommissionSubtype - BonusOperation.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{F1DB4EB5-37A8-4F8C-B5AC-1836CA83258F}"
+          DTS:DTSID="{B421F642-3150-4BC6-AA20-9503B8559DE2}"
           DTS:From="Package\Import CommissionSubtype - BonusOperation\update Commission Subtypes"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
@@ -3135,7 +3139,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
       DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{785BAF67-8833-4ADD-B308-FB7933378372}"
+      DTS:DTSID="{403B2E2B-9418-4A23-819B-817C63D40A78}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Import CustomerSites, Operators, Country and some Lookup">
@@ -3146,16 +3150,16 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Attività Esegui SQL"
           DTS:Disabled="True"
-          DTS:DTSID="{A5EBB7EC-AC2B-4179-B7AF-387DD32DC4AA}"
+          DTS:DTSID="{A4C6734C-8E35-4311-A5C6-3FBC03446E3A}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Attività Esegui SQL"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="INSERT INTO CRM.LKP_Cities VALUES('0000',&#x9;'Unknown',&#x9;'00',&#x9;'Unknown',&#x9;0&#x9;,'Unknown'&#x9;,'NN'&#x9;,'Unknown',&#x9;1,&#x9;1,&#x9;0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -3163,7 +3167,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Popola AuthorityPaymentTools"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{2CA99AD9-BA51-43D3-98B5-EFD99CDA307F}"
+          DTS:DTSID="{B23431DA-BC73-4F4F-B541-A0F39DB36E57}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola AuthorityPaymentTools"
@@ -3516,7 +3520,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Popola AuthorityReasonsForPay"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{E40E0807-8E21-4DD8-84B1-D01872126748}"
+          DTS:DTSID="{B7BBACA6-0CA1-4114-9BB0-7D48FBB3F907}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola AuthorityReasonsForPay"
@@ -3869,7 +3873,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Popola AuthorityReasonsForStates"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{6B40D9F6-D0CE-4D7B-A93D-E09DB91AEC5B}"
+          DTS:DTSID="{A913DF1A-D992-4653-B8E5-2BB5683F7F0D}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola AuthorityReasonsForStates"
@@ -4190,7 +4194,7 @@ where [refTable].[COD_CommissionSubtype] = ? and [refTable].[CommissionCode] = ?
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:Disabled="True"
-          DTS:DTSID="{B97F4A45-C63F-4904-BEE7-1D84A2411465}"
+          DTS:DTSID="{E93D8735-5709-46E5-8E5A-22711F3B408C}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola Cities"
@@ -4762,7 +4766,7 @@ WITH RESULT SETS((
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Popola Countries"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{6B56A1F3-B81D-4B0A-B9B2-3D7A358CA5E1}"
+          DTS:DTSID="{4EB865BA-0C44-47ED-9E95-684556BBE50B}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola Countries"
@@ -5050,7 +5054,7 @@ WITH RESULT SETS((
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:Disabled="True"
-          DTS:DTSID="{ACE60577-4585-4CF9-80C5-F2E2F230B672}"
+          DTS:DTSID="{33428D12-1356-4358-9507-C7C5244CD528}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola CustomersBalance"
@@ -5378,7 +5382,7 @@ WITH RESULT SETS((
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Popola CustomerSites"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{CE60DA6A-0F77-49A4-8B88-4F2827F8E9F7}"
+          DTS:DTSID="{FDFDB5BF-A5E4-4B9B-B551-08ECC196AC4C}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola CustomerSites"
@@ -5992,7 +5996,7 @@ WITH RESULT SETS ((
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:Disabled="True"
-          DTS:DTSID="{FA8B5FE3-336A-4B06-8757-F2266976C871}"
+          DTS:DTSID="{37062892-6797-4DC8-9A63-93BCED471BAB}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola Game"
@@ -6421,7 +6425,7 @@ WITH RESULT SETS ((
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Popola OperatorPermissions"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{CF5EC492-B70C-4AEA-B636-2B0B0799017C}"
+          DTS:DTSID="{D4FF9418-1932-4459-861D-D48F1AFAE456}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola OperatorPermissions"
@@ -6933,7 +6937,7 @@ where [refTable].[Code] = ?</property>
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Popola Operators"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{4D5F626E-3351-453C-957D-9C5A5C642F2D}"
+          DTS:DTSID="{3324F24D-DEBE-492D-AC17-4AF6BD12555E}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola Operators"
@@ -7375,7 +7379,7 @@ where [refTable].[Code] = ?</property>
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Popola OperatorScope"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{109E1BDD-0A3A-4521-AF1C-972F79F0F5CC}"
+          DTS:DTSID="{608D4BEB-1B7B-4D9E-AABD-34FB137CC568}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola OperatorScope"
@@ -7717,7 +7721,7 @@ where [refTable].[Code] = ?</property>
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Popola Operazioni"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{44105F2F-4ABC-41EE-92DA-3DD555A48969}"
+          DTS:DTSID="{02048CAA-70FA-498F-B04B-4DA5718D3BC5}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola Operazioni"
@@ -8198,7 +8202,7 @@ WITH RESULT SETS ((
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:Disabled="True"
-          DTS:DTSID="{23B40F59-E39B-4212-936C-E50679DFC2CE}"
+          DTS:DTSID="{31FC3940-2245-417B-92C4-A9E439EE87C7}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Popola sale bingo"
@@ -8400,8 +8404,8 @@ WITH RESULT SETS ((
                   <connections>
                     <connection
                       refId="Package\Import CustomerSites, Operators, Country and some Lookup\Popola sale bingo\Rooms Bingo.Connections[OleDbConnection]"
-                      connectionManagerID="{270FBBA4-D2C0-420C-BB27-9576F58D7A25}:invalid"
-                      connectionManagerRefId="{270FBBA4-D2C0-420C-BB27-9576F58D7A25}:invalid"
+                      connectionManagerID="Package.ConnectionManagers[Mirror_Bingo]"
+                      connectionManagerRefId="Package.ConnectionManagers[Mirror_Bingo]"
                       description="Connessione di run-time OLE DB utilizzata per accedere al database."
                       name="OleDbConnection" />
                   </connections>
@@ -8644,15 +8648,15 @@ WITH RESULT SETS ((
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella AuthorityPaymentTools"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{49044B80-D5CA-41F9-8247-EAC5FB61B80F}"
+          DTS:DTSID="{4690C9A9-7339-4526-9BBA-1A147C4C784F}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella AuthorityPaymentTools"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [CRM].[LKP_AuthorityPaymentTools]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8660,15 +8664,15 @@ WITH RESULT SETS ((
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella AuthorityReasonsForPay"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{F8A5258B-7379-4F25-BD24-37222CD8F2E5}"
+          DTS:DTSID="{2C815699-C3A0-43CE-BCB4-4790BD723ECE}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella AuthorityReasonsForPay"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [CRM].[LKP_AuthorityReasonsForPayments]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8676,15 +8680,15 @@ WITH RESULT SETS ((
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella AuthorityReasonsForStates"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{A28E4E36-5602-42AF-8E67-3E86E753DD0B}"
+          DTS:DTSID="{22F76697-A8AB-494D-AC05-D93D61B392C1}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella AuthorityReasonsForStates"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [CRM].[LKP_AuthorityReasonsForStates]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8693,15 +8697,15 @@ WITH RESULT SETS ((
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:Disabled="True"
-          DTS:DTSID="{9CF5652D-7953-4053-A0B2-CB5ED0982C3F}"
+          DTS:DTSID="{61763146-56DE-46AF-A4C5-49FEFD665E33}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella Cities"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [CRM].[LKP_Cities]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8709,15 +8713,15 @@ WITH RESULT SETS ((
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella Countries"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{D79913C2-0E31-461C-931B-D6910BB5C85C}"
+          DTS:DTSID="{E8AC4858-4F93-44DA-B24C-FBBCB075B74B}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella Countries"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="9">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [CRM].[LKP_Countries]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8726,15 +8730,15 @@ WITH RESULT SETS ((
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:Disabled="True"
-          DTS:DTSID="{F7C6ABA8-1EA5-4FCF-AD46-E369B23ADE3E}"
+          DTS:DTSID="{CDE74702-D4CB-4AA3-907B-1FFE5EA33E6E}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella CustomersBalance"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="10">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE  [CRM].[CustomersBalance]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8742,15 +8746,15 @@ WITH RESULT SETS ((
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella CustomerSites"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{F59445D5-D97F-45B3-87A6-A98CA407BCEF}"
+          DTS:DTSID="{C1E6E551-6166-46EC-BB03-6E18E1728F55}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella CustomerSites"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [CRM].[CustomerSites]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8759,15 +8763,15 @@ WITH RESULT SETS ((
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:Disabled="True"
-          DTS:DTSID="{8EB84D98-758B-4045-935E-313CB8E04C98}"
+          DTS:DTSID="{78A1D8ED-C1AF-4203-8C4B-6641636E2BED}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella Game"
-          DTS:ThreadHint="8">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE  [CRM].[LKP_Game]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8775,15 +8779,15 @@ WITH RESULT SETS ((
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella OperatorPermissions"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{D3C672AD-4DB2-4AA1-9E57-A69177F546EF}"
+          DTS:DTSID="{BB2D10DA-0B3C-4C69-8B5A-D5160DBF8475}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella OperatorPermissions"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [CRM].[OperatorPermissions]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8791,15 +8795,15 @@ WITH RESULT SETS ((
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella Operators"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{F85AFD6B-C65E-4E95-B1C8-22A86308D14B}"
+          DTS:DTSID="{DED3CC80-4D06-485E-B2CA-921C7AA11740}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella Operators"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [CRM].[Operators]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8807,15 +8811,15 @@ WITH RESULT SETS ((
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella OperatorScope"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{ABA11C11-B860-43E9-80C6-CC42C31BEB63}"
+          DTS:DTSID="{78986A72-99B0-4B08-9A5B-135D27EE4469}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella OperatorScope"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [CRM].[OperatorScope]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8823,15 +8827,15 @@ WITH RESULT SETS ((
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella Operazioni"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{CDBD6EF6-4EEF-4070-9F53-CF9EE1BA9D46}"
+          DTS:DTSID="{0D4FE4C7-597D-44F3-A55F-F679CC77DE00}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella Operazioni"
-          DTS:ThreadHint="9">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [CRM].[LKP_Operations]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8840,15 +8844,15 @@ WITH RESULT SETS ((
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:Disabled="True"
-          DTS:DTSID="{A33A1B1A-CB05-46F6-9413-5906F2810E92}"
+          DTS:DTSID="{CF9F84F1-EE20-4EB2-93FC-54D2B330B3B8}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepara Tabella Rooms Bingo"
-          DTS:ThreadHint="10">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{7FD5A5A3-761A-48EE-BBDD-CB5F1D572555}"
+              SQLTask:Connection="{3962BC9D-A421-4F35-BFA8-E6B312335641}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE [CRM].[LKP_BingoRooms]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8857,7 +8861,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{4758FEFF-36C1-4653-AF97-450245A393BF}"
+          DTS:DTSID="{0AD37896-1613-434D-9D8C-7FDACDB19530}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Popola OperatorScope"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -8865,7 +8869,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{E62D4D70-32CE-4329-8DA1-D92C2665144C}"
+          DTS:DTSID="{5BCF14E2-6F0F-4E29-A08A-DD35CD706B06}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella CustomersBalance"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -8873,7 +8877,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{CD1103FA-640D-414C-AE9B-46BCFFE10691}"
+          DTS:DTSID="{6D827F1D-3CEA-4C19-90A7-4176D0A37D4A}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella CustomerSites"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -8881,7 +8885,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 3 1]"
           DTS:CreationName=""
-          DTS:DTSID="{8F7CF0B8-87B0-4890-8B4B-BDF4FFB36648}"
+          DTS:DTSID="{664A86DB-BEB0-43DE-8FD7-2FBA53831156}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella Operators"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3 1"
@@ -8889,7 +8893,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 3 1 1]"
           DTS:CreationName=""
-          DTS:DTSID="{B31EB368-736E-40D3-AE61-5DE55AAB5E8E}"
+          DTS:DTSID="{AFAB7276-989B-4268-8034-DF44CE3EA274}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella OperatorScope"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3 1 1"
@@ -8897,7 +8901,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 3 1 1 1]"
           DTS:CreationName=""
-          DTS:DTSID="{A0178A2C-B9D7-4B8D-9938-B6120328901E}"
+          DTS:DTSID="{BF9CA64E-6268-41F4-9BC6-B40C318A8ADA}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella OperatorPermissions"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3 1 1 1"
@@ -8905,7 +8909,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 3 1 2]"
           DTS:CreationName=""
-          DTS:DTSID="{B0268A34-A3C3-4779-BF38-FC8B4CF846EA}"
+          DTS:DTSID="{5718C59F-4097-40DC-9D9E-15FF7C0BE90B}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella Countries"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3 1 2"
@@ -8913,7 +8917,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 3 1 2 1]"
           DTS:CreationName=""
-          DTS:DTSID="{2CEE5B55-939B-4911-BB75-ABE35274C49E}"
+          DTS:DTSID="{81C6836D-7260-47CC-B6B7-9C044975BE4B}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella Operazioni"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3 1 2 1"
@@ -8921,7 +8925,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 3 1 2 1 1]"
           DTS:CreationName=""
-          DTS:DTSID="{43B77B08-619C-494E-85B7-9F6C053B0C0F}"
+          DTS:DTSID="{2BE0A8BE-E474-40E1-B76A-8481C578304E}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella AuthorityReasonsForPay"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3 1 2 1 1"
@@ -8929,7 +8933,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 3 1 2 1 1 1]"
           DTS:CreationName=""
-          DTS:DTSID="{E90BD88B-9DD2-48AB-B5C3-3D6F4BEF905E}"
+          DTS:DTSID="{854766F5-CB02-4275-8458-4DD964D6B1B2}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella AuthorityReasonsForStates"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3 1 2 1 1 1"
@@ -8937,7 +8941,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 3 1 2 1 2]"
           DTS:CreationName=""
-          DTS:DTSID="{68DEB4FE-879B-4E84-AA64-645C6C7A9656}"
+          DTS:DTSID="{F67D9DF1-59EC-4728-B64D-5F6820592C7F}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella AuthorityPaymentTools"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3 1 2 1 2"
@@ -8945,7 +8949,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 3 1 2 2]"
           DTS:CreationName=""
-          DTS:DTSID="{83D44279-EEA6-43D3-A5ED-0F7414C15F19}"
+          DTS:DTSID="{1B7068AA-1EC6-428F-9780-95251F7B568F}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella Cities"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3 1 2 2"
@@ -8953,7 +8957,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 3 1 2 3]"
           DTS:CreationName=""
-          DTS:DTSID="{F5FC67CA-F128-4EA4-9306-EFF964551EA7}"
+          DTS:DTSID="{1E867D24-B61B-4571-B63C-075C304C2B0B}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella Rooms Bingo"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3 1 2 3"
@@ -8961,7 +8965,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{89F6DA09-884D-4793-A3AE-A069FE041ED9}"
+          DTS:DTSID="{65C161CF-CB11-4E7F-BB08-0715A6B1CDA4}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Popola Operators"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -8969,7 +8973,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Vincolo]"
           DTS:CreationName=""
-          DTS:DTSID="{7D481197-9583-42C7-8967-EAE19CDEA1D1}"
+          DTS:DTSID="{A658DF92-C914-4790-9C7F-7F9C7AD207BC}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Prepara Tabella Game"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Vincolo"
@@ -8977,7 +8981,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Import CustomerSites, Operators, Country and some Lookup.PrecedenceConstraints[Vincolo 1]"
           DTS:CreationName=""
-          DTS:DTSID="{AE23FA71-A9AA-4A86-9168-F323D9FBFA1D}"
+          DTS:DTSID="{5987B91E-A381-469C-AA39-BB32BD9AA0F9}"
           DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup\Popola Cities"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Vincolo 1"
@@ -8988,7 +8992,7 @@ WITH RESULT SETS ((
       DTS:refId="Package\Lettura Date"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{A7794EC4-25C8-4F2B-9BC6-511A170C177E}"
+      DTS:DTSID="{D71FD021-83F3-4B13-A06E-55004BF6A504}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Lettura Date">
@@ -8998,7 +9002,7 @@ WITH RESULT SETS ((
           DTS:refId="Package\Lettura Date\GetMaxDate"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Attività Esegui SQL"
-          DTS:DTSID="{3CAA1175-91FE-4860-A2C2-CBADF39EF78E}"
+          DTS:DTSID="{BF10E8DE-4EEB-44E2-A963-B7F247CB6D73}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GetMaxDate"
@@ -9006,7 +9010,7 @@ WITH RESULT SETS ((
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{9FF09CB7-DDDA-4F72-84FE-1D512F2B02DA}"
+              SQLTask:Connection="{A6B57B6E-2786-4F71-AA07-554094DDDD46}"
               SQLTask:SqlStatementSource="exec Config.GetMaxDateToLoad ?, ?"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
@@ -9031,7 +9035,7 @@ WITH RESULT SETS ((
           DTS:refId="Package\Lettura Date\GetMinDate"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Attività Esegui SQL"
-          DTS:DTSID="{8B7C2126-46D7-41F3-BFA7-2FB8EBC4C67B}"
+          DTS:DTSID="{E3775D2C-3047-4BBD-AE39-AF99ED51B337}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GetMinDate"
@@ -9039,7 +9043,7 @@ WITH RESULT SETS ((
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{9FF09CB7-DDDA-4F72-84FE-1D512F2B02DA}"
+              SQLTask:Connection="{A6B57B6E-2786-4F71-AA07-554094DDDD46}"
               SQLTask:SqlStatementSource="exec Config.GetMinDateToLoad ?, ?"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
@@ -9065,7 +9069,7 @@ WITH RESULT SETS ((
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Lettura Date.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{939CE0ED-0078-4F6D-AF5C-3249B34FBC08}"
+          DTS:DTSID="{ECC7C54F-AE7B-4194-AD6F-B7B63DD12E14}"
           DTS:From="Package\Lettura Date\GetMinDate"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -9077,7 +9081,7 @@ WITH RESULT SETS ((
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{EE0D655A-FE7D-4D72-8905-2A5C1C1E30EB}"
+      DTS:DTSID="{0BB214D5-FE26-46CB-B771-0E38061DAD7C}"
       DTS:From="Package\Lettura Date"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -9085,7 +9089,7 @@ WITH RESULT SETS ((
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{A89E8D5D-6BE3-48D5-9E9A-33F6A6AD901D}"
+      DTS:DTSID="{0E9C78E8-EAE6-4D2F-908A-6A5F6A246B84}"
       DTS:From="Package\Gestione Connessioni"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -9093,7 +9097,7 @@ WITH RESULT SETS ((
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{E9B29F2B-F409-4B8D-B1CC-3814C438E081}"
+      DTS:DTSID="{672E66B4-4DE7-4B21-B19B-37E3CCA70E72}"
       DTS:From="Package\Import CommissionSubtype - BonusOperation"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -9101,7 +9105,7 @@ WITH RESULT SETS ((
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{80F5832C-AB45-456F-8CAE-8915115BF509}"
+      DTS:DTSID="{A2F3E361-AF8D-4F76-9386-8098B07C473E}"
       DTS:From="Package\Import CustomerSites, Operators, Country and some Lookup"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -9109,7 +9113,7 @@ WITH RESULT SETS ((
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{20463CCD-D9E4-4074-A18A-2A88F52DCDB9}"
+      DTS:DTSID="{DCF7EFBD-FF84-44A4-BC00-DAA263816E7B}"
       DTS:From="Package\Aggiornamento Partizioni"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -10047,13 +10051,13 @@ WITH RESULT SETS ((
     design-time-name="Package\Gestione Connessioni\Test Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Gestione Connessioni\Test Task\OLE DB Source"
           TopLeft="119,80" />
         <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\Gestione Connessioni\Test Task\OLE DB Destination"
           TopLeft="107,195" />
         <EdgeLayout
@@ -10075,7 +10079,9 @@ WITH RESULT SETS ((
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10874,7 +10880,7 @@ WITH RESULT SETS ((
     design-time-name="Package\Import CustomerSites, Operators, Country and some Lookup\Popola CustomerSites">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\Import CustomerSites, Operators, Country and some Lookup\Popola CustomerSites\Insert CustomerSites"
@@ -10906,7 +10912,9 @@ WITH RESULT SETS ((
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10940,7 +10948,9 @@ WITH RESULT SETS ((
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

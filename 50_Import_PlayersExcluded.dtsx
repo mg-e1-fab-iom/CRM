@@ -1,0 +1,2590 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/17/2018 5:36:37 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DEV105"
+  DTS:CreatorName="PEOPLES2001\mambrosino"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{8FBFB75F-EEFE-4092-AE30-58314EFE0342}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="50_Import_PlayersExcluded"
+  DTS:PackageType="5"
+  DTS:VersionBuild="142"
+  DTS:VersionGUID="{EE01228C-D4BF-4002-880C-03EA637BF616}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Config]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BE6AF0E4-7F72-4FA9-9199-06E65CDFA670}"
+      DTS:ObjectName="Config">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_PlayersExcluded-{BE6AF0E4-7F72-4FA9-9199-06E65CDFA670}Config;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{25AFA25D-7055-4AC1-907C-68FEB0B1F10A}"
+      DTS:ObjectName="DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Import_PlayersExcluded-{B4227DB1-5282-44DB-862D-913C6CE34F58}DW;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PAM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0862BE32-85C4-4016-9B69-C486D1B2E69C}"
+      DTS:ObjectName="PAM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TEST_DEV_15219_PAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_PlayersExcluded-{0862BE32-85C4-4016-9B69-C486D1B2E69C}CRM;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E7D71AE2-B313-4045-8398-972FD44DD8FC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Databases">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A63A3C32-CC00-4E2F-94C1-685E725B72A6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DateEnd">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{81789F49-DBEB-41EC-AAA2-A02A9A4B1984}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DateStart">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2A801B7D-7363-4178-BCB6-8CBB73EA8F56}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DBKey">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{461A0116-E7A7-45C8-A16C-3903766A3E68}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DBName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B09A9FB4-0D1E-4A25-97A5-D1BA780C3658}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EnvironmentId">
+      <DTS:VariableValue
+        DTS:DataType="3">3</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{37160AEB-F980-4088-8E57-CE3FD5A786EC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Options">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EED9E3DE-1800-49AC-9FB8-F22872914AF7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Server">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CBD88950-C6ED-41D4-8CF5-D3BF3B8614E2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLServerAuthenticationPassword">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0776106E-53BA-47AD-A5DE-DF60A855E99E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLServerAuthenticationUsername">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B91B1541-C92B-4EE6-96A3-8787B5DB00D5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Task">
+      <DTS:VariableValue
+        DTS:DataType="8">Import_PlayersExcluded</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{99D32483-D497-47F3-8155-FE15E6D62E7D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="UseSQLServerAuthentication">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Aggiornamento Date"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{C0F178C7-358C-4B0F-A13E-CAE2A482844F}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Aggiornamento Date">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Aggiornamento Date\SetDate"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{B179D974-62D2-4618-A853-C77741F2970A}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SetDate"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BE6AF0E4-7F72-4FA9-9199-06E65CDFA670}"
+              SQLTask:SqlStatementSource="exec Config.SetDateToLoadForCRM ?, ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@Task"
+                SQLTask:DtsVariableName="User::Task"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@EnvironmentId"
+                SQLTask:DtsVariableName="User::EnvironmentId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="2"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@LastLoadedDate"
+                SQLTask:DtsVariableName="User::DateEnd"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Aggiornamento Utenti Autoesclusi"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{26BB33FF-149F-4FA1-98AA-9D765E2E0D69}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Aggiornamento Utenti Autoesclusi">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Attività Flusso di dati"
+          DTS:DTSID="{7C7FF9D2-F2F3-40B1-9AE4-CF45D76E9A35}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Popola tabella PlayersExcluded"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+                  description="Origine OLE DB"
+                  name="Carica PlayersExcluded"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset">[Accounting].[BanForSSN]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">exec [CRM].[GetAccountsExcluded]
+WITH RESULT SETS ((
+		[SSN] [varchar](20),
+		[CustomerId] [smallint],
+		[ExclusionType] [smallint],
+		[ExclusionCode] [varchar](32),
+		[ExclusionDescription] [varchar](64),
+		[ExclusionInfo] [varchar](128)
+))</property>
+                    <property
+                      dataType="System.String"
+                      description="Variabile che contiene il comando SQL da eseguire."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Mapping tra i parametri nel comando SQL e le variabili."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PAM]"
+                      connectionManagerRefId="Package.ConnectionManagers[PAM]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB]"
+                      name="Output origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[CustomerId]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].ExternalColumns[CustomerId]"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[CustomerId]"
+                          name="CustomerId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[ExclusionType]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].ExternalColumns[ExclusionType]"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[ExclusionType]"
+                          name="ExclusionType"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[ExclusionCode]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].ExternalColumns[ExclusionCode]"
+                          length="32"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[ExclusionCode]"
+                          name="ExclusionCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[ExclusionDescription]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].ExternalColumns[ExclusionDescription]"
+                          length="64"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[ExclusionDescription]"
+                          name="ExclusionDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[ExclusionInfo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].ExternalColumns[ExclusionInfo]"
+                          length="128"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[ExclusionInfo]"
+                          name="ExclusionInfo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[SSN]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].ExternalColumns[SSN]"
+                          length="20"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[SSN]"
+                          name="SSN"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].ExternalColumns[CustomerId]"
+                          dataType="i2"
+                          name="CustomerId" />
+                        <externalMetadataColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].ExternalColumns[ExclusionType]"
+                          dataType="i2"
+                          name="ExclusionType" />
+                        <externalMetadataColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].ExternalColumns[ExclusionCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="32"
+                          name="ExclusionCode" />
+                        <externalMetadataColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].ExternalColumns[ExclusionDescription]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          name="ExclusionDescription" />
+                        <externalMetadataColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].ExternalColumns[ExclusionInfo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="128"
+                          name="ExclusionInfo" />
+                        <externalMetadataColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].ExternalColumns[SSN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="SSN" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB]"
+                      isErrorOut="true"
+                      name="Output errori origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[SSN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[SSN]"
+                          name="SSN" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[CustomerId]"
+                          dataType="i2"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[CustomerId]"
+                          name="CustomerId" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[ExclusionType]"
+                          dataType="i2"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[ExclusionType]"
+                          name="ExclusionType" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[ExclusionCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="32"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[ExclusionCode]"
+                          name="ExclusionCode" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[ExclusionDescription]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[ExclusionDescription]"
+                          name="ExclusionDescription" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[ExclusionInfo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="128"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[ExclusionInfo]"
+                          name="ExclusionInfo" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+                  description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+                  name="Filtro Customer Attivi"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Crm].[AccountsExcluded]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Crm].[AccountsExcluded]) [refTable]
+where [refTable].[CustomerId] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il tipo di cache della tabella di ricerca."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se fare riferimento ai metadati in un formato XML."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SSN" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CustomerId" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ExclusionType" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ExclusionCode" dataType="DT_STR" length="32" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ExclusionDescription" dataType="DT_STR" length="64" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ExclusionInfo" dataType="DT_STR" length="128" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                      name="ParameterMap">#{Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[CustomerId]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DW]"
+                      connectionManagerRefId="Package.ConnectionManagers[DW]"
+                      description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Inputs[Input ricerca]"
+                      name="Input ricerca">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Inputs[Input ricerca].Columns[CustomerId]"
+                          cachedDataType="i2"
+                          cachedName="CustomerId"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[CustomerId]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                              name="JoinToReferenceColumn">CustomerId</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Outputs[Output corrispondenza ricerca]"
+                      errorOrTruncationOperation="Ricerca"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="Output corrispondenza ricerca"
+                      synchronousInputId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Inputs[Input ricerca]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Outputs[Output nessuna corrispondenza ricerca]"
+                      description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                      exclusionGroup="1"
+                      name="Output nessuna corrispondenza ricerca"
+                      synchronousInputId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Inputs[Input ricerca]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Outputs[Output errori ricerca]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori ricerca"
+                      synchronousInputId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Inputs[Input ricerca]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destinazione OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;4"
+                  description="Destinazione OLE DB"
+                  name="Salva PlayersExcluded"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset">[Crm].[AccountsExcluded]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se i valori specificati per le colonne Identity verranno copiati nella destinazione. Se false, i valori delle colonne Identity verranno generati automaticamente nella destinazione. Applicabile solo se è abilitato il caricamento rapido."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se per le colonne con valori Null, tali valori verranno inseriti nella destinazione. Se false, per le colonne con valori Null verranno inseriti i valori predefiniti corrispondenti nella destinazione. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica le opzioni da utilizzare con il caricamento rapido. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica se vengono eseguiti commit durante l'inserimento dei dati. Il valore 0 indica che verrà eseguito un solo commit al termine dell'inserimento dei dati. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DW]"
+                      connectionManagerRefId="Package.ConnectionManagers[DW]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB]"
+                      errorOrTruncationOperation="Inserimento"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Input destinazione OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].Columns[CustomerId]"
+                          cachedDataType="i2"
+                          cachedName="CustomerId"
+                          externalMetadataColumnId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].ExternalColumns[CustomerId]"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[CustomerId]" />
+                        <inputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].Columns[ExclusionType]"
+                          cachedDataType="ui1"
+                          cachedName="ExclusionType"
+                          externalMetadataColumnId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].ExternalColumns[ExclusionType]"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[ExclusionType]" />
+                        <inputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].Columns[ExclusionCode]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="32"
+                          cachedName="ExclusionCode"
+                          externalMetadataColumnId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].ExternalColumns[ExclusionCode]"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[ExclusionCode]" />
+                        <inputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].Columns[ExclusionDescription]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="64"
+                          cachedName="ExclusionDescription"
+                          externalMetadataColumnId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].ExternalColumns[ExclusionDescription]"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[ExclusionDescription]" />
+                        <inputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].Columns[ExclusionInfo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="128"
+                          cachedName="ExclusionInfo"
+                          externalMetadataColumnId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].ExternalColumns[ExclusionInfo]"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[ExclusionInfo]" />
+                        <inputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].Columns[SSN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="SSN"
+                          externalMetadataColumnId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].ExternalColumns[SSN]"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB].Columns[SSN]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].ExternalColumns[SSN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="SSN" />
+                        <externalMetadataColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].ExternalColumns[CustomerId]"
+                          dataType="i2"
+                          name="CustomerId" />
+                        <externalMetadataColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].ExternalColumns[ExclusionType]"
+                          dataType="i2"
+                          name="ExclusionType" />
+                        <externalMetadataColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].ExternalColumns[ExclusionCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="32"
+                          name="ExclusionCode" />
+                        <externalMetadataColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].ExternalColumns[ExclusionDescription]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          name="ExclusionDescription" />
+                        <externalMetadataColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB].ExternalColumns[ExclusionInfo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="128"
+                          name="ExclusionInfo" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Outputs[Output errori destinazione OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori destinazione OLE DB"
+                      synchronousInputId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded.Paths[Output corrispondenza ricerca]"
+                  endId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded.Inputs[Input destinazione OLE DB]"
+                  name="Output corrispondenza ricerca"
+                  startId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Outputs[Output corrispondenza ricerca]" />
+                <path
+                  refId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded.Paths[Output origine OLE DB]"
+                  endId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi.Inputs[Input ricerca]"
+                  name="Output origine OLE DB"
+                  startId="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded.Outputs[Output origine OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Aggiornamento Utenti Autoesclusi\Pulisci tabella PlayersExcluded"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B360E0C4-E464-4C41-83D9-B6304C594551}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Pulisci tabella PlayersExcluded"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{25AFA25D-7055-4AC1-907C-68FEB0B1F10A}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE CRM.AccountsExcluded" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Aggiornamento Utenti Autoesclusi\Update Frozen for Excluded"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{D58150A5-720E-4EA2-B9F8-EA1942FA1C3A}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update Frozen for Excluded"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{25AFA25D-7055-4AC1-907C-68FEB0B1F10A}"
+              SQLTask:SqlStatementSource="EXEC Management.UpdateFrozenForExcluded" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Aggiornamento Utenti Autoesclusi.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{8D2B72DF-0B34-4DE3-8490-A975A56A8013}"
+          DTS:From="Package\Aggiornamento Utenti Autoesclusi\Pulisci tabella PlayersExcluded"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Aggiornamento Utenti Autoesclusi.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{D5227DFA-91F0-48D7-959B-0A527B5728C7}"
+          DTS:From="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Aggiornamento Utenti Autoesclusi\Update Frozen for Excluded" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Gestione Connessioni"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3CA2E20A-3844-44A9-8147-B6A3C294C76D}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Gestione Connessioni">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Gestione Connessioni\Foreach DB Config"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{C475F86D-2F45-49F0-9E9B-53ED2638455D}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Foreach DB Config">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="Microsoft.ForEachADOEnumerator"
+            DTS:DTSID="{CBFA0A86-C613-4932-943E-DAF0241DE806}"
+            DTS:ObjectName="{05BB7322-E5B2-43C4-B6FE-709BE65D5776}">
+            <DTS:ObjectData>
+              <FEEADO
+                EnumType="EnumerateRowsInFirstTable"
+                VarName="User::Databases" />
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Gestione Connessioni\Foreach DB Config\Script Connections"
+              DTS:CreationName="Microsoft.ScriptTask"
+              DTS:Description="Script Task"
+              DTS:DTSID="{A49039ED-E3A1-4F52-952E-75796E7BCF1F}"
+              DTS:ExecutableType="Microsoft.ScriptTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Script Connections"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ScriptProject
+                  Name="ST_5843f81756ec45938518f7f77683c3be"
+                  VSTAMajorVersion="16"
+                  VSTAMinorVersion="0"
+                  Language="CSharp"
+                  ReadWriteVariables="User::DBKey,User::DBName,User::Options,User::Server,User::SQLServerAuthenticationPassword,User::SQLServerAuthenticationUsername,User::UseSQLServerAuthentication">
+                  <ProjectItem
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_5843f81756ec45938518f7f77683c3be")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_5843f81756ec45938518f7f77683c3be")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Resources.resx"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+                  <ProjectItem
+                    Name="ScriptMain.cs"
+                    Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+#endregion
+
+namespace ST_5843f81756ec45938518f7f77683c3be
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+        /// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+        public void Main()
+        {
+            // TODO: Add your code here
+            try
+            {
+                System.Diagnostics.Trace.WriteLine("Prima di accesso alla variabile");
+                string DBKey = (string)Dts.Variables["DBKey"].Value;
+
+
+                //string DBKeyPermanent = (string)Dts.Variables["DBKey"].Value + "Permanent";
+                string Server = (string)Dts.Variables["Server"].Value;
+                string DBName = (string)Dts.Variables["DBName"].Value;
+                string Options = (string)Dts.Variables["Options"].Value;
+                bool UseSqlServerAuthentication = (bool)Dts.Variables["UseSQLServerAuthentication"].Value;
+                System.Diagnostics.Trace.WriteLine(string.Format("UseSQLServerAuthentication = {0}", UseSqlServerAuthentication));
+                string connectionString;
+                if (UseSqlServerAuthentication)
+                {
+                    string SqlServerAuthenticationUsername = (string)Dts.Variables["SQLServerAuthenticationUsername"].Value;
+                    string SqlServerAuthenticationPassword = (string)Dts.Variables["SQLServerAuthenticationPassword"].Value;
+                    // connectionString = string.Format("Data Source={0};Initial Catalog={1};Provider=SQLNCLI10.1;Integrated Security=SSPI;Application Name=Loader_Microgame_SSIS;Auto Translate=False;", Server, DBName);
+                    connectionString = string.Format("Data Source={0};User ID={1};Password={2};Initial Catalog={3};{4}Provider=SQLNCLI11.1;Auto Translate=False;",
+                        Server, SqlServerAuthenticationUsername, SqlServerAuthenticationPassword, DBName, Options);
+                }
+                else
+                {
+                    connectionString = string.Format("Data Source={0};Initial Catalog={1};{2}Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;", Server, DBName, Options);
+                }
+                System.Diagnostics.Trace.WriteLine(string.Format("++++++++++++++ Connection string = {0}", connectionString));
+                //System.Windows.Forms.MessageBox.Show("Connections[0].Name=" + Dts.Connections[0].Name.ToString());
+                //System.Windows.Forms.MessageBox.Show("Connections[0].ConnectionString=" + Dts.Connections[0].ConnectionString);
+                //System.Windows.Forms.MessageBox.Show("DBKeyPermanent=" + DBKeyPermanent);
+
+                //if (Dts.Connections.Contains(DBKeyPermanent))
+                //{
+                //    //System.Windows.Forms.MessageBox.Show(DBKeyPermanent+" OK");
+                //    Dts.Connections[DBKeyPermanent].ConnectionString = connectionString;
+                //}
+                if (Dts.Connections.Contains(DBKey))
+                {
+                    //System.Windows.Forms.MessageBox.Show(DBKeyPermanent + " KO");
+                    Dts.Connections[DBKey].ConnectionString = connectionString;
+                }
+                else
+                {
+                    System.Diagnostics.Trace.WriteLine(string.Format("++++++++++++++ Connection object for {0} not found. Action taken: SKIP", DBKey));
+                }
+                //                System.Diagnostics.Trace.WriteLine("Dopo accesso alla connessione");
+                Dts.TaskResult = (int)ScriptResults.Success;
+            }
+            catch (Exception ex)
+            {
+                //System.Windows.Forms.MessageBox.Show(ex.ToString());
+                System.Diagnostics.Trace.WriteLine("Script task exception: {0}", ex.ToString());
+                Dts.TaskResult = (int)ScriptResults.Failure;
+            }
+
+        }
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
+                  <ProjectItem
+                    Name="ST_5843f81756ec45938518f7f77683c3be.csproj"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{cb84d25d-a61b-47a9-b219-c4d6f6757b44}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_5843f81756ec45938518f7f77683c3be</RootNamespace>
+    <AssemblyName>ST_5843f81756ec45938518f7f77683c3be</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=16.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=16.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex=""></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Project"
+                    Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_5843f81756ec45938518f7f77683c3be</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_5843f81756ec45938518f7f77683c3be</msb:DisplayName>
+    <msb:ProjectId>{1ED57871-44F6-49EE-8DD7-D0ED27D03ABF}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_5843f81756ec45938518f7f77683c3be.csproj" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_5843f81756ec45938518f7f77683c3be.Properties.Settings.get_Default():ST_5843f81756ec45938518f7f77683c3be.Properties.Sett" +
+    "ings")]
+
+namespace ST_5843f81756ec45938518f7f77683c3be.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Resources.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_5843f81756ec45938518f7f77683c3be.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_5843f81756ec45938518f7f77683c3be.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_5843f81756ec45938518f7f77683c3be.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_5843f81756ec45938518f7f77683c3be.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_5843f81756ec45938518f7f77683c3be.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <BinaryItem
+                    Name="ST_5843f81756ec45938518f7f77683c3be.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAO5ONmUAAAAAAAAAAOAAIiALATAAABYAAAAIAAAAAAAARjQA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAPQzAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAATBQAAAAgAAAAFgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAYAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAo
+NAAAAAAAAEgAAAACAAUAoCIAAJwQAAABAAAAAAAAADwzAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswBQC+AQAAAQAAEXIBAABwKBAAAAoCKBEAAApvEgAACnJB
+AABwbxMAAApvFAAACnQdAAABCgIoEQAACm8SAAAKck0AAHBvEwAACm8UAAAKdB0AAAELAigRAAAK
+bxIAAApyWwAAcG8TAAAKbxQAAAp0HQAAAQwCKBEAAApvEgAACnJpAABwbxMAAApvFAAACnQdAAAB
+DQIoEQAACm8SAAAKcnkAAHBvEwAACm8UAAAKpR4AAAETBHKvAABwEQSMHgAAASgVAAAKKBAAAAoR
+BCxsAigRAAAKbxIAAApy8QAAcG8TAAAKbxQAAAp0HQAAARMGAigRAAAKbxIAAApyMQEAcG8TAAAK
+bxQAAAp0HQAAARMHcnEBAHAbjRIAAAElFgeiJRcRBqIlGBEHoiUZCKIlGgmiKBYAAAoTBSsPckgC
+AHAHCAkoFwAAChMFch8DAHARBSgVAAAKKBAAAAoCKBEAAApvGAAACgZvGQAACiwaAigRAAAKbxgA
+AAoGbxoAAAoRBW8bAAAKKxBybQMAcAYoFQAACigQAAAKAigRAAAKFm8cAAAK3iETCHL8AwBwEQhv
+HQAACigeAAAKAigRAAAKF28cAAAK3gAqAABBHAAAAAAAAAAAAACcAQAAnAEAACEAAAAPAAABHgIo
+HwAACioeAiggAAAKKq5+AQAABC0ecjIEAHDQAwAAAighAAAKbyIAAApzIwAACoABAAAEfgEAAAQq
+Gn4CAAAEKh4CgAIAAAQqGn4DAAAEKh4CKCQAAAoqLnMIAAAGgAMAAAQqAABCU0pCAQABAAAAAAAM
+AAAAdjQuMC4zMDMxOQAAAAAFAGwAAAAYBAAAI34AAIQEAADEBQAAI1N0cmluZ3MAAAAASAoAAKQE
+AAAjVVMA7A4AABAAAAAjR1VJRAAAAPwOAACgAQAAI0Jsb2IAAAAAAAAAAgAAAVcdogEJAwAAAPoB
+MwAWAAABAAAAIwAAAAUAAAAGAAAACQAAAAEAAAAkAAAAAgAAABAAAAABAAAAAgAAAAMAAAAEAAAA
+AQAAAAQAAAABAAAAAQAAAAAAmgMBAAAAAAAGADUCjgQGAMQCjgQGAIEBewQPAAIFAAAGAK4BIAQG
+ABgCIAQGAPkBIAQGAKsCIAQGAFUCIAQGAG4CIAQGAMUBIAQGAOAB8gIKAIkCSQMKAAABSQMGADIE
+ywMGANIDywMGAGQBewQGAJUFywMGAEwErgQGADwECwQOADQBhAMOAJUBhAMOABwB9gMGAEkBjgQO
+AF4AewQKAHIDSQMSAEQFoQASAHQAoQAGACMDywMGAOMDywMSAGQFoQASAFwEoQAGAMsAywMGAH0A
+ywMGALsFIAQAAAAAAQAAAAAAAQABAAEAEADrAzoAOQABAAEAAAAQALUEEQVJAAEAAwAAARAATgUR
+BV0AAwAHAAMBAACABQAAQQAEAAoAEQDXA6QAEQDwAKgAEQBkAKwABgYpALAAVoBwBbMAVoDQALMA
+UCAAAAAAhgDxAwYAAQA4IgAAAACGGG4EBgABAEAiAAAAAIMYbgQGAAEASCIAAAAAkwhIBLcAAQB0
+IgAAAACTCNgAvAABAHsiAAAAAJMI5ADBAAEAgyIAAAAAlgicBccAAgCKIgAAAACGGG4EBgACAJIi
+AAAAAJEYdATMAAIAAAABAOwCCQBuBAEAEQBuBAYAGQBuBAoAKQBuBBAAMQBuBBAAOQBuBBAAQQBu
+BBAASQBuBBAAUQBuBBAAWQBuBBAAYQBuBBAAaQBuBAYAiQBuBAYAsQBuBBUAwQBuBAYAyQDBACgA
+cQB4BS0A0QBABTIA2QDCAzcA4QDiAj0A6QCOBUEA6QCOBUcA6QCOBU4A0QBgBVYA+QBXBVsA+QDC
+A2AAAQEMAxAA0QCoBQEAkQAhA2cAyQDBAGsAcQBuBAYAkQBuBAYACQGPAHEACQG3BXoAmQBuBIAA
+uQBuBAYACAAUAJoACAAYAJ8AKQBzAAcBLgALAN8ALgATAOgALgAbAAcBLgAjABABLgArADkBLgAz
+ADkBLgA7ADkBLgBDABABLgBLAD8BLgBTADkBLgBbAFYBQwBjAJ8ASQBzAAcBYQB7AJ8AYwBrAJ8A
+GwADAAEABAADAAAATATQAAAA+ADVAAAAoAXaAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAAB
+AAAA+CHHWQAAAAAAADoAAAAEAAAAAAAAAAAAAACIADEAAAAAABAAAAAAAAAAAAAAAJEAKgMAAAAA
+BAAAAAAAAAAAAAAAiADLAwAAAAAQAAAAAAAAAAAAAACRAAoAAAAAAAAAAAABAAAAvwQAAAUAAgAA
+AAAAADxNb2R1bGU+AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuTWFuYWdlZERUUwB2YWx1ZV9fAG1zY29y
+bGliAFNUXzU4NDNmODE3NTZlYzQ1OTM4NTE4ZjdmNzc2ODNjM2JlAFRyYWNlAGRlZmF1bHRJbnN0
+YW5jZQBWYXJpYWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBNaWNyb3Nv
+ZnQuU3FsU2VydmVyLkR0cy5SdW50aW1lAFdyaXRlTGluZQBUeXBlAEZhaWx1cmUAZ2V0X0N1bHR1
+cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFz
+ZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBDb21waWxlckdl
+bmVyYXRlZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVB
+dHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUA
+QXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2Vt
+Ymx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENv
+bXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFz
+c2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0
+ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUA
+Z2V0X1ZhbHVlAHZhbHVlAFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAc2V0X0Nvbm5lY3Rpb25T
+dHJpbmcAVG9TdHJpbmcATWljcm9zb2Z0LlNxbFNlcnZlci5TY3JpcHRUYXNrAE1pY3Jvc29mdC5T
+cWxTZXJ2ZXIuRHRzLlRhc2tzLlNjcmlwdFRhc2sAU2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNv
+bXBvbmVudE1vZGVsAFNUXzU4NDNmODE3NTZlYzQ1OTM4NTE4ZjdmNzc2ODNjM2JlLmRsbABnZXRf
+SXRlbQBTeXN0ZW0ARW51bQByZXNvdXJjZU1hbgBCb29sZWFuAFNjcmlwdE1haW4AU3lzdGVtLkNv
+bmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ARXhjZXB0
+aW9uAEN1bHR1cmVJbmZvAGdldF9SZXNvdXJjZU1hbmFnZXIAQ29ubmVjdGlvbk1hbmFnZXIALmN0
+b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZp
+Y2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfNTg0M2Y4MTc1NmVjNDU5Mzg1MThmN2Y3NzY4M2MzYmUu
+UHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFNUXzU4NDNmODE3
+NTZlYzQ1OTM4NTE4ZjdmNzc2ODNjM2JlLlByb3BlcnRpZXMAZ2V0X1ZhcmlhYmxlcwBTZXR0aW5n
+cwBDb250YWlucwBnZXRfQ29ubmVjdGlvbnMAU3VjY2VzcwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMA
+Rm9ybWF0AE9iamVjdABnZXRfRGVmYXVsdABzZXRfVGFza1Jlc3VsdABnZXRfQXNzZW1ibHkAAD9Q
+AHIAaQBtAGEAIABkAGkAIABhAGMAYwBlAHMAcwBvACAAYQBsAGwAYQAgAHYAYQByAGkAYQBiAGkA
+bABlAAALRABCAEsAZQB5AAANUwBlAHIAdgBlAHIAAA1EAEIATgBhAG0AZQAAD08AcAB0AGkAbwBu
+AHMAADVVAHMAZQBTAFEATABTAGUAcgB2AGUAcgBBAHUAdABoAGUAbgB0AGkAYwBhAHQAaQBvAG4A
+AEFVAHMAZQBTAFEATABTAGUAcgB2AGUAcgBBAHUAdABoAGUAbgB0AGkAYwBhAHQAaQBvAG4AIAA9
+ACAAewAwAH0AAD9TAFEATABTAGUAcgB2AGUAcgBBAHUAdABoAGUAbgB0AGkAYwBhAHQAaQBvAG4A
+VQBzAGUAcgBuAGEAbQBlAAA/UwBRAEwAUwBlAHIAdgBlAHIAQQB1AHQAaABlAG4AdABpAGMAYQB0
+AGkAbwBuAFAAYQBzAHMAdwBvAHIAZAAAgNVEAGEAdABhACAAUwBvAHUAcgBjAGUAPQB7ADAAfQA7
+AFUAcwBlAHIAIABJAEQAPQB7ADEAfQA7AFAAYQBzAHMAdwBvAHIAZAA9AHsAMgB9ADsASQBuAGkA
+dABpAGEAbAAgAEMAYQB0AGEAbABvAGcAPQB7ADMAfQA7AHsANAB9AFAAcgBvAHYAaQBkAGUAcgA9
+AFMAUQBMAE4AQwBMAEkAMQAxAC4AMQA7AEEAdQB0AG8AIABUAHIAYQBuAHMAbABhAHQAZQA9AEYA
+YQBsAHMAZQA7AACA1UQAYQB0AGEAIABTAG8AdQByAGMAZQA9AHsAMAB9ADsASQBuAGkAdABpAGEA
+bAAgAEMAYQB0AGEAbABvAGcAPQB7ADEAfQA7AHsAMgB9AFAAcgBvAHYAaQBkAGUAcgA9AFMAUQBM
+AE4AQwBMAEkAMQAxAC4AMQA7AEkAbgB0AGUAZwByAGEAdABlAGQAIABTAGUAYwB1AHIAaQB0AHkA
+PQBTAFMAUABJADsAQQB1AHQAbwAgAFQAcgBhAG4AcwBsAGEAdABlAD0ARgBhAGwAcwBlADsAAE0r
+ACsAKwArACsAKwArACsAKwArACsAKwArACsAIABDAG8AbgBuAGUAYwB0AGkAbwBuACAAcwB0AHIA
+aQBuAGcAIAA9ACAAewAwAH0AAICNKwArACsAKwArACsAKwArACsAKwArACsAKwArACAAQwBvAG4A
+bgBlAGMAdABpAG8AbgAgAG8AYgBqAGUAYwB0ACAAZgBvAHIAIAB7ADAAfQAgAG4AbwB0ACAAZgBv
+AHUAbgBkAC4AIABBAGMAdABpAG8AbgAgAHQAYQBrAGUAbgA6ACAAUwBLAEkAUAAANVMAYwByAGkA
+cAB0ACAAdABhAHMAawAgAGUAeABjAGUAcAB0AGkAbwBuADoAIAB7ADAAfQAAcVMAVABfADUAOAA0
+ADMAZgA4ADEANwA1ADYAZQBjADQANQA5ADMAOAA1ADEAOABmADcAZgA3ADcANgA4ADMAYwAzAGIA
+ZQAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAA29Un/WVISUyt8QRf
+Qj0jUgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERVQwHCQ4ODg4CDg4OEj0EAAEBDgQgABJpBCAA
+Em0FIAEScRwDIAAcBQACDg4cBgACDg4dHAcABA4OHBwcBCAAEn0EIAECHAYgARKAgRwDIAAOBQAC
+AQ4OCAABEoCFEYCJBSAAEoCNByACAQ4SgI0It3pcVhk04IkIiYRdzYCAzJEEAAAAAAQBAAAAAwYS
+TQMGElEDBhIQAgYIAwYRFAQAABJNBAAAElEFAAEBElEEAAASEAMAAAEECAASTQQIABJRBAgAEhAI
+AQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAAKAEAI1NUXzU4
+NDNmODE3NTZlYzQ1OTM4NTE4ZjdmNzc2ODNjM2JlAAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIw
+MjMAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNwEAVA4URnJhbWV3b3JrRGlzcGxheU5h
+bWUSLk5FVCBGcmFtZXdvcmsgNC43tAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJl
+c291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWws
+IFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1l
+UmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAABw0AAAAAAAAAAAAADY0AAAAIAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAoNAAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAA
+AAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABI
+AAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAA
+AAC9BO/+AAABAAAAAQDHWfghAAABAMdZ+CE/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAA
+AAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4A
+AAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAAMAAw
+ADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4A
+eQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAA
+AFMAVABfADUAOAA0ADMAZgA4ADEANwA1ADYAZQBjADQANQA5ADMAOAA1ADEAOABmADcAZgA3ADcA
+NgA4ADMAYwAzAGIAZQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA4
+ADYAOQA2AC4AMgAyADkAOAAzAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMA
+VABfADUAOAA0ADMAZgA4ADEANwA1ADYAZQBjADQANQA5ADMAOAA1ADEAOABmADcAZgA3ADcANgA4
+ADMAYwAzAGIAZQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAA
+QwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQAcgBh
+AGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEA
+bQBlAAAAUwBUAF8ANQA4ADQAMwBmADgAMQA3ADUANgBlAGMANAA1ADkAMwA4ADUAMQA4AGYANwBm
+ADcANwA2ADgAMwBjADMAYgBlAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUA
+AAAAAFMAVABfADUAOAA0ADMAZgA4ADEANwA1ADYAZQBjADQANQA5ADMAOAA1ADEAOABmADcAZgA3
+ADcANgA4ADMAYwAzAGIAZQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEA
+LgAwAC4AOAA2ADkANgAuADIAMgA5ADgAMwAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBl
+AHIAcwBpAG8AbgAAADEALgAwAC4AOAA2ADkANgAuADIAMgA5ADgAMwAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAABINAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+                </ScriptProject>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{7438D6A2-A9C4-4E1A-B1A5-B392DF0B956E}"
+              DTS:ObjectName="{43087E67-540C-4175-AE29-4F5C5AFC31E8}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::DBKey" />
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{547D6A4E-32E3-4C31-B010-374CB7E81FF5}"
+              DTS:ObjectName="{919CDEEE-F257-48FD-9F7B-A65CD093140A}"
+              DTS:ValueIndex="1"
+              DTS:VariableName="User::Server" />
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{C0D6207C-C43B-4C74-A4C9-3DAA4D7A664A}"
+              DTS:ObjectName="{FFD0E5B7-8572-4F1D-93C9-9E47271B6DB9}"
+              DTS:ValueIndex="2"
+              DTS:VariableName="User::DBName" />
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{EC93EDCF-0BA0-4332-8DA8-C8CDBC4FE649}"
+              DTS:ObjectName="{F1DE74E9-B8C0-49DC-B2F5-8EB76929B575}"
+              DTS:ValueIndex="3"
+              DTS:VariableName="User::UseSQLServerAuthentication" />
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{B3413B96-EB69-4368-AA7A-42811DCB2133}"
+              DTS:ObjectName="{E6C922CA-0364-45B3-A942-23F409E9C31B}"
+              DTS:ValueIndex="4"
+              DTS:VariableName="User::SQLServerAuthenticationUsername" />
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{3D7D206C-362B-417B-BE05-4A1DC5206894}"
+              DTS:ObjectName="{0B3E3111-CB3D-48F5-95FA-BCDA491AED08}"
+              DTS:ValueIndex="5"
+              DTS:VariableName="User::SQLServerAuthenticationPassword" />
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{0BE3D696-BDEA-4DDD-928E-807544284982}"
+              DTS:ObjectName="{EBFEB26C-B50D-4579-8E20-31A834566E5D}"
+              DTS:ValueIndex="6"
+              DTS:VariableName="User::Options" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Gestione Connessioni\Load DB Config"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{94BD63E0-E433-46E3-A0C8-D7F8E692E5BA}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load DB Config"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BE6AF0E4-7F72-4FA9-9199-06E65CDFA670}"
+              SQLTask:SqlStatementSource="SELECT&#xA; DBKey, Server, DBName, UseSQLServerAuthentication, COALESCE(SQLServerAuthenticationUsername, '') AS SQLServerAuthenticationUsername, &#xA; COALESCE(SQLServerAuthenticationPassword, '') AS SQLServerAuthenticationPassword, COALESCE(Options, '') as Options&#xA;FROM Config.DB&#xA;WHERE EnvironmentId = ?"
+              SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Databases" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@EnvironmentId"
+                SQLTask:DtsVariableName="User::EnvironmentId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Gestione Connessioni\Test Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{6CD3F961-15C8-4FBD-82F2-610A66AA61FC}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Gestione Connessioni\Test Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Config].[test]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Config]"
+                      connectionManagerRefId="Package.ConnectionManagers[Config]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HostName]"
+                          cachedDataType="wstr"
+                          cachedLength="128"
+                          cachedName="HostName"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HostName]"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HostName]" />
+                        <inputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ServiceName]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="ServiceName"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ServiceName]"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ServiceName]" />
+                        <inputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ServerName]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="ServerName"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ServerName]"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ServerName]" />
+                        <inputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Version]"
+                          cachedDataType="wstr"
+                          cachedLength="300"
+                          cachedName="Version"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Version]"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Version]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ServiceName]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ServiceName" />
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ServerName]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ServerName" />
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HostName]"
+                          dataType="nText"
+                          name="HostName" />
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Version]"
+                          dataType="nText"
+                          name="Version" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Gestione Connessioni\Test Task\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Config].[DB]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+	CONVERT(varchar(max),@@SERVICENAME)	AS ServiceName,
+	CONVERT(varchar(max),@@SERVERNAME)	AS ServerName, 
+	CONVERT(SYSNAME, SERVERPROPERTY('ComputerNamePhysicalNetBIOS')) AS HostName,
+	@@version AS Version</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{B4227DB1-5282-44DB-862D-913C6CE34F58}:invalid"
+                      connectionManagerRefId="{B4227DB1-5282-44DB-862D-913C6CE34F58}:invalid"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ServiceName]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ServiceName]"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ServiceName]"
+                          name="ServiceName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ServerName]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ServerName]"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ServerName]"
+                          name="ServerName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HostName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HostName]"
+                          length="128"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HostName]"
+                          name="HostName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Version]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Version]"
+                          length="300"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Version]"
+                          name="Version"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ServiceName]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ServiceName" />
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ServerName]"
+                          codePage="1252"
+                          dataType="text"
+                          name="ServerName" />
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HostName]"
+                          dataType="wstr"
+                          length="128"
+                          name="HostName" />
+                        <externalMetadataColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Version]"
+                          dataType="wstr"
+                          length="300"
+                          name="Version" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ServiceName]"
+                          codePage="1252"
+                          dataType="text"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ServiceName]"
+                          name="ServiceName" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ServerName]"
+                          codePage="1252"
+                          dataType="text"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ServerName]"
+                          name="ServerName" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HostName]"
+                          dataType="wstr"
+                          length="128"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HostName]"
+                          name="HostName" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Version]"
+                          dataType="wstr"
+                          length="300"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Version]"
+                          name="Version" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Gestione Connessioni\Test Task.Paths[OLE DB Source Output]"
+                  endId="Package\Gestione Connessioni\Test Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Gestione Connessioni\Test Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Gestione Connessioni.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{83578C5F-C93C-4DB1-82CC-020B5555B5B7}"
+          DTS:From="Package\Gestione Connessioni\Load DB Config"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Gestione Connessioni\Foreach DB Config" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Gestione Connessioni.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{4C3EBFB7-588C-41B8-973A-E78AFB1E4372}"
+          DTS:From="Package\Gestione Connessioni\Foreach DB Config"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Gestione Connessioni\Test Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Lettura Date"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{FA2351B6-58C2-40AB-969C-EAE1657DDE92}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Lettura Date">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Lettura Date\GetMaxDate"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{EF8CE5D1-CC23-4EAD-A52A-F5313346DEE8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GetMaxDate"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BE6AF0E4-7F72-4FA9-9199-06E65CDFA670}"
+              SQLTask:SqlStatementSource="exec Config.GetMaxDateToLoad ?, ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="MaxDateToLoad"
+                SQLTask:DtsVariableName="User::DateEnd" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@Task"
+                SQLTask:DtsVariableName="User::Task"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@EnvironmentId"
+                SQLTask:DtsVariableName="User::EnvironmentId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="2"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Lettura Date\GetMinDate"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{C39EB73D-5D11-4658-9D01-81B4C5B20BEB}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GetMinDate"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BE6AF0E4-7F72-4FA9-9199-06E65CDFA670}"
+              SQLTask:SqlStatementSource="exec Config.GetMinDateToLoad ?, ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="MinDateToLoad"
+                SQLTask:DtsVariableName="User::DateStart" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@Task"
+                SQLTask:DtsVariableName="User::Task"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@EnvironmentId"
+                SQLTask:DtsVariableName="User::EnvironmentId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="2"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Lettura Date.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{E992B229-2D7A-48D8-8B2A-BB0241F6988D}"
+          DTS:From="Package\Lettura Date\GetMinDate"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Lettura Date\GetMaxDate" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F1BCA4F6-7D82-4F8B-B114-FEFDD697237C}"
+      DTS:From="Package\Gestione Connessioni"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Lettura Date" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{844042D1-E34A-4854-8929-317F59B41552}"
+      DTS:From="Package\Lettura Date"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Aggiornamento Utenti Autoesclusi" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{23A01391-7042-41CC-A563-D45B4A63F897}"
+      DTS:From="Package\Aggiornamento Utenti Autoesclusi"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Aggiornamento Date" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
+<!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
+<!--Sarà comunque possibile caricare manualmente il pacchetto, ma le informazioni precedenti sul layout verranno perse e gli elementi verranno nuovamente disposti nell'area di progettazione all'interno dell'apposita finestra.-->
+<Objects
+  Version="8">
+  <!--Ogni nodo seguente conterrà proprietà che non influiscono sul comportamento di runtime.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Aggiornamento Date\SetDate"
+          TopLeft="63,56" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="246.4,209.6"
+          Size="246.4,252.8"
+          Id="Package\Aggiornamento Date"
+          TopLeft="1252,156" />
+        <NodeLayout
+          Size="224.8,41.6"
+          Id="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded"
+          TopLeft="37,105" />
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\Aggiornamento Utenti Autoesclusi\Pulisci tabella PlayersExcluded"
+          TopLeft="39.8333333002197,29.1333333264457" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\Aggiornamento Utenti Autoesclusi\Update Frozen for Excluded"
+          TopLeft="47,181" />
+        <EdgeLayout
+          Id="Package\Aggiornamento Utenti Autoesclusi.PrecedenceConstraints[Constraint]"
+          TopLeft="152.41666665011,70.7333333264457">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.2666666735543"
+              Start="0,0"
+              End="0,26.7666666735543">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.7666666735543" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Aggiornamento Utenti Autoesclusi.PrecedenceConstraints[Constraint 1]"
+          TopLeft="152.2,146.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.4"
+              Start="0,0"
+              End="0,26.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="307.2,278.4"
+          Size="307.2,321.6"
+          Id="Package\Aggiornamento Utenti Autoesclusi"
+          TopLeft="859,126" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Gestione Connessioni\Foreach DB Config\Script Connections"
+          TopLeft="22,25" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="215.2,104"
+          Size="215.2,147.2"
+          Id="Package\Gestione Connessioni\Foreach DB Config"
+          TopLeft="99,118" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Gestione Connessioni\Load DB Config"
+          TopLeft="132,46" />
+        <NodeLayout
+          Size="127.2,41.6"
+          Id="Package\Gestione Connessioni\Test Task"
+          TopLeft="142,296" />
+        <EdgeLayout
+          Id="Package\Gestione Connessioni.PrecedenceConstraints[Constraint]"
+          TopLeft="207.25,88">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Gestione Connessioni.PrecedenceConstraints[Constraint 1]"
+          TopLeft="206,265">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="417.6,408.8"
+          Size="417.6,452"
+          Id="Package\Gestione Connessioni"
+          TopLeft="46,61" />
+        <NodeLayout
+          Size="140.8,41.6"
+          Id="Package\Lettura Date\GetMaxDate"
+          TopLeft="52,111" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Lettura Date\GetMinDate"
+          TopLeft="52,37" />
+        <EdgeLayout
+          Id="Package\Lettura Date.PrecedenceConstraints[Constraint]"
+          TopLeft="121.75,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="248,209.6"
+          Size="248,252.8"
+          Id="Package\Lettura Date"
+          TopLeft="539,158" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="463.6,285.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75.4,0"
+              Start="0,0"
+              End="67.9,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="67.9,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="787,285.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72,0"
+              Start="0,0"
+              End="64.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="64.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="1166.2,284.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.8,0"
+              Start="0,0"
+              End="78.3,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.3,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded"
+          TopLeft="121,229" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded"
+          TopLeft="121,29" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi"
+          TopLeft="126,125" />
+        <EdgeLayout
+          Id="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded.Paths[Output origine OLE DB]"
+          TopLeft="217.75,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded.Paths[Output corrispondenza ricerca]"
+          TopLeft="216.75,167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-66.78587890625,21.4453125,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Salva PlayersExcluded">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Carica PlayersExcluded">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Aggiornamento Utenti Autoesclusi\Popola tabella PlayersExcluded\Filtro Customer Attivi">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Crm].[AccountsExcluded]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Gestione Connessioni\Test Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Gestione Connessioni\Test Task\OLE DB Source"
+          TopLeft="119,80" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Gestione Connessioni\Test Task\OLE DB Destination"
+          TopLeft="107,195" />
+        <EdgeLayout
+          Id="Package\Gestione Connessioni\Test Task.Paths[OLE DB Source Output]"
+          TopLeft="193.25,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Gestione Connessioni\Test Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Gestione Connessioni\Test Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
