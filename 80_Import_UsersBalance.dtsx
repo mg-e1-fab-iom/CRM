@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/13/2018 4:53:41 PM"
@@ -12,8 +12,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="04_Import_UsersBalance"
   DTS:PackageType="5"
-  DTS:VersionBuild="247"
-  DTS:VersionGUID="{5CFB1A6F-6C38-4A9D-A5AA-569364D2DE98}">
+  DTS:VersionBuild="251"
+  DTS:VersionGUID="{09562B05-2C38-4E75-B85E-3703FA670723}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -61,7 +61,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.30.21.10;User ID=MG-E-FAB-IOM;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_UsersBalance-{463094CA-3810-40F5-AC4D-510C4BD767CD}Config;" />
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=MG-E-FAB-IOM;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_UsersBalance-{463094CA-3810-40F5-AC4D-510C4BD767CD}Config;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC1ciGP5ILAE2bwK9WiMJIVLv2RYzZ5IhK86jSqUshpXwAAAAAOgAAAAAIAACAAAAALL31KHmTe49EvQoQBQPOy3ujve3AtpRPsFD3qBbG9eTAAAAChTn2JXt6QC8P/FCPtGz3wrdvms/gHCE2KiLzEzyjrKe57Oz67R9pdWuUKldONPphAAAAA/nW2nlhNpYntWZra5zn2ZpEFaLeJYV0Hv/pqcgdRVcGJrastpxu9LytEFwUqo58S7vSmcq8/doaeL0WsypmLzQ</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -85,7 +90,115 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Auto Translate=False;Application Name=SSIS-Import_UsersBalance-{BB4E2914-8B1F-4446-A531-981F52971CFF}DW;" />
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_UsersBalance-{BB4E2914-8B1F-4446-A531-981F52971CFF}DW;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABSYM/fVqXoLp43S9flNntHxx/QWsMH/nH5Mrvk9wUcygAAAAAOgAAAAAIAACAAAAD5l6eh64zdaIfkXe2TtdmPGJhNhcw8vIVprPPGJZb6ADAAAABGUUuAG47GUiSdQUZG5Orho1/fT41coNW9EVc7kPUykkn6mNHjc6V/BRFTq5/xR0JAAAAAE2vGZoJKlPcWeJJiD4duDhAtRPQbwoLAAFFmuqv9huU0ryru5V9F2L638dLV8hDymUfPtPOqSx8iBnEduIf+FA</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ExportPlayersBalance]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{EA459F01-8EB0-44FD-A63C-7C2F0B8B0C23}"
+      DTS:ObjectName="ExportPlayersBalance">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::PathTargetAnagrafiche]+"\\PlayersBalance.csv"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1040"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\ETL_Out\Upload_Temporarily\Anagrafiche\PlayersBalance.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PartitionFlag"
+              DTS:DTSID="{7D589626-A371-4F97-9300-3DD51537E3BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompetenceDate"
+              DTS:DTSID="{E361AD82-7527-4DDB-93D3-A5160672B0C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SUR_SubAccount"
+              DTS:DTSID="{0E830E16-D07F-4CAC-BA65-8E1E72482B4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COD_Customer"
+              DTS:DTSID="{AE3B8F62-E2B8-45D0-9E86-532F309A27E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COD_Site"
+              DTS:DTSID="{8241B550-E4CD-4A5B-BBF8-16C9C1F1094A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Balance"
+              DTS:DTSID="{2C283FBC-6BB9-4831-B135-AF9E7E0F223D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ToWithdraw"
+              DTS:DTSID="{C30BE1A7-490C-4CB8-BA95-6309BED1460F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reserve"
+              DTS:DTSID="{1F713FA9-DE46-459A-BE25-571512DC2ADA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Bonus"
+              DTS:DTSID="{7B34F296-1BF3-46ED-9D6E-6C29C2091921}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -97,7 +210,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TEST_DEV_15219_PAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_UsersBalance-{01DB611E-B625-4398-B100-AEFAA64BA116}Mirror_03Master;" />
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TEST_DEV_15219_PAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_UsersBalance-{01DB611E-B625-4398-B100-AEFAA64BA116}Mirror_03Master;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADz1pPhALuwCvSPRNmu2yfriQGuMcG3B6ZGKka/Z0j6eQAAAAAOgAAAAAIAACAAAABaywLTqbhMjoivpxx4LC33hsxfvfZ44sQgW1gUXlV8vTAAAAD8YLA+Gy0RIZoUVSY2ZKG/j132wmawzZD/JS4f8e/vgQW0b2gtnjCnbeUDpRY/195AAAAAtnm88QJAsUyA3oJHVKJ2QqljrPMIVu7CXOSJA5kCMb9eHTSgQD/nbRlH7MN2H4YbueUJB+otp6oJS+ajtZHoNQ</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -203,6 +321,15 @@
       <DTS:VariableValue
         DTS:DataType="8"
         xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B5DE184B-8DDD-4943-8BB9-82DF054DA10B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PathTargetAnagrafiche">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\ETL_Out\Upload_Temporarily\Anagrafiche</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1611,36 +1738,6 @@ where [refTable].[COD_SubAccount] = ? and [refTable].[COD_Site] = ?</property>
               ReadOnlyVariables="User::CurrentStartMonth,User::DateEnd"
               ReadWriteVariables="User::CurrentEndMonth">
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_aecfe3cad7794f48834ee87a288d8034")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_aecfe3cad7794f48834ee87a288d8034")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-              <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -1759,6 +1856,35 @@ using System.Runtime.CompilerServices;
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_aecfe3cad7794f48834ee87a288d8034.Properties.Settings.get_Default():ST_aecfe3cad7794f48834ee87a288d8034.Properties.Sett" +
+    "ings")]
+
+namespace ST_aecfe3cad7794f48834ee87a288d8034.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -1999,34 +2125,35 @@ namespace ST_aecfe3cad7794f48834ee87a288d8034
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_aecfe3cad7794f48834ee87a288d8034")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_aecfe3cad7794f48834ee87a288d8034")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_aecfe3cad7794f48834ee87a288d8034.Properties.Settings.get_Default():ST_aecfe3cad7794f48834ee87a288d8034.Properties.Sett" +
-    "ings")]
-
-namespace ST_aecfe3cad7794f48834ee87a288d8034.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Settings.settings"
                 Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -2226,6 +2353,432 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\For Loop Mensile\Popola CSV PlayersBalance"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Attività Flusso di dati"
+          DTS:DTSID="{B91C6E5F-EA04-48A1-9DB4-A2D40AA10F5F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Popola CSV PlayersBalance"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Destinazione file flat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+                  description="Destinazione file flat"
+                  localeId="1040"
+                  name="Destinazione file flat"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifica se i dati verranno sovrascritti o accodati nel file di destinazione."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il testo da scrivere nel file di destinazione prima della scrittura dei dati."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="Quando il qualificatore di testo è abilitato, specifica se il qualificatore di testo nei dati scritti nel file di destinazione verrà o meno preceduto da un carattere di escape."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ExportPlayersBalance]"
+                      connectionManagerRefId="Package.ConnectionManagers[ExportPlayersBalance]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat]"
+                      hasSideEffects="true"
+                      name="Input destinazione file flat">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].Columns[PartitionFlag]"
+                          cachedDataType="i4"
+                          cachedName="PartitionFlag"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[PartitionFlag]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[PartitionFlag]" />
+                        <inputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].Columns[CompetenceDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="CompetenceDate"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[CompetenceDate]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[CompetenceDate]" />
+                        <inputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].Columns[SUR_SubAccount]"
+                          cachedDataType="i8"
+                          cachedName="SUR_SubAccount"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[SUR_SubAccount]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[SUR_SubAccount]" />
+                        <inputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].Columns[COD_Customer]"
+                          cachedDataType="i2"
+                          cachedName="COD_Customer"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[COD_Customer]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[COD_Customer]" />
+                        <inputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].Columns[COD_Site]"
+                          cachedDataType="i2"
+                          cachedName="COD_Site"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[COD_Site]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[COD_Site]" />
+                        <inputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].Columns[Balance]"
+                          cachedDataType="cy"
+                          cachedName="Balance"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[Balance]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Balance]" />
+                        <inputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].Columns[ToWithdraw]"
+                          cachedDataType="cy"
+                          cachedName="ToWithdraw"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[ToWithdraw]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[ToWithdraw]" />
+                        <inputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].Columns[Reserve]"
+                          cachedDataType="cy"
+                          cachedName="Reserve"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[Reserve]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Reserve]" />
+                        <inputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].Columns[Bonus]"
+                          cachedDataType="cy"
+                          cachedName="Bonus"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[Bonus]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Bonus]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[PartitionFlag]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="PartitionFlag" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[CompetenceDate]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="CompetenceDate" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[SUR_SubAccount]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="SUR_SubAccount" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[COD_Customer]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="COD_Customer" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[COD_Site]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="COD_Site" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[Balance]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Balance" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[ToWithdraw]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="ToWithdraw" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[Reserve]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Reserve" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[Bonus]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Bonus" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+                  description="Origine OLE DB"
+                  name="Origine OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset">[Crm].[PlayersBalance]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variabile che contiene il comando SQL da eseguire."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Mapping tra i parametri nel comando SQL e le variabili."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DW]"
+                      connectionManagerRefId="Package.ConnectionManagers[DW]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB]"
+                      name="Output origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[PartitionFlag]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[PartitionFlag]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[PartitionFlag]"
+                          name="PartitionFlag"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[CompetenceDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[CompetenceDate]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[CompetenceDate]"
+                          name="CompetenceDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[SUR_SubAccount]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[SUR_SubAccount]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[SUR_SubAccount]"
+                          name="SUR_SubAccount"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[COD_Customer]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[COD_Customer]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[COD_Customer]"
+                          name="COD_Customer"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[COD_Site]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[COD_Site]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[COD_Site]"
+                          name="COD_Site"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Balance]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[Balance]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Balance]"
+                          name="Balance"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[ToWithdraw]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[ToWithdraw]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[ToWithdraw]"
+                          name="ToWithdraw"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Reserve]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[Reserve]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Reserve]"
+                          name="Reserve"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Bonus]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[Bonus]"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].Columns[Bonus]"
+                          name="Bonus"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[PartitionFlag]"
+                          dataType="i4"
+                          name="PartitionFlag" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[CompetenceDate]"
+                          dataType="dbTimeStamp"
+                          name="CompetenceDate" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[SUR_SubAccount]"
+                          dataType="i8"
+                          name="SUR_SubAccount" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[COD_Customer]"
+                          dataType="i2"
+                          name="COD_Customer" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[COD_Site]"
+                          dataType="i2"
+                          name="COD_Site" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[Balance]"
+                          dataType="cy"
+                          name="Balance" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[ToWithdraw]"
+                          dataType="cy"
+                          name="ToWithdraw" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[Reserve]"
+                          dataType="cy"
+                          name="Reserve" />
+                        <externalMetadataColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[Bonus]"
+                          dataType="cy"
+                          name="Bonus" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB]"
+                      isErrorOut="true"
+                      name="Output errori origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[PartitionFlag]"
+                          dataType="i4"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[PartitionFlag]"
+                          name="PartitionFlag" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[CompetenceDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[CompetenceDate]"
+                          name="CompetenceDate" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[SUR_SubAccount]"
+                          dataType="i8"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[SUR_SubAccount]"
+                          name="SUR_SubAccount" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[COD_Customer]"
+                          dataType="i2"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[COD_Customer]"
+                          name="COD_Customer" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[COD_Site]"
+                          dataType="i2"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[COD_Site]"
+                          name="COD_Site" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[Balance]"
+                          dataType="cy"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[Balance]"
+                          name="Balance" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ToWithdraw]"
+                          dataType="cy"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ToWithdraw]"
+                          name="ToWithdraw" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[Reserve]"
+                          dataType="cy"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[Reserve]"
+                          name="Reserve" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[Bonus]"
+                          dataType="cy"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[Bonus]"
+                          name="Bonus" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\For Loop Mensile\Popola CSV PlayersBalance.Paths[Output origine OLE DB]"
+                  endId="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat.Inputs[Input destinazione file flat]"
+                  name="Output origine OLE DB"
+                  startId="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB.Outputs[Output origine OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\For Loop Mensile\Set EndDate"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Attività Esegui SQL"
@@ -2317,6 +2870,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
           DTS:To="Package\For Loop Mensile\Set EndDate" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\For Loop Mensile.PrecedenceConstraints[Vincolo]"
+          DTS:CreationName=""
+          DTS:DTSID="{6532321A-AD04-4B0D-9B06-DC5B821F9636}"
+          DTS:From="Package\For Loop Mensile\Set EndDate"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Vincolo"
+          DTS:To="Package\For Loop Mensile\Popola CSV PlayersBalance" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -2366,36 +2927,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   VSTAMinorVersion="0"
                   Language="CSharp"
                   ReadWriteVariables="User::DBKey,User::DBName,User::Options,User::Server,User::SQLServerAuthenticationPassword,User::SQLServerAuthenticationUsername,User::UseSQLServerAuthentication">
-                  <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_c27ece3c043c4b4fba641a6533c465ce")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_c27ece3c043c4b4fba641a6533c465ce")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2515,6 +3046,35 @@ using System.Runtime.CompilerServices;
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_c27ece3c043c4b4fba641a6533c465ce.Properties.Settings.get_Default():ST_c27ece3c043c4b4fba641a6533c465ce.Properties.Sett" +
+    "ings")]
+
+namespace ST_c27ece3c043c4b4fba641a6533c465ce.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -2772,34 +3332,35 @@ namespace ST_c27ece3c043c4b4fba641a6533c465ce.Properties {
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_c27ece3c043c4b4fba641a6533c465ce")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_c27ece3c043c4b4fba641a6533c465ce")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_c27ece3c043c4b4fba641a6533c465ce.Properties.Settings.get_Default():ST_c27ece3c043c4b4fba641a6533c465ce.Properties.Sett" +
-    "ings")]
-
-namespace ST_c27ece3c043c4b4fba641a6533c465ce.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -4102,6 +4663,10 @@ FROM CRM.SubAccountPlayer with(nolock)</property>
           Id="Package\For Loop Mensile\Get MonthDate"
           TopLeft="74,29" />
         <NodeLayout
+          Size="210.4,41.6"
+          Id="Package\For Loop Mensile\Popola CSV PlayersBalance"
+          TopLeft="60.7999753634146,335.266670723491" />
+        <NodeLayout
           Size="140.8,41.6"
           Id="Package\For Loop Mensile\Set EndDate"
           TopLeft="77,260" />
@@ -4221,11 +4786,45 @@ FROM CRM.SubAccountPlayer with(nolock)</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Mensile.PrecedenceConstraints[Vincolo]"
+          TopLeft="147.4,301.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.5999753634146,33.6666707234912"
+              Start="0,0"
+              End="18.5999753634146,26.1666707234912">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.8333353617456" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.8333353617456"
+                    Point2="0,16.8333353617456"
+                    Point3="4,16.8333353617456" />
+                  <mssgle:LineSegment
+                    End="14.5999753634146,16.8333353617456" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.5999753634146,16.8333353617456"
+                    Point2="18.5999753634146,16.8333353617456"
+                    Point3="18.5999753634146,20.8333353617456" />
+                  <mssgle:LineSegment
+                    End="18.5999753634146,26.1666707234912" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="647.2,404.8"
-          Size="647.2,448"
+          PanelSize="647.2,442.4"
+          Size="647.2,485.6"
           Id="Package\For Loop Mensile"
           TopLeft="559,361" />
         <NodeLayout
@@ -4404,30 +5003,30 @@ FROM CRM.SubAccountPlayer with(nolock)</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1030,283">
+          TopLeft="1030.2,283.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-147.5,78"
+              EndConnector="-147.6,77.6"
               Start="0,0"
-              End="-147.5,70.5">
+              End="-147.6,70.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35" />
+                    End="0,34.8" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35"
-                    Point2="0,39"
-                    Point3="-4,39" />
+                    Point1="0,34.8"
+                    Point2="0,38.8"
+                    Point3="-4,38.8" />
                   <mssgle:LineSegment
-                    End="-143.5,39" />
+                    End="-143.6,38.8" />
                   <mssgle:CubicBezierSegment
-                    Point1="-143.5,39"
-                    Point2="-147.5,39"
-                    Point3="-147.5,43" />
+                    Point1="-143.6,38.8"
+                    Point2="-147.6,38.8"
+                    Point3="-147.6,42.8" />
                   <mssgle:LineSegment
-                    End="-147.5,70.5" />
+                    End="-147.6,70.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4438,30 +5037,30 @@ FROM CRM.SubAccountPlayer with(nolock)</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="1206,585">
+          TopLeft="1206.2,603.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64,-32.5"
+              EndConnector="63.8,-51.1999999999999"
               Start="0,0"
-              End="56.5,-32.5">
+              End="56.3,-51.1999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="28,0" />
+                    End="27.9,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="28,0"
-                    Point2="32,0"
-                    Point3="32,-4" />
+                    Point1="27.9,0"
+                    Point2="31.9,0"
+                    Point3="31.9,-4" />
                   <mssgle:LineSegment
-                    End="32,-28.5" />
+                    End="31.9,-47.1999999999999" />
                   <mssgle:CubicBezierSegment
-                    Point1="32,-28.5"
-                    Point2="32,-32.5"
-                    Point3="36,-32.5" />
+                    Point1="31.9,-47.1999999999999"
+                    Point2="31.9,-51.1999999999999"
+                    Point3="35.9,-51.1999999999999" />
                   <mssgle:LineSegment
-                    End="56.5,-32.5" />
+                    End="56.3,-51.1999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4634,6 +5233,69 @@ FROM CRM.SubAccountPlayer with(nolock)</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\For Loop Mensile\Popola CSV PlayersBalance">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB"
+          TopLeft="677,81" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\For Loop Mensile\Popola CSV PlayersBalance\Destinazione file flat"
+          TopLeft="750,216" />
+        <EdgeLayout
+          Id="Package\For Loop Mensile\Popola CSV PlayersBalance.Paths[Output origine OLE DB]"
+          TopLeft="753.4,122.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82.2,93.4"
+              Start="0,0"
+              End="82.2,85.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.7"
+                    Point2="0,46.7"
+                    Point3="4,46.7" />
+                  <mssgle:LineSegment
+                    End="78.2,46.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="78.2,46.7"
+                    Point2="82.2,46.7"
+                    Point3="82.2,50.7" />
+                  <mssgle:LineSegment
+                    End="82.2,85.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Mensile\Popola CSV PlayersBalance\Origine OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/20/2018 1:19:26 PM"
@@ -12,8 +12,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="G10_Imports_Games"
   DTS:PackageType="5"
-  DTS:VersionBuild="570"
-  DTS:VersionGUID="{94870D6D-C76B-48DC-B843-1476F2D98AA5}">
+  DTS:VersionBuild="577"
+  DTS:VersionGUID="{67679F7C-DFDE-4751-8015-D81946348947}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.30.21.10;User ID=MG-E-FAB-IOM;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_GamesDaily-{4EE63211-95D1-4DCF-BBA8-0E7BFC8EF590}Config;" />
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=MG-E-FAB-IOM;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_GamesDaily-{4EE63211-95D1-4DCF-BBA8-0E7BFC8EF590}Config;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACkj/1lYpckTdjOag1MiJsYSQNxUYGKo2Jjvbw3Ul9fBwAAAAAOgAAAAAIAACAAAADXBLnzA2hcJXgP1WMDTb+GjDVkcUhrab83+CnvAoOHSDAAAAD19v8dBu3HgcrLFyEipmZgC3PQNnw/l25x21oFtrLRO0Xlg9J2iP8SgjSi0XZirhNAAAAAUlwfLkNwrNXGubxQQm8AwkHFAjREsz0Bdwzslh0uKlPV8smqW7nzF5wqM764eRqXieQ18PTCwC/LoIQjUAh3Yg</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -585,7 +590,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="CurrentEndMonth">
       <DTS:VariableValue
-        DTS:DataType="7">4/2/2024</DTS:VariableValue>
+        DTS:DataType="7">4/13/2024</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -817,66 +822,17 @@
       <DTS:VariableValue
         DTS:DataType="11">0</DTS:VariableValue>
     </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{621F933C-0F74-4E2A-AA5A-F89FB1DA3E1B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variabile">
+      <DTS:VariableValue
+        DTS:DataType="8">.\SFTP_Import.ps1</DTS:VariableValue>
+    </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
-    <DTS:Executable
-      DTS:refId="Package\Aggiornamento Date"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Sequence Container"
-      DTS:DTSID="{2601C87D-C8FB-4380-ADC2-9A43B3CA47BC}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Aggiornamento Date">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Aggiornamento Date\Update DateToLoad"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0CF8AEA9-CDC5-4AA3-8695-7CD7F2820C7F}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Update DateToLoad"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables>
-            <DTS:Variable
-              DTS:CreationName=""
-              DTS:DTSID="{60EFED38-62D7-404B-B6A6-76E5E8F7C767}"
-              DTS:IncludeInDebugDump="6789"
-              DTS:Namespace="User"
-              DTS:ObjectName="Variable">
-              <DTS:VariableValue
-                DTS:DataType="3">0</DTS:VariableValue>
-            </DTS:Variable>
-          </DTS:Variables>
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{4EE63211-95D1-4DCF-BBA8-0E7BFC8EF590}"
-              SQLTask:SqlStatementSource="exec Config.SetDateToLoadForCRM ?, ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="@Task"
-                SQLTask:DtsVariableName="User::Task"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="32" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="@EnvironmentId"
-                SQLTask:DtsVariableName="User::EnvironmentId"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="2"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="@LastLoadedDate"
-                SQLTask:DtsVariableName="User::EndToLoad"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="7"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Caricamento date"
       DTS:CreationName="STOCK:SEQUENCE"
@@ -7970,6 +7926,72 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
           DTS:VariableName="User::FileFullName" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transfer SFTP"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Attività Esegui processo"
+      DTS:DTSID="{7739dc10-4af4-4947-8e19-63cf9c309762}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer SFTP"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">@[User::Variabile]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="powershell.exe"
+          Arguments=".\SFTP_Import.ps1"
+          WorkingDirectory="c:\tools" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update DateToLoad"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0CF8AEA9-CDC5-4AA3-8695-7CD7F2820C7F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update DateToLoad"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{60EFED38-62D7-404B-B6A6-76E5E8F7C767}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="Variable">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4EE63211-95D1-4DCF-BBA8-0E7BFC8EF590}"
+          SQLTask:SqlStatementSource="exec Config.SetDateToLoadForCRM ?, ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Task"
+            SQLTask:DtsVariableName="User::Task"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="32" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@EnvironmentId"
+            SQLTask:DtsVariableName="User::EnvironmentId"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="2"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@LastLoadedDate"
+            SQLTask:DtsVariableName="User::EndToLoad"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -7983,11 +8005,11 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Vincolo]"
       DTS:CreationName=""
-      DTS:DTSID="{28F81A45-5924-46FF-B0EA-3A946CF6CD8B}"
+      DTS:DTSID="{53ACA54F-82B0-4865-A6C7-65FCF6F01138}"
       DTS:From="Package\Caricamento date"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Vincolo"
-      DTS:To="Package\Loop giornaliero Casino" />
+      DTS:To="Package\Transfer SFTP" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Vincolo 1]"
       DTS:CreationName=""
@@ -8007,11 +8029,19 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Vincolo 3]"
       DTS:CreationName=""
-      DTS:DTSID="{0A0E2A5A-7F1E-4F2C-AAFD-9671F8FA38D3}"
-      DTS:From="Package\Loop giornaliero Sport"
+      DTS:DTSID="{8F49C0E2-DAA3-4FE4-A842-2EAB15634148}"
+      DTS:From="Package\Transfer SFTP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Vincolo 3"
-      DTS:To="Package\Aggiornamento Date" />
+      DTS:To="Package\Loop giornaliero Casino" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Vincolo 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{58356F14-0C6F-42AB-8E7E-6A27BDDF9757}"
+      DTS:From="Package\Loop giornaliero Sport"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Vincolo 4"
+      DTS:To="Package\Update DateToLoad" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
@@ -8025,17 +8055,6 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="177.6,41.6"
-          Id="Package\Aggiornamento Date\Update DateToLoad"
-          TopLeft="5.5,5.49999999999995" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="188.8,102.4"
-          Size="188.8,145.6"
-          Id="Package\Aggiornamento Date"
-          TopLeft="832.685152097257,561.933336756494" />
         <NodeLayout
           Size="140.8,41.6"
           Id="Package\Caricamento date\GetMaxDate"
@@ -8072,7 +8091,7 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
           PanelSize="152,202.4"
           Size="152,246.4"
           Id="Package\Caricamento date"
-          TopLeft="384.000012020269,21.9296073075272" />
+          TopLeft="264.83335008886,132.86294152248" />
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\Gestione Connessioni\Foreach DB Config\Script Connections"
@@ -8142,7 +8161,7 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
           PanelSize="188.8,409.6"
           Size="188.8,452.8"
           Id="Package\Gestione Connessioni"
-          TopLeft="116.433355254596,13.796296317724" />
+          TopLeft="26.4333588308745,28.5296297681473" />
         <NodeLayout
           Size="135.2,41.6"
           Id="Package\Loop giornaliero Casino\Archivia File"
@@ -8267,7 +8286,7 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
           PanelSize="296.8,398.4"
           Size="296.8,441.6"
           Id="Package\Loop giornaliero Casino"
-          TopLeft="603.348166003785,19.8333330784899" />
+          TopLeft="698.348162228824,52.7666666735539" />
         <NodeLayout
           Size="135.2,41.6"
           Id="Package\Loop giornaliero Poker\Archivia File"
@@ -8380,7 +8399,7 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
           PanelSize="321.6,409.6"
           Size="321.6,452.8"
           Id="Package\Loop giornaliero Poker"
-          TopLeft="932.962925890351,16.7037035376344" />
+          TopLeft="1106.29625233604,32.3037036616122" />
         <NodeLayout
           Size="135.2,41.6"
           Id="Package\Loop giornaliero Sport\Archivia File"
@@ -8493,33 +8512,25 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
           PanelSize="341.6,412.8"
           Size="341.6,456"
           Id="Package\Loop giornaliero Sport"
-          TopLeft="1299.1703286324,20.0999776633566" />
+          TopLeft="1474.2369922526,38.2999778079973" />
+        <NodeLayout
+          Size="146.4,41.6"
+          Id="Package\Transfer SFTP"
+          TopLeft="477.266674249704,244.933332603242" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="305.233355254596,240.196296317724">
+          TopLeft="215.233358830875,255.496285645313">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78.7666567656732,-95.0666890101968"
+              EndConnector="49.5999912579853,0"
               Start="0,0"
-              End="71.2666567656732,-95.0666890101968">
+              End="42.0999912579853,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="35.3833283828366,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="35.3833283828366,0"
-                    Point2="39.3833283828366,0"
-                    Point3="39.3833283828366,-4" />
-                  <mssgle:LineSegment
-                    End="39.3833283828366,-91.0666890101968" />
-                  <mssgle:CubicBezierSegment
-                    Point1="39.3833283828366,-91.0666890101968"
-                    Point2="39.3833283828366,-95.0666890101968"
-                    Point3="43.3833283828366,-95.0666890101968" />
-                  <mssgle:LineSegment
-                    End="71.2666567656732,-95.0666890101968" />
+                    End="42.0999912579853,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8530,30 +8541,30 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Vincolo]"
-          TopLeft="536.000012020269,145.129607307527">
+          TopLeft="416.83335008886,256.06294152248">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="67.3481539835161,95.5037257709627"
+              EndConnector="60.4333241608435,9.67039108076193"
               Start="0,0"
-              End="59.8481539835161,95.5037257709627">
+              End="52.9333241608435,9.67039108076193">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="29.6740769917581,0" />
+                    End="26.2166620804217,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="29.6740769917581,0"
-                    Point2="33.6740769917581,0"
-                    Point3="33.6740769917581,4" />
+                    Point1="26.2166620804217,0"
+                    Point2="30.2166620804217,0"
+                    Point3="30.2166620804217,4" />
                   <mssgle:LineSegment
-                    End="33.6740769917581,91.5037257709627" />
+                    End="30.2166620804217,5.67039108076193" />
                   <mssgle:CubicBezierSegment
-                    Point1="33.6740769917581,91.5037257709627"
-                    Point2="33.6740769917581,95.5037257709627"
-                    Point3="37.6740769917581,95.5037257709627" />
+                    Point1="30.2166620804217,5.67039108076193"
+                    Point2="30.2166620804217,9.67039108076193"
+                    Point3="34.2166620804217,9.67039108076193" />
                   <mssgle:LineSegment
-                    End="59.8481539835161,95.5037257709627" />
+                    End="52.9333241608435,9.67039108076193" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8564,18 +8575,30 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Vincolo 1]"
-          TopLeft="900.148166003785,241.868518308062">
+          TopLeft="995.148162228824,273.566666673554">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="32.814759886566,0"
+              EndConnector="111.148090107213,-14.8629630119416"
               Start="0,0"
-              End="25.314759886566,0">
+              End="103.648090107213,-14.8629630119416">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="25.314759886566,0" />
+                    End="51.5740450536065,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.5740450536065,0"
+                    Point2="55.5740450536065,0"
+                    Point3="55.5740450536065,-4" />
+                  <mssgle:LineSegment
+                    End="55.5740450536065,-10.8629630119416" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.5740450536065,-10.8629630119416"
+                    Point2="55.5740450536065,-14.8629630119416"
+                    Point3="59.5740450536065,-14.8629630119416" />
+                  <mssgle:LineSegment
+                    End="103.648090107213,-14.8629630119416" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8586,18 +8609,18 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Vincolo 2]"
-          TopLeft="1254.56292589035,245.601840600496">
+          TopLeft="1427.89625233604,262.501840734805">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="44.6074027420491,0"
+              EndConnector="46.3407399165676,0"
               Start="0,0"
-              End="37.1074027420491,0">
+              End="38.8407399165676,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="37.1074027420491,0" />
+                    End="38.8407399165676,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8608,30 +8631,56 @@ where [refTable].[COD_Site] = ? and [refTable].[COD_Customer] = ? and [refTable]
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Vincolo 3]"
-          TopLeft="1469.9703286324,476.099977663357">
+          TopLeft="623.666674249704,269.649999638398">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-542.885176535143,85.8333590931373"
+              EndConnector="74.6814879791207,0"
               Start="0,0"
-              End="-542.885176535143,78.3333590931373">
+              End="67.1814879791207,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.9166795465687" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38.9166795465687"
-                    Point2="0,42.9166795465687"
-                    Point3="-4,42.9166795465687" />
+                    End="67.1814879791207,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\Update DateToLoad"
+          TopLeft="1187.86664365265,587.899999586741" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Vincolo 4]"
+          TopLeft="1645.0369922526,494.299977807997">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-368.370348599948,93.6000217787441"
+              Start="0,0"
+              End="-368.370348599948,86.1000217787441">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-538.885176535143,42.9166795465687" />
+                    End="0,42.800010889372" />
                   <mssgle:CubicBezierSegment
-                    Point1="-538.885176535143,42.9166795465687"
-                    Point2="-542.885176535143,42.9166795465687"
-                    Point3="-542.885176535143,46.9166795465687" />
+                    Point1="0,42.800010889372"
+                    Point2="0,46.800010889372"
+                    Point3="-4,46.800010889372" />
                   <mssgle:LineSegment
-                    End="-542.885176535143,78.3333590931373" />
+                    End="-364.370348599948,46.800010889372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-364.370348599948,46.800010889372"
+                    Point2="-368.370348599948,46.800010889372"
+                    Point3="-368.370348599948,50.800010889372" />
+                  <mssgle:LineSegment
+                    End="-368.370348599948,86.1000217787441" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

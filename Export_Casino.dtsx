@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/13/2019 2:24:40 PM"
@@ -13,8 +13,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Export_Casino"
   DTS:PackageType="5"
-  DTS:VersionBuild="646"
-  DTS:VersionGUID="{DEDE0843-64D3-455F-A761-40BD8F8296FC}">
+  DTS:VersionBuild="711"
+  DTS:VersionGUID="{B8DC42DE-3A17-498A-98CE-A84CD121B1DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-GetGameSummaryDaily-{F1B10003-3BB7-4A53-9513-5F839DC10280}Config;" />
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-GetGameSummaryDaily-{F1B10003-3BB7-4A53-9513-5F839DC10280}Config;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADwvJPzCeNNzyaX+dNvEARzfiFeCPaqKztLVlf8V/4wlQAAAAAOgAAAAAIAACAAAAAd16LZy8Q+wJYQiF3LIAH09BiQAF3XmEy9KQm8qRGPKjAAAAA/27fYV9n7vYpXgGcgQ+C0+X8ufXTJxzbbXt6il7Q5vhEaGboxwWT+1cnRrdAmn+dAAAAA3O50n4wjYB39pqfAt3xqempR07aIBCGivNvfBMm+lUEKZWYuBobZLUjmroqUKXjVZsP+FdAt2icniAnxuk8e/w</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -39,7 +44,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_CASINO;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Calcolo Provvigioni Bingo-{3ACA4E52-49CC-481B-9A16-EC4FE4867EFA}DW;" />
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_CASINO;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Calcolo Provvigioni Bingo-{3ACA4E52-49CC-481B-9A16-EC4FE4867EFA}DW;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACBg2AQn8BQ5uVTas8gpFeMXCaAZ/cgMBJwVeQt5J5FHQAAAAAOgAAAAAIAACAAAACeLyBGGIQzPoq0XJ/WRijp75UBpFEQI36MkH4GXnNL6TAAAACRhNMV/h1LH99PzxcUHDKoPCid/3CzC2U4BLE+VlL3gIZzKlD0zw2CaT8iA2GnWGBAAAAAYpkQkqbuLzlIVT+WvRozyv250kBSbD3zze9Zoq1MCPmTo114JwZCrb8w8L/mhkanGhkubLjtBumbpGLSph1GvQ</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -318,16 +328,6 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A060FE4B-483B-4CA4-AB30-91EA00E3AF80}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="Delete">
-      <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
       DTS:DTSID="{517752BB-090C-4618-A776-00492B8A2CC5}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -346,25 +346,6 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1AA578C3-48A8-4643-9063-70653CD1F8C7}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="Executable_path_7zip">
-      <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{FECBE2FD-1353-4409-A2F0-50AA19641D30}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="Execute_7zip_flag">
-      <DTS:VariableValue
-        DTS:DataType="11">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
       DTS:DTSID="{835454E7-2AF7-47C6-8CFB-0F3C5D529E59}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::PathTarget]  +@[User::CurrentDateString] + &quot;.csv&quot;"
@@ -373,15 +354,6 @@
       DTS:ObjectName="FileFullName">
       <DTS:VariableValue
         DTS:DataType="8">C:\ETL_Out\Upload_Temporarily\Casino\Export_18991230.csv</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{88F1D750-6497-431E-83A1-02ADC032565F}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="InFiletype">
-      <DTS:VariableValue
-        DTS:DataType="8">csv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -433,63 +405,12 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EED08B06-983A-4B5B-902B-E0440AAE279C}"
-      DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[User::PathTarget]"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="OutFolder">
-      <DTS:VariableValue
-        DTS:DataType="8">C:\ETL_Out\Upload_Temporarily\Casino\</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{9BD4D220-CAF7-475A-AA7B-A1C0FC278812}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="OutMessage">
-      <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{183CDC11-F562-4DA9-A38C-07455FCB97BE}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="Outsubject">
-      <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
       DTS:DTSID="{F27A88FF-37D4-4BA7-8FF7-2AC6ADD405FC}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PathTarget">
       <DTS:VariableValue
         DTS:DataType="8">C:\ETL_Out\Upload_Temporarily\Casino\</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{C3165B94-DDF6-4853-A070-45D46AF018A5}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="PS1Code">
-      <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{176486A7-EB08-4CC9-B184-F0E1D42D387F}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="PS1Es">
-      <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -541,13 +462,12 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F706CE6D-C75E-48DA-91DA-2B8E96E72A9F}"
+      DTS:DTSID="{550F16E2-2C30-4847-8AFE-06A7BFFEBB3E}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="Working_Dir_7zip">
+      DTS:ObjectName="Variabile">
       <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
+        DTS:DataType="8">.\SFTP_Casino.ps1</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -608,6 +528,24 @@
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Attività File system"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Attività File system"
+      DTS:Disabled="True"
+      DTS:DTSID="{12E2B4F1-AB00-4C35-A347-2591071F5110}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Attività File system"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="{C2E94F3F-8DD3-40A1-91B0-ECBA46D28F8C}" />
+      </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Caricamento date"
@@ -733,24 +671,6 @@
       DTS:ObjectName="Contenitore Ciclo For">
       <DTS:Variables />
       <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Contenitore Ciclo For\Attività Esegui processo"
-          DTS:CreationName="Microsoft.ExecuteProcess"
-          DTS:Description="Attività Esegui processo"
-          DTS:DTSID="{2E29FA35-06EF-4F3E-B8BB-A20D0092B6DE}"
-          DTS:ExecutableType="Microsoft.ExecuteProcess"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Attività Esegui processo"
-          DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecuteProcessData
-              Executable="powershell.exe"
-              Arguments="-f &quot;c:\tools\SFTP_Casino.ps1&quot;"
-              WorkingDirectory="C:\Program Files (x86)\WinSCP" />
-          </DTS:ObjectData>
-        </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Contenitore Ciclo For\GetSummaryByUser"
           DTS:CreationName="Microsoft.Pipeline"
@@ -1651,16 +1571,6 @@ WITH RESULT SETS ((
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Contenitore Ciclo For.PrecedenceConstraints[Vincolo]"
-          DTS:CreationName=""
-          DTS:DTSID="{D35070E8-27AB-44B9-8AA0-92F898D12AC0}"
-          DTS:From="Package\Contenitore Ciclo For\GetSummaryByUser"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Vincolo"
-          DTS:To="Package\Contenitore Ciclo For\Attività Esegui processo" />
-      </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Gestione Connessioni"
@@ -2747,6 +2657,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:To="Package\Gestione Connessioni\Test Task" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transfer SFTP"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Attività Esegui processo"
+      DTS:DTSID="{2E29FA35-06EF-4F3E-B8BB-A20D0092B6DE}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer SFTP"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">@[User::Variabile]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="powershell.exe"
+          Arguments=".\SFTP_Casino.ps1"
+          WorkingDirectory="c:\tools" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -2768,11 +2698,27 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Vincolo 1]"
       DTS:CreationName=""
-      DTS:DTSID="{C72DCB12-0DBB-45FB-ABC4-F3BD44821289}"
+      DTS:DTSID="{925CDDA4-5202-4F92-9EB1-8CCA2CEAEE4F}"
       DTS:From="Package\Contenitore Ciclo For"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Vincolo 1"
+      DTS:To="Package\Transfer SFTP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Vincolo 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{F5BBB609-9E0E-49CC-860A-479FC46B60C1}"
+      DTS:From="Package\Transfer SFTP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Vincolo 2"
       DTS:To="Package\Aggiornamento Date" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Vincolo 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{26A685F7-B672-4443-951E-90EAD61E68C4}"
+      DTS:From="Package\Aggiornamento Date"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Vincolo 3"
+      DTS:To="Package\Attività File system" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
@@ -2793,10 +2739,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="197.6,102.4"
-          Size="197.6,145.6"
+          PanelSize="197.6,62.4"
+          Size="197.6,105.6"
           Id="Package\Aggiornamento Date"
-          TopLeft="834.138074168328,886.01854362017" />
+          TopLeft="938.72140334589,457.235206879172" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Attività File system"
+          TopLeft="1329.16661385033,493.133337252405" />
         <NodeLayout
           Size="140.8,41.6"
           Id="Package\Caricamento date\GetMaxDate"
@@ -2833,56 +2783,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           PanelSize="184.8,202.4"
           Size="184.8,246.4"
           Id="Package\Caricamento date"
-          TopLeft="459.799994536241,299.300002334913" />
+          TopLeft="363.133331710763,151.100001157125" />
         <NodeLayout
           Size="173.6,41.6"
           Id="Package\Contenitore Ciclo For\GetSummaryByUser"
-          TopLeft="31.4259248957222,9.85555234131965" />
-        <NodeLayout
-          Size="189.6,41.6"
-          Id="Package\Contenitore Ciclo For\Attività Esegui processo"
-          TopLeft="306.033293166427,163.133334896829" />
-        <EdgeLayout
-          Id="Package\Contenitore Ciclo For.PrecedenceConstraints[Vincolo]"
-          TopLeft="118.225924895722,51.4555523413196">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="282.607368270705,111.67778255551"
-              Start="0,0"
-              End="282.607368270705,104.17778255551">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.8388912777549" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,51.8388912777549"
-                    Point2="0,55.8388912777549"
-                    Point3="4,55.8388912777549" />
-                  <mssgle:LineSegment
-                    End="278.607368270705,55.8388912777549" />
-                  <mssgle:CubicBezierSegment
-                    Point1="278.607368270705,55.8388912777549"
-                    Point2="282.607368270705,55.8388912777549"
-                    Point3="282.607368270705,59.8388912777549" />
-                  <mssgle:LineSegment
-                    End="282.607368270705,104.17778255551" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="41.8425911484677,9.85555234131965" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="768.8,484"
-          Size="768.8,527.2"
+          PanelSize="277.6,79.2"
+          Size="277.6,122.4"
           Id="Package\Contenitore Ciclo For"
-          TopLeft="704.428543655647,292.710584293127" />
+          TopLeft="612.761880631487,207.777250284804" />
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\Gestione Connessioni\Foreach DB Config\Script Connections"
@@ -2952,10 +2864,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           PanelSize="204,409.6"
           Size="204,452.8"
           Id="Package\Gestione Connessioni"
-          TopLeft="168.900005364418,299.833358080652" />
+          TopLeft="72.2333425389394,151.633356902864" />
+        <NodeLayout
+          Size="146.4,41.6"
+          Id="Package\Transfer SFTP"
+          TopLeft="941.666629248194,248.449999571244" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="372.900005364418,526.233358080652">
+          TopLeft="276.23334253894,378.033356902864">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2972,9 +2888,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                     Point2="43.4499945859117,0"
                     Point3="43.4499945859117,-4" />
                   <mssgle:LineSegment
-                    End="43.4499945859117,-99.7333557457391" />
+                    End="43.4499945859117,-99.733355745739" />
                   <mssgle:CubicBezierSegment
-                    Point1="43.4499945859117,-99.7333557457391"
+                    Point1="43.4499945859117,-99.733355745739"
                     Point2="43.4499945859117,-103.733355745739"
                     Point3="47.4499945859117,-103.733355745739" />
                   <mssgle:LineSegment
@@ -2989,30 +2905,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Vincolo]"
-          TopLeft="644.599994536241,422.500002334913">
+          TopLeft="547.933331710763,271.638625720965">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="59.8285491194061,133.810581958214"
+              EndConnector="64.8285489207242,0"
               Start="0,0"
-              End="52.3285491194061,133.810581958214">
+              End="57.3285489207242,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="25.9142745597031,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25.9142745597031,0"
-                    Point2="29.9142745597031,0"
-                    Point3="29.9142745597031,4" />
-                  <mssgle:LineSegment
-                    End="29.9142745597031,129.810581958214" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29.9142745597031,129.810581958214"
-                    Point2="29.9142745597031,133.810581958214"
-                    Point3="33.9142745597031,133.810581958214" />
-                  <mssgle:LineSegment
-                    End="52.3285491194061,133.810581958214" />
+                    End="57.3285489207242,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3023,30 +2927,74 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Vincolo 1]"
-          TopLeft="1088.82854365565,819.910584293127">
+          TopLeft="890.361880631487,269.113624928024">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-155.890469487319,66.107959327043"
+              EndConnector="51.3047486167071,0"
               Start="0,0"
-              End="-155.890469487319,58.607959327043">
+              End="43.8047486167071,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.0539796635215" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.0539796635215"
-                    Point2="0,33.0539796635215"
-                    Point3="-4,33.0539796635215" />
+                    End="43.8047486167071,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Vincolo 2]"
+          TopLeft="1014.86662924819,290.049999571244">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.654774097696,167.185207307928"
+              Start="0,0"
+              End="22.654774097696,159.685207307928">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-151.890469487319,33.0539796635215" />
+                    End="0,79.592603653964" />
                   <mssgle:CubicBezierSegment
-                    Point1="-151.890469487319,33.0539796635215"
-                    Point2="-155.890469487319,33.0539796635215"
-                    Point3="-155.890469487319,37.0539796635215" />
+                    Point1="0,79.592603653964"
+                    Point2="0,83.592603653964"
+                    Point3="4,83.592603653964" />
                   <mssgle:LineSegment
-                    End="-155.890469487319,58.607959327043" />
+                    End="18.654774097696,83.592603653964" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.654774097696,83.592603653964"
+                    Point2="22.654774097696,83.592603653964"
+                    Point3="22.654774097696,87.592603653964" />
+                  <mssgle:LineSegment
+                    End="22.654774097696,159.685207307928" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Vincolo 3]"
+          TopLeft="1136.32140334589,511.984272065789">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="192.845210504441,0"
+              Start="0,0"
+              End="185.345210504441,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="185.345210504441,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
