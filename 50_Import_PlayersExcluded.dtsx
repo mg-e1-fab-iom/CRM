@@ -12,8 +12,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="50_Import_PlayersExcluded"
   DTS:PackageType="5"
-  DTS:VersionBuild="143"
-  DTS:VersionGUID="{1A632E3B-0174-4B06-8A2A-91C1EA0460DC}">
+  DTS:VersionBuild="144"
+  DTS:VersionGUID="{DE3F78A0-100B-4D09-A3D8-93A3D1FD2AC7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACC8hUxfwOneoc2CFP2MSXYQ2REsysUWBOOLaJQ82bOUQAAAAAOgAAAAAIAACAAAAC0o1uh0/Fbp/ZeLbvsa3HTGmvc/ewgrYUak0uZZ/3baTAAAADXJTaw1jwAk4trooU/rD3a1anbS3Hi85WfKYyQLf5PptXaggdXeNsf652T/zOVeC1AAAAAkjNu6DIQbclHFjaDXr3LLepOAQHpCSWkgTLSoqWKICrnwyf4p9m8Kzb6TL80i/5mrLdONXd71ebpYlOfuRSz9g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABA0LttYltF3zdG6Boxe+NuN7kfAkE5jCKPlOt0O8DIfgAAAAAOgAAAAAIAACAAAADE5etYvf3/hPzgGVnaQfzF6S3JAz/o7ayJfliv6boa3TAAAADY9o/cuNEiu4FoqU/Tosz+sHGoO+TQk5Rm9A2bs4efN45zWZkjwC8psF4LFOzyBDRAAAAAnlu8HLhCtVLBvVSk7El9LV1nvhl1k4xP6X8yqmx5gmqOXbaiAgCxNNAU4k/JWkkIY/scqvjDR6JJfnZTNMjyhw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -43,7 +43,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Import_PlayersExcluded-{B4227DB1-5282-44DB-862D-913C6CE34F58}DW;" />
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TMP_15219_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Import_PlayersExcluded-{B4227DB1-5282-44DB-862D-913C6CE34F58}DW;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACS09A64jedbGY2YU8fNKFOHfBjUOVBOGneT7XCZtjChQAAAAAOgAAAAAIAACAAAAAq+tuqeCcsxEXzDgCNfdYtDs8LI4pmagyRmBYHn4jd9TAAAADleEa1YEbg27Ck7EqGMEx8tzN5nnKBwM6TY9gC3pgjABqTpDJfPQ332p/2pKdKhyJAAAAA7LUBanI5ZphSnWJ5LSYVgjj+2yd3Cuj7A2vAVPbDrZJA1sLl3v4wcZoeqzb2x8GrY3Q5bFqjK/AElOFjrQL02Q</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -55,7 +60,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TEST_DEV_15219_PAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_PlayersExcluded-{0862BE32-85C4-4016-9B69-C486D1B2E69C}CRM;" />
+          DTS:ConnectionString="Data Source=10.30.21.10;User ID=mg-e-fab-iom;Initial Catalog=TEST_DEV_15219_PAM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Import_PlayersExcluded-{0862BE32-85C4-4016-9B69-C486D1B2E69C}CRM;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACWG6XQymQrdxj8mti/TpQLB+t2XsJ9UB5ZzN5HEMS//QAAAAAOgAAAAAIAACAAAADkBuhS/VFQmYW7H1Ny4fP826EOuXwgTldIhJMqdom8njAAAADxFZPTcccAbIptRXJRrPlU/ExFiJ49N+5UXmnd9DKMSkf95G81aBqfO2B5Nq8/poxAAAAAbksFD8K4eloSwYWsMKSnV6TvHKMv52EA0ZZh4g/QGnGhdBSvNjr1KAg6iCo1aVEjO86jwpq19BwiM2JYmarP4A</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -921,6 +931,15 @@ where [refTable].[CustomerId] = ?</property>
                   Language="CSharp"
                   ReadWriteVariables="User::DBKey,User::DBName,User::Options,User::Server,User::SQLServerAuthenticationPassword,User::SQLServerAuthenticationUsername,User::UseSQLServerAuthentication">
                   <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+                  <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -1039,35 +1058,6 @@ where [refTable].[CustomerId] = ?</property>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_5843f81756ec45938518f7f77683c3be.Properties.Settings.get_Default():ST_5843f81756ec45938518f7f77683c3be.Properties.Sett" +
-    "ings")]
-
-namespace ST_5843f81756ec45938518f7f77683c3be.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -1342,6 +1332,35 @@ namespace ST_5843f81756ec45938518f7f77683c3be
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_5843f81756ec45938518f7f77683c3be.Properties.Settings.get_Default():ST_5843f81756ec45938518f7f77683c3be.Properties.Sett" +
+    "ings")]
+
+namespace ST_5843f81756ec45938518f7f77683c3be.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
                     Name="Properties\AssemblyInfo.cs"
                     Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -1371,15 +1390,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2454,9 +2464,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

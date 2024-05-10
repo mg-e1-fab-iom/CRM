@@ -12,8 +12,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="90_Import_UsersTransactions"
   DTS:PackageType="5"
-  DTS:VersionBuild="478"
-  DTS:VersionGUID="{D53AC61F-8BF2-4B73-8572-C0624169AC7D}">
+  DTS:VersionBuild="479"
+  DTS:VersionGUID="{AFD62FD5-88EB-4220-A6A3-60A11142CB3E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -318,7 +318,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABRQ4nahVxoC4MEcfQkyOpNKsUsA8jXjFBaN1vBtN+MkgAAAAAOgAAAAAIAACAAAACzF1caqy2naQWampDeqBX/4c4r+s4Ma2EsrUZZUXnoODAAAABQPjTgXRPUp38xTfkrOXatTPygXAw4uDNyzKnP4S2/76f4793IkwB8l7DJ61wRXPFAAAAAvDT5ra6x8NLjUdN1IUJMjDjP3+hc8nCeNvyc6Xq1LjaDvFrRuQ94ymKb58f35QHwPq+787vCZccbyFRXs/1P3A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD89FPVUQHa8WkMxNYw0YNfzwEV+3b/ATdEfHQ5lkTdwQAAAAAOgAAAAAIAACAAAACdNV3DeenuPCUT9JmookUGSV8kKtrMQ+uT+2IgmzSjzDAAAAAHMJDmXsGMqClX7N+sajhkg9Hv6xRE2yTD0l262/nS24lrm25CD3S4VkRP9pyOPEtAAAAAkz0F0U2XJbApLpkEmm0u0xru3hsfGkkBeUWpZVyBCx50HUSCXt6L1AjIHSKPZtDn9lHNeacBgolGwg1r+/3dDg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -347,7 +347,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAdzQhJLYzuGGZodOfGNg2h6KRQgsWvucrfc2XlJt8gtwAAAAAOgAAAAAIAACAAAACKo/UF2lnx4zhvyZiI45B6nYiKRlSLay3/GwLcmexTwjAAAAAY8dNpse6iGJ7R69SU4FrWOzY9IK4JzNDvCup2EUxnOsb4qBN3ywnwrz9zbDv6oLxAAAAAWqZrfjjMh0UsmTM3d4CjcI0UipQYmQwvvO2yfBXaSTX/dvu2gSSIz8SmGadARM0Fn6Uawl1O3/g71wqDiT8sGQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADlHQk6+t89NkfANPKmYT4dMw9IohaPPjzSMOfzT+QgyAAAAAAOgAAAAAIAACAAAABsuiPSwmfcftzYJ+WPFfi4CRUNujIYtBOUneWis3MtcjAAAACffQrF0aILw9l/O2ge61fDXLwCxOXKZqUdjsp2870ktN7dT5e92qIPSg6Jy8s0zVdAAAAAJkDeeU3/ad6SXRwbamFp3PrdaNEJ7c+Iix7+eYAPH9E0ERNu/A7lA3MKM696RZFNaLYMm2p1w2fpJE0GE2a6UA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -364,7 +364,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA9EjAzGUo8AxdQfyIPFmAG+qdPDuDS79c9DNm4PBR/uwAAAAAOgAAAAAIAACAAAACaWGsueNsq7bvx/9DUhhXIb3DIYxAd4rf/2J4a6YoeyTAAAADYWA+WE0U1W1p5FvTh8bRVIVdDObtSlwxItioHoiJiQaUO8PDw58XcfoRUJA6Eg4lAAAAAXkgae48QwaAl2Fq+GW8Yshfn4IMBN2ltNFUEG0YcTMod0r0aCs0jMaDUEeixtZ/Bd++7uKuQSuiUvmkBliRAdg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAArPOrzF8V4APqcWyuNUyHu740zfEdAyZp0j09jv2NnuAAAAAAOgAAAAAIAACAAAACQYbgxdYrkaWaAswd7ptLCzVRc7/gQMHX5pvsQTpb7pzAAAADb6NH8AaATE+/PMA6i2YdYBewif6czIGvm5lkWsn3XlE0dtD8ZdPp3BPoUHtjD8MRAAAAAVbkDsSP4YHWjcPx0IOweXMYZGgHaZShbrBBIVuP7S4wWIIiJ7wKnQCD6qseYtN4R1IsN4KCFDCT2T1j1tm3gjA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -523,7 +523,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACc/Ktrl4OnFb+ZZimYUk+0vGzzL1/+2X1uqZ8FtAOL5gAAAAAOgAAAAAIAACAAAAAlA/Vckp8txrGe4sKkaDImN5Kll5lDE0B/HEy/Uve0iDAAAADOMtgf7I/OwaFC+TgLLnpAWS/EIxp4uvV9I96NKpXHTGdEm1z35IiAdCso630h8FNAAAAAxL/DR5QAnoyAq4NVzu6jOmTPtPiIQqxqomHgS2g5pzmwfxu0Mt9fO31BD0/6733CKn1eYGLEIMx7imJUkDHQlA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD/ajU7LNz/WaVbViJHYHlYOHHLHXFw1KgkWRkoCe1hXAAAAAAOgAAAAAIAACAAAABDxlTayJvF4+pdnVw+xQm1eIgLlmrQPYExj1KwFOj68jAAAAD98kT4ndsVA2qaVCk6r1Rax4UWW8mxE5H0dOEw4wqhafqV3M4wuzK96FM3izFSHBpAAAAAurz57l5vDUJ8TOlhTfQI1wf0lglbRLMHeWAEu90xFMeSdvZnyqxBpbmoPuWN3H5RrHwLfuMn9nFqrGMup9G/tQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -540,7 +540,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACpw/gSsHrw1r25yssK8V7qKdU9EIE/haGb/jx2wNUQHwAAAAAOgAAAAAIAACAAAABNUgUCgFfMQD6TUcpyIF0SQLLASJQ8wZjg8oftHW+sMDAAAABytzAKMmc7vFmsh/9icTWIcofWNh4+mtxCgpLcHUBLqyYXhguggotXAZ82pU6h7FpAAAAAZUtHEmPOPm7Qoff+qrZMFcnAzEEe+02jwU/ZZcqv5RzwhW/7ngsbXKA+5uo3c1sxVHtAMWwLas6EhlP1w4uwqQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAS472e5ODO7lg3yhn2UuvHa+/nXPRWXYWgmQDuiLPT9gAAAAAOgAAAAAIAACAAAADEjYzo+vEROFQETWt02SQpGciTM9iteZUsBNpDYeN37DAAAABDD8r7fUltVFCmjTYP8duJsefLN+X+L+qCD5mV/WXD6Ngsl773L7s0edskHjuct89AAAAA77d+tq17tbq0/dTxL26uXEqbSomezFcp4X2LRwJwPwOCXnsGWMIGG77qeayDmlpFHEfRRXmEEDBlpU6iO6ohZw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -5277,30 +5277,30 @@ where [refTable].[OperationCode] = ?</property>
                           name="Lookup Error Output"
                           startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup R.Outputs[Lookup Error Output]" />
                         <path
-                          refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output3]"
-                          endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup R.Inputs[Lookup Input]"
-                          name="Lookup Match Output"
-                          startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup Subaccounts R.Outputs[Lookup Match Output]" />
-                        <path
                           refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output4]"
-                          endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Derived Column R.Inputs[Derived Column Input]"
+                          endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Conversione dati.Inputs[Input conversione dati]"
                           name="Lookup Match Output"
-                          startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup 2.Outputs[Lookup Match Output]" />
+                          startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup Subaccounts V.Outputs[Lookup Match Output]" />
                         <path
-                          refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output1]"
+                          refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output2]"
                           endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Derived Column V.Inputs[Derived Column Input]"
                           name="Lookup Match Output"
                           startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup V.Outputs[Lookup Match Output]" />
                         <path
-                          refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output]"
+                          refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output3]"
                           endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Data Conversion 2.Inputs[Data Conversion Input]"
                           name="Lookup Match Output"
                           startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup R.Outputs[Lookup Match Output]" />
                         <path
-                          refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output2]"
-                          endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Conversione dati.Inputs[Input conversione dati]"
+                          refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output]"
+                          endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup R.Inputs[Lookup Input]"
                           name="Lookup Match Output"
-                          startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup Subaccounts V.Outputs[Lookup Match Output]" />
+                          startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup Subaccounts R.Outputs[Lookup Match Output]" />
+                        <path
+                          refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output1]"
+                          endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Derived Column R.Inputs[Derived Column Input]"
+                          name="Lookup Match Output"
+                          startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup 2.Outputs[Lookup Match Output]" />
                         <path
                           refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[OLE DB Source Output]"
                           endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup Subaccounts R.Inputs[Lookup Input]"
@@ -5332,15 +5332,15 @@ where [refTable].[OperationCode] = ?</property>
                           name="Output colonna derivata"
                           startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Aggiungi dettagli 2.Outputs[Output colonna derivata]" />
                         <path
-                          refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Output conversione dati]"
-                          endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\OLE DB Destination V.Inputs[OLE DB Destination Input]"
-                          name="Output conversione dati"
-                          startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Conversione V.Outputs[Output conversione dati]" />
-                        <path
                           refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Output conversione dati1]"
                           endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\OLE DB Destination R.Inputs[OLE DB Destination Input]"
                           name="Output conversione dati"
                           startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Conversione R.Outputs[Output conversione dati]" />
+                        <path
+                          refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Output conversione dati]"
+                          endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\OLE DB Destination V.Inputs[OLE DB Destination Input]"
+                          name="Output conversione dati"
+                          startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Conversione V.Outputs[Output conversione dati]" />
                         <path
                           refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Output conversione dati2]"
                           endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup V.Inputs[Lookup Input]"
@@ -10677,14 +10677,14 @@ where [refTable].[COD_CommissionSubtype] = ?</property>
                           startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD\Lookup History Subaccounts V.Outputs[Lookup Match Output]" />
                         <path
                           refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD.Paths[Lookup No Match Output1]"
-                          endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD\Data Conversion V.Inputs[Data Conversion Input]"
-                          name="Lookup No Match Output"
-                          startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD\Lookup Subaccounts V.Outputs[Lookup No Match Output]" />
-                        <path
-                          refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD.Paths[Lookup No Match Output]"
                           endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD\Data Conversion R.Inputs[Data Conversion Input]"
                           name="Lookup No Match Output"
                           startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD\Lookup Subaccounts R.Outputs[Lookup No Match Output]" />
+                        <path
+                          refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD.Paths[Lookup No Match Output]"
+                          endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD\Data Conversion V.Inputs[Data Conversion Input]"
+                          name="Lookup No Match Output"
+                          startId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD\Lookup Subaccounts V.Outputs[Lookup No Match Output]" />
                         <path
                           refId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD.Paths[OLE DB Source Output]"
                           endId="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD\Lookup Subaccounts R.Inputs[Lookup Input]"
@@ -22753,14 +22753,35 @@ where [refTable].[CRM_COD_SubAccount] = ? and [refTable].[CRM_COD_Site] = ?</pro
               ReadOnlyVariables="User::CurrentStartMonth,User::DateEnd"
               ReadWriteVariables="User::CurrentEndMonth">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_a42d7b62c5a347c5ba60221572fd1eae")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_a42d7b62c5a347c5ba60221572fd1eae")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -23148,35 +23169,14 @@ namespace ST_a42d7b62c5a347c5ba60221572fd1eae.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_a42d7b62c5a347c5ba60221572fd1eae")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_a42d7b62c5a347c5ba60221572fd1eae")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -23517,14 +23517,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadWriteVariables="User::DBKey,User::DBName,User::Options,User::Server,User::SQLServerAuthenticationPassword,User::SQLServerAuthenticationUsername,User::UseSQLServerAuthentication">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_3bd43094734d4512975f2ab8fa9ac074")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_3bd43094734d4512975f2ab8fa9ac074")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -23948,35 +23969,14 @@ namespace ST_3bd43094734d4512975f2ab8fa9ac074.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_3bd43094734d4512975f2ab8fa9ac074")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_3bd43094734d4512975f2ab8fa9ac074")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -25374,10 +25374,10 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="222.4,191.2"
+          PanelSize="222.4,190.4"
           Size="222.4,233.6"
           Id="Package\Aggiornamento Date"
-          TopLeft="1076.66665050719,1662.62744730539" />
+          TopLeft="1237.77775521632,1707.96078091423" />
         <NodeLayout
           Size="249.6,41.6"
           Id="Package\For Loop Mensile\Commission Container\Crea CRMCommission TempTable"
@@ -26243,20 +26243,26 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="373.990465519762,125.22744730539"
+              EndConnector="423.901570228893,53.7607809142294"
               Start="0,0"
-              End="366.490465519762,125.22744730539">
+              End="423.901570228893,46.2607809142294">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,121.22744730539" />
+                    End="0,22.8803904571147" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,121.22744730539"
-                    Point2="0,125.22744730539"
-                    Point3="4,125.22744730539" />
+                    Point1="0,22.8803904571147"
+                    Point2="0,26.8803904571147"
+                    Point3="4,26.8803904571147" />
                   <mssgle:LineSegment
-                    End="366.490465519762,125.22744730539" />
+                    End="419.901570228893,26.8803904571147" />
+                  <mssgle:CubicBezierSegment
+                    Point1="419.901570228893,26.8803904571147"
+                    Point2="423.901570228893,26.8803904571147"
+                    Point3="423.901570228893,30.8803904571147" />
+                  <mssgle:LineSegment
+                    End="423.901570228893,46.2607809142294" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26558,7 +26564,7 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output4]"
+          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output1]"
           TopLeft="383.499997913837,455.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26582,7 +26588,7 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output3]"
+          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output]"
           TopLeft="381.999997913837,149.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26606,7 +26612,7 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output2]"
+          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output4]"
           TopLeft="621.116654927864,150.29999838829">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26630,7 +26636,7 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output1]"
+          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output2]"
           TopLeft="612.349998410543,293.033332045343">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26654,7 +26660,7 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output]"
+          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission.Paths[Lookup Match Output3]"
           TopLeft="383.499997913837,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26917,12 +26923,22 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup Subaccounts R">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup R">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -26932,7 +26948,7 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -26940,12 +26956,15 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Lookup Subaccounts R">
+    design-time-name="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Scrivi Err 1 1">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -27004,6 +27023,19 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Scrivi Err 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Scrivi Err">
     <Properties>
       <Property>
@@ -27018,19 +27050,6 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\OLE DB Destination R">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Scrivi Err 1 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -27440,7 +27459,7 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD.Paths[Lookup No Match Output1]"
+          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD.Paths[Lookup No Match Output]"
           TopLeft="829.833333333333,158.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27476,7 +27495,7 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD.Paths[Lookup No Match Output]"
+          Id="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission OLD.Paths[Lookup No Match Output1]"
           TopLeft="275.333333333333,156.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -29264,19 +29283,6 @@ FROM     Crm.SubAccountPlayer WITH (nolock) INNER JOIN
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Mensile\Commission Container\Loop Caricamento Transazioni giornaliere\Carica Commission\Scrivi Err 2">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

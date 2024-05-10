@@ -12,8 +12,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="Import_UsersTransactionSummary"
   DTS:PackageType="5"
-  DTS:VersionBuild="422"
-  DTS:VersionGUID="{83BFDA21-67F8-4F71-BE04-2373B2F2E6C4}">
+  DTS:VersionBuild="423"
+  DTS:VersionGUID="{475257E2-C6D0-4744-A739-E961C1A5C051}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -94,7 +94,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAstHVG7qEt28uP+GjX5SsDfj6X6ELt/EsfVMix06opAgAAAAAOgAAAAAIAACAAAABhVWXLcDBan5Ej4DKo2ojavj6E2SQGOOtU4ssjXCz3RTAAAACiDzzqryqMduK3alnbQpgo55Yz7KPJJDZX5rIg7qrCHYFJVJU0RLU7O39CZbgUPPNAAAAAcyQPqmz6ihLtVe2Q/AdDvAULlnQOyxllrnh+bwCY161wx2aVLB9OGovTe3O7HXC4Qda8k/BNNlwOT6zpfLJ/cg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbX05Cal4gUKsdz6EedTMkAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABt/eaAj1joc8XL1tOnLhCK2wXOZV871FC4ZjjnGi3x5wAAAAAOgAAAAAIAACAAAACvAlX6qFBIjq1EJUIhB4aY7HvUD6DdZnkxzeSI0SLL5TAAAAAhPs93rPXFxxy+PR5nkiHc5y6L2Dxy3z7fIlXZehJVYYLvj+i3Lqa/a5Jq2AJRTvVAAAAA2oCuav5MD21ZD9Sge4TizGxBdQRxNuZet5qIw3OkOQNZXYWnXqH5vvIy4SF8Mur+hVuicFnXW4AlnsUXZjxepw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1070,14 +1070,35 @@ WHERE [CompetenceDate] &gt;= ?</property>
               ReadOnlyVariables="User::CurrentStartMonth"
               ReadWriteVariables="User::CurrentEndMonth,User::CurrentMonthInt,User::CurrentStartMonthInt">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_825b10eb349d4b5bb7b3343a253a9855")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_825b10eb349d4b5bb7b3343a253a9855")]
+[assembly: AssemblyCopyright("Copyright @  2019")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1401,35 +1422,14 @@ namespace ST_825b10eb349d4b5bb7b3343a253a9855.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_825b10eb349d4b5bb7b3343a253a9855")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_825b10eb349d4b5bb7b3343a253a9855")]
-[assembly: AssemblyCopyright("Copyright @  2019")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -9307,13 +9307,13 @@ where [refTable].[PartitionFlag] = ? and [refTable].[COD_Site] = ? and [refTable
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary"
+              DTS:refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
               DTS:DTSID="{BF44AD3D-ABD5-4903-BA7B-2DE796ABDB76}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
-              DTS:ObjectName="Data Flow PlayersTransactionSummary"
+              DTS:ObjectName="Data Flow SiteTransactionsAuthoritySummary"
               DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
               <DTS:ObjectData>
@@ -9323,7 +9323,7 @@ where [refTable].[PartitionFlag] = ? and [refTable].[COD_Site] = ? and [refTable
                   version="1">
                   <components>
                     <component
-                      refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati"
+                      refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati"
                       componentClassID="Microsoft.DataConvert"
                       contactInfo="Conversione dati;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
                       description="Conversione dati"
@@ -9331,34 +9331,34 @@ where [refTable].[PartitionFlag] = ? and [refTable].[COD_Site] = ? and [refTable
                       usesDispositions="true">
                       <inputs>
                         <input
-                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Inputs[Input conversione dati]"
+                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Inputs[Input conversione dati]"
                           name="Input conversione dati">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Inputs[Input conversione dati].Columns[AuthorityCode]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Inputs[Input conversione dati].Columns[AuthorityCode]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="81"
                               cachedName="AuthorityCode"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[AuthorityCode]" />
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[AuthorityCode]" />
                           </inputColumns>
                           <externalMetadataColumns />
                         </input>
                       </inputs>
                       <outputs>
                         <output
-                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Outputs[Output conversione dati]"
+                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Outputs[Output conversione dati]"
                           exclusionGroup="1"
                           name="Output conversione dati"
-                          synchronousInputId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Inputs[Input conversione dati]">
+                          synchronousInputId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Inputs[Input conversione dati]">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Outputs[Output conversione dati].Columns[Copia di AuthorityCode]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Outputs[Output conversione dati].Columns[Copia di AuthorityCode]"
                               dataType="wstr"
                               errorOrTruncationOperation="Conversione"
                               errorRowDisposition="FailComponent"
                               length="32"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Outputs[Output conversione dati].Columns[Copia di AuthorityCode]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Outputs[Output conversione dati].Columns[Copia di AuthorityCode]"
                               name="Copia di AuthorityCode"
                               truncationRowDisposition="FailComponent">
                               <properties>
@@ -9366,7 +9366,7 @@ where [refTable].[PartitionFlag] = ? and [refTable].[COD_Site] = ? and [refTable
                                   containsID="true"
                                   dataType="System.Int32"
                                   description="Specifica la colonna di input utilizzata come origine dati per la conversione."
-                                  name="SourceInputColumnLineageID">#{Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[AuthorityCode]}</property>
+                                  name="SourceInputColumnLineageID">#{Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[AuthorityCode]}</property>
                                 <property
                                   dataType="System.Boolean"
                                   description="Indica se la colonna utilizza le routine di analisi più veloci indipendenti dalle impostazioni locali."
@@ -9377,22 +9377,22 @@ where [refTable].[PartitionFlag] = ? and [refTable].[COD_Site] = ? and [refTable
                           <externalMetadataColumns />
                         </output>
                         <output
-                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Outputs[Output errori conversione dati]"
+                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Outputs[Output errori conversione dati]"
                           exclusionGroup="1"
                           isErrorOut="true"
                           name="Output errori conversione dati"
-                          synchronousInputId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Inputs[Input conversione dati]">
+                          synchronousInputId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Inputs[Input conversione dati]">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Outputs[Output errori conversione dati].Columns[ErrorCode]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Outputs[Output errori conversione dati].Columns[ErrorCode]"
                               dataType="i4"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Outputs[Output errori conversione dati].Columns[ErrorCode]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Outputs[Output errori conversione dati].Columns[ErrorCode]"
                               name="ErrorCode"
                               specialFlags="1" />
                             <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Outputs[Output errori conversione dati].Columns[ErrorColumn]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Outputs[Output errori conversione dati].Columns[ErrorColumn]"
                               dataType="i4"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Outputs[Output errori conversione dati].Columns[ErrorColumn]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Outputs[Output errori conversione dati].Columns[ErrorColumn]"
                               name="ErrorColumn"
                               specialFlags="2" />
                           </outputColumns>
@@ -9401,11 +9401,231 @@ where [refTable].[PartitionFlag] = ? and [refTable].[COD_Site] = ? and [refTable
                       </outputs>
                     </component>
                     <component
-                      refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB"
+                      refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary"
+                      componentClassID="Microsoft.OLEDBSource"
+                      contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                      description="OLE DB Source"
+                      name="GetSiteTransactionsAuthoritySummary"
+                      usesDispositions="true"
+                      version="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset"></property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">exec [CRM].[GetSiteTransactionsAuthoritySummary]  ?</property>
+                        <property
+                          dataType="System.String"
+                          description="The variable that contains the SQL command to be executed."
+                          name="SqlCommandVariable"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">2</property>
+                        <property
+                          dataType="System.String"
+                          description="The mappings between the parameters in the SQL command and variables."
+                          name="ParameterMapping">"@COD_Period:Input",{20D0D21B-1E10-46E2-8A1E-701D882F40CE};</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Connections[OleDbConnection]"
+                          connectionManagerID="Package.ConnectionManagers[DW]"
+                          connectionManagerRefId="Package.ConnectionManagers[DW]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <outputs>
+                        <output
+                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output]"
+                          name="OLE DB Source Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[PartitionFlag]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Conversione"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[PartitionFlag]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[PartitionFlag]"
+                              name="PartitionFlag"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[COD_Site]"
+                              dataType="i2"
+                              errorOrTruncationOperation="Conversione"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[COD_Site]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[COD_Site]"
+                              name="COD_Site"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[COD_Customer]"
+                              dataType="i2"
+                              errorOrTruncationOperation="Conversione"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[COD_Customer]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[COD_Customer]"
+                              name="COD_Customer"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[AuthorityCode]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversione"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[AuthorityCode]"
+                              length="81"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[AuthorityCode]"
+                              name="AuthorityCode"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[COD_UserType]"
+                              dataType="ui1"
+                              errorOrTruncationOperation="Conversione"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[COD_UserType]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[COD_UserType]"
+                              name="COD_UserType"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[TotalCount]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Conversione"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[TotalCount]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[TotalCount]"
+                              name="TotalCount"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[TotalAmount]"
+                              dataType="cy"
+                              errorOrTruncationOperation="Conversione"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[TotalAmount]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[TotalAmount]"
+                              name="TotalAmount"
+                              truncationRowDisposition="FailComponent" />
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[PartitionFlag]"
+                              dataType="i4"
+                              name="PartitionFlag" />
+                            <externalMetadataColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[COD_Site]"
+                              dataType="i2"
+                              name="COD_Site" />
+                            <externalMetadataColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[COD_Customer]"
+                              dataType="i2"
+                              name="COD_Customer" />
+                            <externalMetadataColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[AuthorityCode]"
+                              codePage="1252"
+                              dataType="str"
+                              length="81"
+                              name="AuthorityCode" />
+                            <externalMetadataColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[COD_UserType]"
+                              dataType="ui1"
+                              name="COD_UserType" />
+                            <externalMetadataColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[TotalCount]"
+                              dataType="i4"
+                              name="TotalCount" />
+                            <externalMetadataColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].ExternalColumns[TotalAmount]"
+                              dataType="cy"
+                              name="TotalAmount" />
+                          </externalMetadataColumns>
+                        </output>
+                        <output
+                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output]"
+                          isErrorOut="true"
+                          name="OLE DB Source Error Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[PartitionFlag]"
+                              dataType="i4"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[PartitionFlag]"
+                              name="PartitionFlag" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[COD_Customer]"
+                              dataType="i2"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[COD_Customer]"
+                              name="COD_Customer" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[COD_Site]"
+                              dataType="i2"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[COD_Site]"
+                              name="COD_Site" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[AuthorityCode]"
+                              codePage="1252"
+                              dataType="str"
+                              length="81"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[AuthorityCode]"
+                              name="AuthorityCode" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[COD_UserType]"
+                              dataType="ui1"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[COD_UserType]"
+                              name="COD_UserType" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[TotalCount]"
+                              dataType="i4"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[TotalCount]"
+                              name="TotalCount" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[TotalAmount]"
+                              dataType="cy"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[TotalAmount]"
+                              name="TotalAmount" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary"
                       componentClassID="Microsoft.OLEDBDestination"
                       contactInfo="Destinazione OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;4"
                       description="Destinazione OLE DB"
-                      name="Destinazione OLE DB"
+                      name="Temp SiteTransactionsAuthoritySummary"
                       usesDispositions="true"
                       version="4">
                       <properties>
@@ -9458,7 +9678,7 @@ where [refTable].[PartitionFlag] = ? and [refTable].[COD_Site] = ? and [refTable
                       </properties>
                       <connections>
                         <connection
-                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Connections[OleDbConnection]"
+                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Connections[OleDbConnection]"
                           connectionManagerID="Package.ConnectionManagers[DW]"
                           connectionManagerRefId="Package.ConnectionManagers[DW]"
                           description="Connessione di run-time OLE DB utilizzata per accedere al database."
@@ -9466,85 +9686,85 @@ where [refTable].[PartitionFlag] = ? and [refTable].[COD_Site] = ? and [refTable
                       </connections>
                       <inputs>
                         <input
-                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB]"
+                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB]"
                           errorOrTruncationOperation="Inserimento"
                           errorRowDisposition="FailComponent"
                           hasSideEffects="true"
                           name="Input destinazione OLE DB">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[PartitionFlag]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].Columns[PartitionFlag]"
                               cachedDataType="i4"
                               cachedName="PartitionFlag"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[PartitionFlag]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[PartitionFlag]" />
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[PartitionFlag]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[PartitionFlag]" />
                             <inputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[COD_Site]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].Columns[COD_Site]"
                               cachedDataType="i2"
                               cachedName="COD_Site"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[COD_Site]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[COD_Site]" />
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[COD_Site]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[COD_Site]" />
                             <inputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[COD_Customer]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].Columns[COD_Customer]"
                               cachedDataType="i2"
                               cachedName="COD_Customer"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[COD_Customer]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[COD_Customer]" />
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[COD_Customer]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[COD_Customer]" />
                             <inputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[COD_UserType]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].Columns[COD_UserType]"
                               cachedDataType="ui1"
                               cachedName="COD_UserType"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[COD_UserType]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[COD_UserType]" />
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[COD_UserType]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[COD_UserType]" />
                             <inputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[TotalCount]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].Columns[TotalCount]"
                               cachedDataType="i4"
                               cachedName="TotalCount"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[TotalCount]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[TotalCount]" />
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[TotalCount]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[TotalCount]" />
                             <inputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[TotalAmount]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].Columns[TotalAmount]"
                               cachedDataType="cy"
                               cachedName="TotalAmount"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[TotalAmount]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[TotalAmount]" />
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[TotalAmount]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output].Columns[TotalAmount]" />
                             <inputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[Copia di AuthorityCode]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].Columns[Copia di AuthorityCode]"
                               cachedDataType="wstr"
                               cachedLength="32"
                               cachedName="Copia di AuthorityCode"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[AuthorityCode]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Outputs[Output conversione dati].Columns[Copia di AuthorityCode]" />
+                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[AuthorityCode]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Outputs[Output conversione dati].Columns[Copia di AuthorityCode]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
                             <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[PartitionFlag]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[PartitionFlag]"
                               dataType="i4"
                               name="PartitionFlag" />
                             <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[COD_Customer]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[COD_Customer]"
                               dataType="i2"
                               name="COD_Customer" />
                             <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[COD_Site]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[COD_Site]"
                               dataType="i2"
                               name="COD_Site" />
                             <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[AuthorityCode]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[AuthorityCode]"
                               dataType="wstr"
                               length="32"
                               name="AuthorityCode" />
                             <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[COD_UserType]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[COD_UserType]"
                               dataType="i2"
                               name="COD_UserType" />
                             <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[TotalCount]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[TotalCount]"
                               dataType="i4"
                               name="TotalCount" />
                             <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[TotalAmount]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB].ExternalColumns[TotalAmount]"
                               dataType="cy"
                               name="TotalAmount" />
                           </externalMetadataColumns>
@@ -9552,242 +9772,22 @@ where [refTable].[PartitionFlag] = ? and [refTable].[COD_Site] = ? and [refTable
                       </inputs>
                       <outputs>
                         <output
-                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Outputs[Output errori destinazione OLE DB]"
+                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Outputs[Output errori destinazione OLE DB]"
                           exclusionGroup="1"
                           isErrorOut="true"
                           name="Output errori destinazione OLE DB"
-                          synchronousInputId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB]">
+                          synchronousInputId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB]">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
                               dataType="i4"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
                               name="ErrorCode"
                               specialFlags="1" />
                             <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
                               dataType="i4"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
-                              name="ErrorColumn"
-                              specialFlags="2" />
-                          </outputColumns>
-                          <externalMetadataColumns />
-                        </output>
-                      </outputs>
-                    </component>
-                    <component
-                      refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary"
-                      componentClassID="Microsoft.OLEDBSource"
-                      contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-                      description="OLE DB Source"
-                      name="TransactionSummary"
-                      usesDispositions="true"
-                      version="7">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                          name="CommandTimeout">0</property>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the name of the database object used to open a rowset."
-                          name="OpenRowset"></property>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the variable that contains the name of the database object used to open a rowset."
-                          name="OpenRowsetVariable"></property>
-                        <property
-                          dataType="System.String"
-                          description="The SQL command to be executed."
-                          name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">exec [CRM].[GetSiteTransactionsAuthoritySummary]  ?</property>
-                        <property
-                          dataType="System.String"
-                          description="The variable that contains the SQL command to be executed."
-                          name="SqlCommandVariable"></property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the column code page to use when code page information is unavailable from the data source."
-                          name="DefaultCodePage">1252</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Forces the use of the DefaultCodePage property value when describing character data."
-                          name="AlwaysUseDefaultCodePage">false</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the mode used to access the database."
-                          name="AccessMode"
-                          typeConverter="AccessMode">2</property>
-                        <property
-                          dataType="System.String"
-                          description="The mappings between the parameters in the SQL command and variables."
-                          name="ParameterMapping">"@COD_Period:Input",{20D0D21B-1E10-46E2-8A1E-701D882F40CE};</property>
-                      </properties>
-                      <connections>
-                        <connection
-                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Connections[OleDbConnection]"
-                          connectionManagerID="Package.ConnectionManagers[DW]"
-                          connectionManagerRefId="Package.ConnectionManagers[DW]"
-                          description="The OLE DB runtime connection used to access the database."
-                          name="OleDbConnection" />
-                      </connections>
-                      <outputs>
-                        <output
-                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output]"
-                          name="OLE DB Source Output">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[PartitionFlag]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversione"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[PartitionFlag]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[PartitionFlag]"
-                              name="PartitionFlag"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[COD_Site]"
-                              dataType="i2"
-                              errorOrTruncationOperation="Conversione"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[COD_Site]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[COD_Site]"
-                              name="COD_Site"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[COD_Customer]"
-                              dataType="i2"
-                              errorOrTruncationOperation="Conversione"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[COD_Customer]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[COD_Customer]"
-                              name="COD_Customer"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[AuthorityCode]"
-                              codePage="1252"
-                              dataType="str"
-                              errorOrTruncationOperation="Conversione"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[AuthorityCode]"
-                              length="81"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[AuthorityCode]"
-                              name="AuthorityCode"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[COD_UserType]"
-                              dataType="ui1"
-                              errorOrTruncationOperation="Conversione"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[COD_UserType]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[COD_UserType]"
-                              name="COD_UserType"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[TotalCount]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversione"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[TotalCount]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[TotalCount]"
-                              name="TotalCount"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[TotalAmount]"
-                              dataType="cy"
-                              errorOrTruncationOperation="Conversione"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[TotalAmount]"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].Columns[TotalAmount]"
-                              name="TotalAmount"
-                              truncationRowDisposition="FailComponent" />
-                          </outputColumns>
-                          <externalMetadataColumns
-                            isUsed="True">
-                            <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[PartitionFlag]"
-                              dataType="i4"
-                              name="PartitionFlag" />
-                            <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[COD_Site]"
-                              dataType="i2"
-                              name="COD_Site" />
-                            <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[COD_Customer]"
-                              dataType="i2"
-                              name="COD_Customer" />
-                            <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[AuthorityCode]"
-                              codePage="1252"
-                              dataType="str"
-                              length="81"
-                              name="AuthorityCode" />
-                            <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[COD_UserType]"
-                              dataType="ui1"
-                              name="COD_UserType" />
-                            <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[TotalCount]"
-                              dataType="i4"
-                              name="TotalCount" />
-                            <externalMetadataColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output].ExternalColumns[TotalAmount]"
-                              dataType="cy"
-                              name="TotalAmount" />
-                          </externalMetadataColumns>
-                        </output>
-                        <output
-                          refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output]"
-                          isErrorOut="true"
-                          name="OLE DB Source Error Output">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[PartitionFlag]"
-                              dataType="i4"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[PartitionFlag]"
-                              name="PartitionFlag" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[COD_Customer]"
-                              dataType="i2"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[COD_Customer]"
-                              name="COD_Customer" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[COD_Site]"
-                              dataType="i2"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[COD_Site]"
-                              name="COD_Site" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[AuthorityCode]"
-                              codePage="1252"
-                              dataType="str"
-                              length="81"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[AuthorityCode]"
-                              name="AuthorityCode" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[COD_UserType]"
-                              dataType="ui1"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[COD_UserType]"
-                              name="COD_UserType" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[TotalCount]"
-                              dataType="i4"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[TotalCount]"
-                              name="TotalCount" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[TotalAmount]"
-                              dataType="cy"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[TotalAmount]"
-                              name="TotalAmount" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                              dataType="i4"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                              name="ErrorCode"
-                              specialFlags="1" />
-                            <outputColumn
-                              refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                              dataType="i4"
-                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                              lineageId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
                               name="ErrorColumn"
                               specialFlags="2" />
                           </outputColumns>
@@ -9798,15 +9798,15 @@ where [refTable].[PartitionFlag] = ? and [refTable].[COD_Site] = ? and [refTable
                   </components>
                   <paths>
                     <path
-                      refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary.Paths[OLE DB Source Output]"
-                      endId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Inputs[Input conversione dati]"
+                      refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary.Paths[OLE DB Source Output]"
+                      endId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Inputs[Input conversione dati]"
                       name="OLE DB Source Output"
-                      startId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary.Outputs[OLE DB Source Output]" />
+                      startId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary.Outputs[OLE DB Source Output]" />
                     <path
-                      refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary.Paths[Output conversione dati]"
-                      endId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB.Inputs[Input destinazione OLE DB]"
+                      refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary.Paths[Output conversione dati]"
+                      endId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary.Inputs[Input destinazione OLE DB]"
                       name="Output conversione dati"
-                      startId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati.Outputs[Output conversione dati]" />
+                      startId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati.Outputs[Output conversione dati]" />
                   </paths>
                 </pipeline>
               </DTS:ObjectData>
@@ -9844,12 +9844,12 @@ where [refTable].[PartitionFlag] = ? and [refTable].[COD_Site] = ? and [refTable
               DTS:From="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\CreateTempCRM_SiteTransactionsAuthoritySummary"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Vincolo"
-              DTS:To="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary" />
+              DTS:To="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary" />
             <DTS:PrecedenceConstraint
               DTS:refId="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS.PrecedenceConstraints[Vincolo 1]"
               DTS:CreationName=""
               DTS:DTSID="{58AC03AF-0992-42E8-86CC-4E77237AB08B}"
-              DTS:From="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary"
+              DTS:From="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Vincolo 1"
               DTS:To="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\PartitionsSwitch_SiteTransactionsAuthoritySummary" />
@@ -9931,14 +9931,35 @@ where [refTable].[PartitionFlag] = ? and [refTable].[COD_Site] = ? and [refTable
                   Language="CSharp"
                   ReadWriteVariables="User::DBKey,User::DBName,User::Options,User::Server,User::SQLServerAuthenticationPassword,User::SQLServerAuthenticationUsername,User::UseSQLServerAuthentication">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_8f7ed3023d754b44afd8b7544a716c5c")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_8f7ed3023d754b44afd8b7544a716c5c")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -10361,35 +10382,14 @@ namespace ST_8f7ed3023d754b44afd8b7544a716c5c.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_8f7ed3023d754b44afd8b7544a716c5c")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_8f7ed3023d754b44afd8b7544a716c5c")]
-[assembly: AssemblyCopyright("Copyright @  2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -15197,8 +15197,8 @@ order by [COD_Period]</property>
           Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\CreateTempCRM_SiteTransactionsAuthoritySummary"
           TopLeft="14.5,18.5" />
         <NodeLayout
-          Size="272.8,41.6"
-          Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary"
+          Size="291.2,41.6"
+          Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary"
           TopLeft="38.5,96.5" />
         <NodeLayout
           Size="336,41.6"
@@ -15206,18 +15206,18 @@ order by [COD_Period]</property>
           TopLeft="8.5,179.5" />
         <EdgeLayout
           Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS.PrecedenceConstraints[Vincolo]"
-          TopLeft="176.75,60.5">
+          TopLeft="181.3,60.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36"
+              EndConnector="0,36.4"
               Start="0,0"
-              End="0,28.5">
+              End="0,28.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="0,28.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15228,18 +15228,18 @@ order by [COD_Period]</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS.PrecedenceConstraints[Vincolo 1]"
-          TopLeft="175.75,138.5">
+          TopLeft="180.3,138.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41"
+              EndConnector="0,41.4"
               Start="0,0"
-              End="0,33.5">
+              End="0,33.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5" />
+                    End="0,33.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15868,9 +15868,7 @@ order by [COD_Period]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15904,9 +15902,7 @@ order by [COD_Period]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16000,9 +15996,7 @@ order by [COD_Period]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16036,9 +16030,7 @@ order by [COD_Period]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16072,9 +16064,7 @@ order by [COD_Period]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16263,9 +16253,7 @@ order by [COD_Period]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16359,9 +16347,7 @@ order by [COD_Period]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16383,9 +16369,7 @@ order by [COD_Period]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16436,75 +16420,95 @@ order by [COD_Period]</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary">
+    design-time-name="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="177.6,41.6"
-          Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB"
+          Size="271.2,41.6"
+          Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary"
           TopLeft="34.5,235.5" />
         <NodeLayout
           Size="156.8,41.6"
-          Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Conversione dati"
+          Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Conversione dati"
           TopLeft="45,133.5" />
         <NodeLayout
-          Size="184,41.6"
-          Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary"
+          Size="258.4,41.6"
+          Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary"
           TopLeft="31.5,31.5" />
         <EdgeLayout
-          Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary.Paths[Output conversione dati]"
-          TopLeft="123.5,175.5">
+          Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary.Paths[Output conversione dati]"
+          TopLeft="123.4,175.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="46.7,60.4"
               Start="0,0"
-              End="0,52.5">
+              End="46.7,52.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,26.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2"
+                    Point2="0,30.2"
+                    Point3="4,30.2" />
+                  <mssgle:LineSegment
+                    End="42.7,30.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.7,30.2"
+                    Point2="46.7,30.2"
+                    Point3="46.7,34.2" />
+                  <mssgle:LineSegment
+                    End="46.7,52.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,18.25,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary.Paths[OLE DB Source Output]"
-          TopLeft="123.5,73.5">
+          Id="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary.Paths[OLE DB Source Output]"
+          TopLeft="160.7,73.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-37.3,60.4"
               Start="0,0"
-              End="0,52.5">
+              End="-37.3,52.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,26.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2"
+                    Point2="0,30.2"
+                    Point3="-4,30.2" />
+                  <mssgle:LineSegment
+                    End="-33.3,30.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-33.3,30.2"
+                    Point2="-37.3,30.2"
+                    Point3="-37.3,34.2" />
+                  <mssgle:LineSegment
+                    End="-37.3,52.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\Destinazione OLE DB">
+    design-time-name="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\Temp SiteTransactionsAuthoritySummary">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16517,7 +16521,7 @@ order by [COD_Period]</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow PlayersTransactionSummary\TransactionSummary">
+    design-time-name="Package\For Loop Month\Riepilogo mensile depositi e prelivi per causale AAMS\Data Flow SiteTransactionsAuthoritySummary\GetSiteTransactionsAuthoritySummary">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16629,9 +16633,7 @@ order by [COD_Period]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16725,9 +16727,7 @@ order by [COD_Period]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16749,9 +16749,7 @@ order by [COD_Period]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
